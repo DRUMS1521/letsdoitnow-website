@@ -19,6 +19,7 @@
     </div>
     </div>
   </div>
+  
   <div class="wrapper-about-2">
     <div class="layout-about-4">
       <div class="card-align">
@@ -38,6 +39,10 @@
         :descriptionText="'Nuestra comunicación se establece con nuestros expertos comerciales que poseen la fluidez de la pila para dar vida a la visión de su producto.'"/>
       </div>
     </div>
+  </div>
+
+  <div class="wrapper-about-3">
+    
   </div>
 </template>
   

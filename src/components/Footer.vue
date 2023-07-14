@@ -12,15 +12,19 @@
         </div>
         <div class="layout-f2">
             <h3>INFORMACIÓN</h3>
-            <CardFooter/>
+            <CardFooter :textFooter="'Sobre nosotros'" :link1="'/about'"
+            :textFooter2="'Carreras'"
+            :textFooter3="'Blog'" :link3="'blog'"/>
         </div>
         <div class="layout-f2">
             <h3>SOCIALES</h3>
-            <CardFooter/>
+            <CardFooter :textFooter="'Instagram'" :link1="'https://www.instagram.com/lets.doit.now/'"
+            :textFooter2="'Linkedin'" :link2="'https://www.linkedin.com/company/letsdoitnowus/'"
+            :textFooter3="'Chat'" :link3="'https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20'"/>
         </div>
         <div class="layout-f2">
             <h3>APOYO</h3>
-            <CardFooter/>
+            <CardFooter :textFooter="'Privacidad'"/>
         </div>
     </div>
 </template>
