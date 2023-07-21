@@ -36,7 +36,7 @@ export default {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 0 2rem;
+        padding: 0 1rem;
         width: 200px;
         height: 200px;
         border-radius: 10px;
@@ -46,5 +46,13 @@ export default {
 
     .layout-card h4{
         margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px){
+        .layout-card{
+            width: 150px;
+            height: 150px;
+        }
+
     }
 </style>

@@ -5,7 +5,7 @@
             <img v-if="imgIcon==3" src="../../assets/icon-people.svg" alt="">
             <img v-if="imgIcon==4" src="../../assets/icon-people-2.svg" alt="">
             <h4 class="subtitle-2">{{ text }}</h4>
-        <p class="pf">No solo queremos entregar un producto para el presente. Diseñamos estrategias que duran, diseñadas para liderar la industria.</p>
+        <p class="pf">{{longText}}</p>
     </div>
 </template>
 
@@ -17,6 +17,9 @@
             type: Number
         },
         text:{
+            type: String
+        },
+        longText:{
             type: String
         }
 
@@ -39,5 +42,11 @@
 
 .layout-cardI p{
     margin-top: 0;
+}
+
+@media screen and (max-width: 768px){
+    .layout-cardI {
+        width: fit-content;
+    }
 }
 </style>

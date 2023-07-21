@@ -1,12 +1,11 @@
 <template>
     <div class="layout-card-review">
-        <h4 class="subtitle-3">Norem ipsum dolor sit amet, consectetur adipiscing elit</h4>
-        <p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+        <p>{{ review }}</p>
         <div class="name-review">
             <img src="../../assets/icon-review.svg" alt="">
             <div>
-               <h5>Juan Carlos</h5>
-                <h6>CEO, Name Company</h6> 
+               <h5>{{ namePerson }}</h5>
+                <h6>{{ company }}</h6> 
             </div>
             
         </div>
@@ -14,7 +13,19 @@
 </template>
 
 <script>
-
+    export default{
+        props:{
+            namePerson:{
+                type: String
+            },
+            company: {
+                type: String
+            },
+            review:{
+                type: String
+            }
+        }
+    }
 </script>
 
 <style>
