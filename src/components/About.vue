@@ -15,7 +15,7 @@
       </div>
       <div class="text-line">
       <div class="line-about"></div>
-      <p style="width: 800px;">Nuestro experimentado equipo ha aprendido que uno de los principales problemas al contratar una agencia es que las agencias no son dueñas del problema del cliente. En base a eso, hemos estado construyendo la confianza de nuestros clientes en:</p>
+      <p style="width: auto;">Nuestro experimentado equipo ha aprendido que uno de los principales problemas al contratar una agencia es que las agencias no son dueñas del problema del cliente. En base a eso, hemos estado construyendo la confianza de nuestros clientes en:</p>
     </div>
     </div>
   </div>
@@ -134,5 +134,47 @@
 .card-align-3{
   display: flex;
   align-items: end;
+}
+
+@media screen and (max-width: 768px){
+
+  .layout-about{
+  width: auto;  
+  margin-left: 1rem;
+}
+
+.layout-about-2{
+  gap: 5rem;
+}
+
+.layout-about-3{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 620px;
+}
+.wrapper-about{
+  height: 1000px;
+}
+
+.text-line{
+  margin-left: 1rem;
+}
+
+.line-about{
+  width: auto;
+}
+
+.wrapper-about-2{
+  margin: 70% 0 10% 0;
+}
+
+.layout-about-4{
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 }
 </style>

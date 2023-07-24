@@ -49,7 +49,6 @@
 }
 
 .wrapper-f1{
-    display: flex;
     display: grid;
     margin-left: 2rem;
     margin-right: 2rem;
@@ -111,5 +110,22 @@ input:focus {
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 768px){
+    .wrapper-f1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    margin-left: 8px;
+    
+}
+
+.layout-f2{
+    align-items: flex-start;
+}
+
+
+
 }
 </style>

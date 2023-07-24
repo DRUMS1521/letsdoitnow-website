@@ -64,4 +64,21 @@ export default{
     height: 0.5px;
     background-color: #A8A8A8;
 }
+
+@media screen and (max-width: 768px){
+    .layout-card-blog{
+        width: fit-content;
+    }
+
+    
+
+}
+@media screen and (max-width: 350px){
+    .layout-card-blog{
+        width: 250px;
+    }
+
+    
+
+}
 </style>

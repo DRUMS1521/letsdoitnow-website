@@ -52,4 +52,10 @@ export default{
     letter-spacing: 0.48px;
 
 }
+
+@media screen and (max-width: 768px){
+    .links-blog{
+    flex-direction: column;
+}
+}
 </style>

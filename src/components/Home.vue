@@ -323,6 +323,16 @@
   .layout-3{
     width: fit-content;
     margin-right: 0;
+    padding: 1rem;
+  }
+
+  .wrapper-5 h2{
+    display: flex;
+    width: fit-content;
+  }
+
+  .layout-5{
+    flex-direction: column;
   }
 
 

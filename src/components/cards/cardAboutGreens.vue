@@ -36,4 +36,10 @@ export default{
     text-align: start;
     color: #263F28;
 }
+
+@media screen and (max-width: 768px){
+    .card-style-green{
+    width: fit-content;
+}
+}
 </style>
