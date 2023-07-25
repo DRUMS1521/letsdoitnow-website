@@ -322,13 +322,13 @@ i {
 }
 
 .wrapper-f1 {
-    display: flex;
+    width: 100%;
+   /*  display: flex;
     display: grid;
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 3rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
 }
 
 .layout-f1, .layout-f2 {
