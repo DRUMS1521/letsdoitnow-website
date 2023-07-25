@@ -331,7 +331,16 @@ i {
 
 }
 
-.layout-f1,
+.layout-f1, .layout-f2 {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 350px;
+}
+
+.layout-f2 {
+    min-width: 200px;
+}
+
 .layout-f1 h2 {
     display: flex;
     flex-direction: column;
@@ -340,6 +349,14 @@ i {
 
 .layout-f1 img {
     width: 100px;
+}
+
+.layout-f2 h3 {
+    color: #263F28;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.4px;
 }
 
 .input {
@@ -371,21 +388,6 @@ input:focus {
     border: none;
     border-radius: 100%;
     background-image: url('../arrow-1.svg');
-}
-
-.layout-f2 {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.layout-f2 h3 {
-    color: #263F28;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    letter-spacing: 0.4px;
 }
 
 .links-footer {
