@@ -9,7 +9,6 @@ import SwitchLang from '../components/General/SwitchLang.vue'
 		<switch-lang />
 		<NavBarResponsive />
 		<router-view />
-		
 		<Footer />
 	</div>
 </template>
