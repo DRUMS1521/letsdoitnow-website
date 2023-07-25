@@ -1,0 +1,25 @@
+{
+	"files": [],
+	"references": [
+	  {
+		"path": "./tsconfig.node.json"
+	  },
+	  {
+		"path": "./tsconfig.app.json"
+	  }
+	],
+	"compilerOptions": {
+	  "resolveJsonModule": true,
+	  "esModuleInterop": true,
+	  "allowSyntheticDefaultImports": true,
+	  "module": "ESNext",
+	  "target": "ESNext",
+	  "moduleResolution": "Node",
+	  "strict": true,
+	  "jsx": "preserve",
+	  "sourceMap": true
+	},
+	
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.json"],
+	"exclude": ["node_modules"]
+  }
