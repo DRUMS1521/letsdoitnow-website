@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
+import { seoMeta } from '@/stores/SeoMeta';
 
 const language = ref<any>({
-	title001: "", title002: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: ""
+	langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", title001: "", title002: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: ""
 });
 
 onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").services
+	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
 });
 </script>
 

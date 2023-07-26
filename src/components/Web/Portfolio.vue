@@ -1,4 +1,16 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
+import { lang } from '@/stores/SwitchLang'
+import { seoMeta } from '@/stores/SeoMeta';
+
+const language = ref<any>({
+	langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", 
+});
+
+onMounted(() => {
+	language.value = lang(localStorage.getItem("Lang") === "Es").porfolio
+	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
+})
 </script>
 
 <template>

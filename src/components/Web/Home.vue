@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onBeforeMount  } from 'vue';
 import { lang } from '../../stores/SwitchLang';
+import { seoMeta } from '@/stores/SeoMeta'
 import Card from '../cards/card-1.vue'
 import CardBlogCategory from '../cards/cardBlogCategory.vue';
 import CardBlogResume from '../cards/cardBlogResume.vue';
 import CardInformation from '../cards/cardInformation.vue'
 import CardReview from '../cards/cardReview.vue';
 
+/* function onBeforeMount(callback: () => void): void */
+
 const language = ref<any>({
-	"title01": "", "title02": "", "title03": "", "text001": "", "text002": "", "text003": "", "text004": "", "text005": "", "text006": "", "text007": "", "text008": "", "text009": "", "text010": "", "text011": "", "text012": "", "text013": "", "text014": "", "text015": "", "text016": "", "text017": "", "text018": "", "text019": "", "text020": "", "text021": "", "text022": "", "text023": "", "text024": "", "text025": "", "text026": "", "text027": "", "text028": "", "text029": "", "text030": ""
+		"langweb": "", "titleweb": "", "desciptionweb": "", "keywords": "", "imgweb": "", "title01": "", "title02": "", "title03": "", "text001": "", "text002": "", "text003": "", "text004": "", "text005": "", "text006": "", "text007": "", "text008": "", "text009": "", "text010": "", "text011": "", "text012": "", "text013": "", "text014": "", "text015": "", "text016": "", "text017": "", "text018": "", "text019": "", "text020": "", "text021": "", "text022": "", "text023": "", "text024": "", "text025": "", "text026": "", "text027": "", "text028": "", "text029": "", "text030": ""
 });
 
 const quote = (): void => {
@@ -18,8 +21,11 @@ const freeConsulation = (): void => {
 	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
 }
 
-onMounted(() => {
-	language.value = lang(localStorage.getItem("Lang") === "Es").home
+onBeforeMount(() => {
+	language.value = lang(localStorage.getItem("Lang") === "Es").home;
+
+	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
+
 });
 </script>
 

@@ -19,6 +19,11 @@
 		"privacy": "Privacy"
 	},
 	"home": {
+		"langweb": "en",
+		"titleweb": "Let's do it now: Software and App Development for Enterprises",
+		"desciptionweb": "We offer technological solutions developed by Latin American talent with experience in the logistics, manufacturing, and construction sectors.",
+		"keywords": "Software and App Development for Latin Enterprises in New York, App Development Companies in Colombia, App Development Companies in New York, App Development Companies, App Development Companies Colombia, Multilingual Software Development in New York, Scalable Mobile App Development, Spanish Software Development Services in New York, Software Development Companies with Experience in Logistics, Construction, and Manufacturing.",
+		"imgweb": "",
 		"title01": "Software",
 		"title02": "Solutions",
 		"title03": "Digital",
@@ -59,6 +64,11 @@
 		"text035": "Get a free consultation"
 	},
 	"about": {
+		"langweb": "en",
+		"titleweb": "Let's do it now: The bilingual development team that creates technology for your company",
+		"desciptionweb": "Based in New York and with a team of digital nomads, we build software and applications for Latin companies that need technology to manage their business.",
+		"keywords": "Custom Software Development for Enterprises, Dedicated Software Development Team, Technology Consulting for Latin Companies, Custom App Development for Enterprises, Experience in Software and App Development.",
+		"imgweb": "",
 		"title001": "We start with curiosity and solve the problem",
 		"text002": "We know that every business has its unique problem. Our work begins with identifying the problem and its user.",
 		"text003": "Evaluation",
@@ -76,6 +86,11 @@
 		"text015": "'Our communication is established with our business experts who possess the fluency of the stack to bring your product vision to life.'"
 	},
 	"services": {
+		"langweb": "en",
+		"titleweb": "Let's do it now: Software and App Nearshoring: Empower Your Business with Technology",
+		"desciptionweb": "We offer software and app solutions at Latin American prices for companies that need nearshoring teams for shared or dedicated development, adapting technologies to the needs of each business.",
+		"keywords": "Mobile App Development for Enterprises, Software Development for Inventory Management, App Development for Route and Transportation Management, Fleet and Logistics Management App, ERP Applications for Enterprise Resource Planning, App Development for Production and Quality Control, Apps for Project Management and Data Analysis, Responsive and Modern Website Development, Custom Web Application Development Services.",
+		"imgweb": "",
 		"title001": "Your vision is ",
 		"title002": "our mission",
 		"text002": "We transform your ideas into customized digital solutions.",

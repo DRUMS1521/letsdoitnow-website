@@ -19,6 +19,11 @@
 		"privacy": "Privacidad"
 	},
 	"home": {
+		"langweb": "es",
+		"titleweb": "Let's do it now: Desarrollo de Software y Apps para Empresas",
+		"desciptionweb": "Ofrecemos soluciones tecnológicas desarrolladas por talento latinoamericano con experiencia en los sectores de logística, manufactura y construcción.",
+		"keywords": "Desarrollo de Software y Apps para Empresas Latinas en New York, Empresas Desarrolladoras de Apps en Colombia, Empresas Desarrolladoras de Apps en New York, Empresas Desarrolladoras de Apps, Empresas Desarrolladoras Apps Colombia, Desarrollo de Software Multilingüe en New York, Desarrollo de Aplicaciones Móviles Escalables, Servicios de Desarrollo de Software en Español en New York, Empresas de Desarrollo de Software con Experiencia en Logística Construcción y Manufactura",
+		"imgweb": "",
 		"title01": "Software",
 		"title02": "de soluciones",
 		"title03": "Digitales",
@@ -59,6 +64,11 @@
 		"text035": "Recibe una consultoría gratis"
 	},
 	"about": {
+		"langweb": "es",
+		"titleweb": "Let's do it now: El equipo de desarrollo bilingüe que crea tecnología para tu empresa",
+		"desciptionweb": "Con base en New York y un equipo de nómadas digitales construimos software y aplicaciones para empresas latinas que necesitan tecnología para gestionar su negocio.",
+		"keywords": "Desarrollo de Software a la Medida para Empresas, Equipo de Desarrollo de Software Dedicado, Consultoría Tecnológica para Empresas Latinas, Desarrollo de Apps Personalizadas para Empresas, Experiencia en Desarrollo de Software y Apps",
+		"imgweb": "",
 		"title001": "Empezamos con la curiosidad y resolvemos el problema",
 		"text002": "Sabemos que cada negocio tiene su propio problema. Nuestro trabajo comienza con la identificación del problema y su usuario.",
 		"text003": "Evaluación",
@@ -76,6 +86,11 @@
 		"text015": "'Nuestra comunicación se establece con nuestros expertos comerciales que poseen la fluidez de la pila para dar vida a la visión de su producto.'"
 	},
 	"services": {
+		"langweb": "es",
+		"titleweb": "Let's do it now: Nearshoring de Software y apps: Potencia tu Negocio con tecnología",
+		"desciptionweb": "Ofrecemos soluciones de software y apps a precios latinoamericanos para empresas que necesitan equipos nearshoring para desarrollo compartido o dedicado, adaptando tecnologías a las necesidades de cada negocio.",
+		"keywords": "Desarrollo de Aplicaciones Móviles para Empresas, Desarrollo de Software para la Gestión de Inventarios, Desarrollo de Apps para la Gestión de Rutas y Transporte, App para Gestión de Flotas y Logística, Aplicaciones ERP para la Planificación de Recursos Empresariales, Desarrollo de Apps para el Control de Producción y Calidad, Apps para la Gestión de Proyectos y Análisis de Datos, Desarrollo de Sitios Web Responsivos y Modernos, Servicios de Desarrollo de Aplicaciones Web a Medida",
+		"imgweb": "",
 		"title001": "Tu visión es ",
 		"title002": "nuestra misión",
 		"text002": "Transformamos tus ideas en soluciones digitales personalizadas.",
