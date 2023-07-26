@@ -1,1 +1,0 @@
-import{_ as e}from"./mantenimiento-bc4a260e.js";import{_ as o,o as t,c as _,a as s}from"./index-50e3d760.js";const n={},c=s("img",{class:"mantenimiento",src:e,alt:""},null,-1),r=[c];function a(i,l){return t(),_("div",null,r)}const d=o(n,[["render",a]]);export{d as default};

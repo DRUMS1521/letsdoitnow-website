@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s,a as n}from"./index-b1685fa7.js";const o="/assets/mantenimiento-39563b05.svg";const _={},c=n("img",{class:"mantenimiento",src:o,alt:""},null,-1),a=[c];function l(r,i){return t(),s("div",null,a)}const d=e(_,[["render",l]]);export{d as default};
