@@ -35,12 +35,12 @@ onBeforeMount(() => {
 			<h1 class="title">{{ language.title01 }}<br><span class="rectangle">{{ language.title02 }}</span><br>{{ language.title03 }}</h1>
 			<p class="pf">{{ language.text001 }}</p>
 			<div class="layout-btn">
-				<a href="">
+				<a>
 					<button class="btn-style-deg" @click="quote">
 						{{ language.text002 }}
 					</button>
 				</a>
-				<a href="">
+				<a  @click="$router.push('/portfolio')">
 					<button class="btn-underline">
 						{{ language.text003 }}
 					</button>
