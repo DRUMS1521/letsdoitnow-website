@@ -11,7 +11,7 @@ import CardReview from '../cards/cardReview.vue';
 /* function onBeforeMount(callback: () => void): void */
 
 const language = ref<any>({
-		"langweb": "", "titleweb": "", "desciptionweb": "", "keywords": "", "imgweb": "", "title01": "", "title02": "", "title03": "", "text001": "", "text002": "", "text003": "", "text004": "", "text005": "", "text006": "", "text007": "", "text008": "", "text009": "", "text010": "", "text011": "", "text012": "", "text013": "", "text014": "", "text015": "", "text016": "", "text017": "", "text018": "", "text019": "", "text020": "", "text021": "", "text022": "", "text023": "", "text024": "", "text025": "", "text026": "", "text027": "", "text028": "", "text029": "", "text030": ""
+		langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", title01: "", title02: "", title03: "", text001: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: "", text012: "", text013: "", text014: "", text015: "", text016: "", text017: "", text018: "", text019: "", text020: "", text021: "", text022: "", text023: "", text024: "", text025: "", text026: "", text027: "", text028: "", text029: "", text030: ""
 });
 
 const quote = (): void => {

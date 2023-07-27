@@ -20,20 +20,20 @@ const props = defineProps({
 
 <template>
 	<h3 class="subtitle-3">Categorías del blog</h3>
-	<ul class="links-blog">
-		<a href="">
+	<ul class="">
+		<a href="" class="blogtop">
 			<li>{{ props.text }}</li>
 		</a>
-		<a href="">
+		<a href="" class="blogtop">
 			<li>{{ props.text2 }}</li>
 		</a>
-		<a href="">
+		<a href="" class="blogtop">
 			<li>{{ props.text3 }}</li>
 		</a>
-		<a href="">
+		<a href="" class="blogtop">
 			<li>{{ props.text4 }}</li>
 		</a>
-		<a href="">
+		<a href="" class="blogtop">
 			<li>{{ props.text5 }}</li>
 		</a>
 	</ul>

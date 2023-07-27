@@ -331,9 +331,29 @@ i {
     grid-template-columns: 1fr 1fr 1fr 1fr; */
 }
 
-.layout-f1, .layout-f2 {
+.blogtop, .layout-f1, .layout-f2 {
     display: inline-block;
     vertical-align: top;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.blogtop li {
+    color: #333;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.48px;
+    list-style: none;
+    width: 200px;
+    padding-bottom: 0.5rem;
+}
+
+.layout-f1, .layout-f2 {
     min-width: 350px;
 }
 
