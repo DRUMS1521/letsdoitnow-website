@@ -35,7 +35,7 @@ onMounted(() => {
 		<div class="layout-f2">
 			<h3>{{ language.inforrmation }}</h3>
 			<card-footer :textFooter="language.about" :link1="'/about'" :textFooter2="language.careers"
-				:textFooter3="'Blog'" :link3="'blog'" />
+			 :link2="'/careers'" :textFooter3="'Blog'" :link3="'blog'" />
 		</div>
 		<div class="layout-f2">
 			<h3>{{ language.social }}</h3>

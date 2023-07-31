@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
 	<div class="card-style">
-		<h2>{{ titleText }}</h2>
-		<p>{{ descriptionText }}</p>
+		<h2>{{ props.titleText }}</h2>
+		<p>{{ props.descriptionText }}</p>
 	</div>
 </template>

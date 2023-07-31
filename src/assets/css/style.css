@@ -18,9 +18,20 @@
 
 .btn button,
 .btn-style-deg {
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    background: var(--degradado-1, linear-gradient(90deg, #79db92 0, #9cce7c 100%))
+    background: var(--degradado-1, linear-gradient(90deg, #79db92 0, #9cce7c 100%));
+    box-shadow: 0px 4px 11px 4px rgba(161, 253, 156, 0.66);
 }
+
+.btn-style-deg:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+  
+  .btn-style-deg:active {
+    opacity: 0.5;
+  }
 
 .entry-blog h4,
 .languaje h5,
@@ -139,6 +150,9 @@ p {
     background-color: #0ff
 }
 
+.rectangle {
+	background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);
+}
 .slider,
 input:checked+.slider {
     background-color: #79db92
@@ -531,7 +545,7 @@ p {
 }
 
 .layout-about-2 {
-    gap: 8rem
+    gap: 5rem
 }
 
 .layout-about-3 {
@@ -646,6 +660,64 @@ p {
     width: 500px
 }
 
+.wrapper-port {
+    margin: 2rem;
+    text-align: start
+}
+
+.card-portfolio {
+    margin: 2rem 0
+}
+
+.card-portfolio h3 {
+    color: #333
+}
+
+.line-port {
+    margin: 5rem 0;
+    width: 100%;
+    height: 1px;
+    background-color: #4d4d4d
+}
+
+.imgs-port {
+    text-align: center;
+    width: 100%
+}
+
+.imgs-port img {
+    width: 100%;
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: top;
+    border: .5rem solid transparent
+}
+
+.wrapper-crs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 4rem;
+}
+
+.img-crs{
+    border-radius: 10px;
+}
+
+.layout-crs{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.layout-about-team{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    padding: 4rem;
+}
+
 @media screen and (max-width:768px) {
     .header {
         margin: 0;
@@ -712,7 +784,7 @@ p {
     }
 
     .layout-about-2 {
-        gap: 5rem
+        gap: 3rem
     }
 
     .layout-about-3 {
@@ -759,6 +831,18 @@ p {
         align-items: center;
         justify-items: center;
         flex-direction: column-reverse
+    }
+
+    .btn-style-deg {
+        box-shadow: none;
+    }
+
+    .layout-about-team{
+        display: flex;
+        grid-template-columns: none;
+        flex-direction: column;
+        justify-items: center;
+        padding: 4rem;
     }
 }
 
