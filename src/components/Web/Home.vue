@@ -59,7 +59,7 @@ onBeforeMount(() => {
 		<div class="layout-2">
 			<h2 class="subtitle">{{ language.text008 }}</h2>
 			<p class="pf">{{ language.text009 }}</p>
-			<a href="">
+			<a @click="$router.push('/services')">
 				<button class="btn-style-deg">
 					{{ language.text010 }}
 				</button>
@@ -91,7 +91,7 @@ onBeforeMount(() => {
 			<h3 class="subtitle">{{ language.text019 }}<br><span class="rectangle">{{ language.text020 }}</span><br>{{ language.text021 }}</h3>
 			<p class="pf">{{ language.text022 }}</p>
 			<div class="layout-btn">
-				<a href="">
+				<a @click="$router.push('/blog')">
 					<button class="btn-style-deg">
 						{{ language.text023 }}
 					</button>

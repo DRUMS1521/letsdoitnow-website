@@ -83,7 +83,12 @@
 		"text012": "'We take charge of your problem'",
 		"text013": "'We understand our clients' problems through a consulting process led by our business experts.'",
 		"text014": "'We speak your language'",
-		"text015": "'Our communication is established with our business experts who possess the fluency of the stack to bring your product vision to life.'"
+		"text015": "'Our communication is established with our business experts who possess the fluency of the stack to bring your product vision to life.'",
+		"text016": "Schedule a meeting with us",
+		"text017": "Meet",
+		"text018": "our team",
+		"text019": "To be the company our clients desire, it takes a diverse group of passionate operators. Get to know the people who are leading the way at Let's Do It Now",
+		"text020": "Do you have any questions? Write to us"
 	},
 	"services": {
 		"langweb": "en",
@@ -102,6 +107,7 @@
 		"text008": "Web Application Development",
 		"text009": "Our team can assist you with web-based solutions. Our web application development service aims to optimize by creating scalable web functionalities.",
 		"text010": "Mobile App Design",
-		"text011": "We can develop your mobile solution as a standalone application or one that seamlessly integrates and communicates with the software you're already using."
+		"text011": "We can develop your mobile solution as a standalone application or one that seamlessly integrates and communicates with the software you're already using.",
+		"text012": "Schedule a meeting with us"
 	}
 }

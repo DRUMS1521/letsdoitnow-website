@@ -11,6 +11,10 @@ onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").services
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
 });
+
+const freeConsulation = (): void => {
+	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
+}
 </script>
 
 <template>
@@ -57,6 +61,11 @@ onMounted(() => {
 			</div>
 
 		</div>
+		<a href="">
+			<button class="btn-style-deg" @click="freeConsulation">
+				{{ language.text012 }}
+			</button>
+			</a>
 
 </div></template>
 
