@@ -169,10 +169,6 @@ onBeforeMount(() => {
 	justify-items: flex-end;
 }
 
-.rectangle {
-	background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);
-}
-
 .wrapper-2 {
 	max-height: fit-content;
 	display: grid;

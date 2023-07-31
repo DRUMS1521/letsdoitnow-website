@@ -44,11 +44,11 @@ onMounted(() => {
             </div>
             <nav class="nav" :class="showMobileMenu ? 'open-menu' : 'closed-menu'">
                 <ul class="links">
-                    <li><router-link to="/">{{ language.menu.home }}</router-link></li>
-                    <li><router-link to="/about">{{ language.menu.about }}</router-link></li>
-                    <li><router-link to="/services">{{language.menu.services}}</router-link></li>
-                    <li><router-link to="/portfolio">{{ language.menu.portfolio }}</router-link></li>
-                    <li><router-link to="/blog">{{ language.menu.blog }}</router-link></li>
+                    <li @click="showMobileMenu = false"><router-link to="/">{{ language.menu.home }}</router-link></li>
+                    <li @click="showMobileMenu = false"><router-link to="/about">{{ language.menu.about }}</router-link></li>
+                    <li @click="showMobileMenu = false"><router-link to="/services">{{language.menu.services}}</router-link></li>
+                    <li @click="showMobileMenu = false"><router-link to="/portfolio">{{ language.menu.portfolio }}</router-link></li>
+                    <li @click="showMobileMenu = false"><router-link to="/blog">{{ language.menu.blog }}</router-link></li>
                 </ul>
             </nav>
     </header>

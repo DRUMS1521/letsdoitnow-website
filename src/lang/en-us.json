@@ -103,5 +103,24 @@
 		"text009": "Our team can assist you with web-based solutions. Our web application development service aims to optimize by creating scalable web functionalities.",
 		"text010": "Mobile App Design",
 		"text011": "We can develop your mobile solution as a standalone application or one that seamlessly integrates and communicates with the software you're already using."
+	},
+	"portfolio": {
+		"langweb": "en",
+		"titleweb": "Software and apps focused on logistics, manufacturing, or construction.",
+		"desciptionweb": "Our expert team in technology and artificial intelligence has experience creating software and applications for fleet management, inventory, production, among others.",
+		"keywords": "App Development for Logistics Company: Success Case, Software Development for Construction Company: Case Study, Mobile Application for Manufacturing Company: Highlighted Project, Software Solutions for Latin Companies in New York: Practical Examples, Apps Developed for Small Latin Companies: Showcase of Our Work",
+		"imgweb": "",
+		"portfolio": "Portfolio",
+		"text001": "Here you will find a selection of the projects we have had the honor of working on.",
+		"text002": "Are you ready to be our next success story? Let's do it now!",
+		"text003": "01/CARRAZO.PE",
+		"text004": "Reinventing the buying and selling of vehicles with personalized technology",
+		"text005": "Access more information here",
+		"text006": "02/PLANIUM.AI",
+		"text007": "The ERP solution for builders",
+		"text008": "Access more information here",
+		"text009": "03/AJPENNY",
+		"text010": "Revolutionizing Blinds Production with a Customized ERP",
+		"text011": "Access more information here"
 	}
 }

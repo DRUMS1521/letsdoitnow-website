@@ -1,5 +1,5 @@
 <script setup lang="ts">
-/* import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { lang } from '@/stores/SwitchLang'
 import { seoMeta } from '@/stores/SeoMeta';
 
@@ -8,43 +8,43 @@ const language = ref<any>({
 });
 
 onMounted(() => {
-	language.value = lang(localStorage.getItem("Lang") === "Es").porfolio
+	language.value = lang(localStorage.getItem("Lang") === "Es").portfolio
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
-}) */
+})
 </script>
 
 <template>
-	<div class="wrapper-port">
-		<h1 class="subtitle">Por<span class="rectangle">tafolio</span></h1>
-		<p>Aquí encontrarás una selección de los proyectos en los que hemos tenido el honor de trabajar.<br>¿Estás listo para ser nuestro próximo caso de éxito? ¡Hagámoslo ahora!</p>
+	<div class="wrapper-port" style="width: 950px; margin: 0 auto;">
+		<h1 class="subtitle"><span class="rectangle">{{ language.portfolio }}</span></h1>
+		<p>{{ language.text001 }}<br>{{ language.text002 }}</p>
 		<div class="card-portfolio">
-			<h3>01/CARRAZO.PE</h3>
-			<p style="margin-block-end: 1em;">Reinventando la compra y venta de vehículos con tecnología personalizada</p>
+			<h3>{{ language.text003 }}</h3>
+			<p style="margin-block-end: 1em;">{{ language.text004 }}</p>
 			<div class="imgs-port">
 				<img src="../../assets/carrazo-port.png" alt="" >
 				<img src="../../assets/carrazo-port-2.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">Accede a más información aquí</button>
+			<button class="btn-underline" style="font-size: medium;">{{ language.text005 }}</button>
 		</div>
 		<div class="line-port"></div>
 
 		<div class="card-portfolio">
-			<h3>02/PLANIUM.AI</h3>
-			<p style="margin-block-end: 1em;">La solución ERP para constructores</p>
+			<h3>{{ language.text006 }}</h3>
+			<p style="margin-block-end: 1em;">{{ language.text007 }}</p>
 			<div class="imgs-port">
 				<img src="../../assets/planium-port.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">Accede a más información aquí</button>
+			<button class="btn-underline" style="font-size: medium;">{{ language.text008 }}</button>
 		</div>
 		<div class="line-port"></div>
 
 		<div class="card-portfolio">
-			<h3>03/AJPENNY</h3>
-			<p style="margin-block-end: 1em;">Revolucionando la Producción de Persianas con un ERP a Medida</p>
+			<h3>{{ language.text009 }}</h3>
+			<p style="margin-block-end: 1em;">{{ language.text010 }}</p>
 			<div class="imgs-port">
 				<img src="../../assets/ajpenny-port.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">Accede a más información aquí</button>
+			<button class="btn-underline" style="font-size: medium;">{{ language.text011 }}</button>
 		</div>
 		<div class="line-port"></div>
 	</div>

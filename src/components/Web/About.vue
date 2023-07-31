@@ -17,7 +17,7 @@ onMounted(() => {
 
 <template>
 	<div class="wrapper-about">
-		<div class="layout-about-2">
+		<div class="layout-about-2" style="width: 950px; margin: 0 auto;">
 			<div class="layout-about">
 				<h2 style="color: white;">{{ language.title001 }}</h2>
 				<p style="color: white;">{{ language.text002 }}</p>

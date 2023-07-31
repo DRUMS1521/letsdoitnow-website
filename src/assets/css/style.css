@@ -794,3 +794,7 @@ p {
     vertical-align: top;
     border: .5rem solid transparent
 }
+
+.rectangle {
+	background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);
+}
