@@ -25,7 +25,7 @@ const chat = (): void => {
 
 <template>
 	<div class="wrapper-about">
-		<div class="layout-about-2" style="width: 950px; margin: 0 auto;">
+		<div class="layout-about-2">
 			<div class="layout-about">
 				<h2 style="color: white;">{{ language.title001 }}</h2>
 				<p style="color: white;">{{ language.text002 }}</p>
@@ -136,6 +136,23 @@ const chat = (): void => {
 				<img src="../../assets/team/jahaziel.png" alt="" style="width: 250px;">
 				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Jahaziel Hernandez</h2>
 				<p>Backend Dev</p>
+			</div>
+		</div>
+		<div class="layout-about-team">
+			<div style="width: fit-content;">
+				<img src="../../assets/team/marysabel.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Marysabel Plata</h2>
+				<p>Marketer</p>
+			</div>
+			<div>
+				<img src="../../assets/team/alejandra.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Alejandra Martínez</h2>
+				<p>Scrum Master</p>
+			</div>
+			<div>
+				<img src="../../assets/team/felipe.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Felipe Ladino</h2>
+				<p>Frontend Dev</p>
 			</div>
 		</div>
 		<a href="">
