@@ -27,6 +27,10 @@ const router = createRouter({
 					path: "/careers",
 					component: () => import('@/components/Web/Careers.vue')
 				},
+				{
+					path: "/portfolio-details",
+					component: () => import('@/components/Web/TemplatePortfolio.vue')
+				},
 			]
 		},
 		{

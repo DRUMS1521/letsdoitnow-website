@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="wrapper-port" style="width: 950px; margin: 0 auto;">
+	<div class="wrapper-port">
 		<h1 class="subtitle"><span class="rectangle">{{ language.portfolio }}</span></h1>
 		<p>{{ language.text001 }}<br>{{ language.text002 }}</p>
 		<div class="card-portfolio">
@@ -24,7 +24,7 @@ onMounted(() => {
 				<img src="../../assets/carrazo-port.png" alt="" >
 				<img src="../../assets/carrazo-port-2.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">{{ language.text005 }}</button>
+			<a @click="$router.push('/portfolio-details')"><button class="btn-underline" style="font-size: medium;">{{ language.text005 }}</button></a>
 		</div>
 		<div class="line-port"></div>
 
@@ -34,7 +34,7 @@ onMounted(() => {
 			<div class="imgs-port">
 				<img src="../../assets/planium-port.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">{{ language.text008 }}</button>
+			<a @click="$router.push('/portfolio-details')"><button class="btn-underline" style="font-size: medium;">{{ language.text008 }}</button></a>
 		</div>
 		<div class="line-port"></div>
 
@@ -44,7 +44,7 @@ onMounted(() => {
 			<div class="imgs-port">
 				<img src="../../assets/ajpenny-port.png" alt="" >
 			</div>
-			<button class="btn-underline" style="font-size: medium;">{{ language.text011 }}</button>
+			<a @click="$router.push('/portfolio-details')"><button class="btn-underline" style="font-size: medium;">{{ language.text011 }}</button></a>
 		</div>
 		<div class="line-port"></div>
 	</div>
