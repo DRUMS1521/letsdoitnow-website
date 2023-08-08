@@ -77,43 +77,26 @@ const chat = (): void => {
 				<p>CEO/Sales</p>
 			</div>
 			<div>
-				<img src="../../assets/team/cifu.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Andrés Cifuentes</h2>
-				<p>Backend Dev</p>
+				<img src="../../assets/team/joan.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Joan Ariza</h2>
+				<p>CFO</p>
 			</div>
 			<div>
-				<img src="../../assets/team/edinson.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Edinson Acevedo</h2>
-				<p>Full Stack Dev</p>
+				<img src="../../assets/team/juanes.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Juan Esteban Paca</h2>
+				<p>Sales</p>
 			</div>
 		</div>
 		<div class="layout-about-team">
 			<div style="width: fit-content;">
-				<img src="../../assets/team/jesus.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Jesús Bastidas</h2>
-				<p>Frontend Dev</p>
-			</div>
-			<div>
 				<img src="../../assets/team/maline.png" alt="" style="width: 250px;">
 				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Maline García</h2>
 				<p>RRHH</p>
 			</div>
 			<div>
-				<img src="../../assets/team/joan.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Joan Ariza</h2>
-				<p>CFO</p>
-			</div>
-		</div>
-		<div class="layout-about-team">
-			<div style="width: fit-content;">
-				<img src="../../assets/team/juanes.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Juan Esteban Paca</h2>
-				<p>Sales</p>
-			</div>
-			<div>
-				<img src="../../assets/team/juandaniel.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Juan Daniel Velasquez</h2>
-				<p>Scrum Master</p>
+				<img src="../../assets/team/marysabel.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Marysabel Plata</h2>
+				<p>Marketer</p>
 			</div>
 			<div>
 				<img src="../../assets/team/daniela.png" alt="" style="width: 250px;">
@@ -123,13 +106,30 @@ const chat = (): void => {
 		</div>
 		<div class="layout-about-team">
 			<div style="width: fit-content;">
-				<img src="../../assets/team/fernanda.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Olga Castaño</h2>
-				<p>Frontend Dev</p>
+				<img src="../../assets/team/juandaniel.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Juan Daniel Velasquez</h2>
+				<p>Scrum Master</p>
 			</div>
 			<div>
+				<img src="../../assets/team/alejandra.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Alejandra Martínez</h2>
+				<p>Scrum Master</p>
+			</div>
+			<div>
+				<img src="../../assets/team/edinson.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Edinson Acevedo</h2>
+				<p>Full Stack Dev</p>
+			</div>
+		</div>
+		<div class="layout-about-team">
+			<div style="width: fit-content;">
 				<img src="../../assets/team/suyin.png" alt="" style="width: 250px;">
 				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Suyin Orihuen</h2>
+				<p>Backend Dev</p>
+			</div>
+			<div>
+				<img src="../../assets/team/cifu.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Andrés Cifuentes</h2>
 				<p>Backend Dev</p>
 			</div>
 			<div>
@@ -140,14 +140,14 @@ const chat = (): void => {
 		</div>
 		<div class="layout-about-team">
 			<div style="width: fit-content;">
-				<img src="../../assets/team/marysabel.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Marysabel Plata</h2>
-				<p>Marketer</p>
+				<img src="../../assets/team/jesus.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Jesús Bastidas</h2>
+				<p>Frontend Dev</p>
 			</div>
 			<div>
-				<img src="../../assets/team/alejandra.png" alt="" style="width: 250px;">
-				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Alejandra Martínez</h2>
-				<p>Scrum Master</p>
+				<img src="../../assets/team/fernanda.png" alt="" style="width: 250px;">
+				<h2 class="subtitle-3" style="text-align: start; margin-block-end: 0;">Olga Castaño</h2>
+				<p>Frontend Dev</p>
 			</div>
 			<div>
 				<img src="../../assets/team/felipe.png" alt="" style="width: 250px;">
