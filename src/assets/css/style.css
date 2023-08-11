@@ -791,13 +791,15 @@ p {
         background-color: #4d4d4d;
         opacity: 1;
         height: auto;
-        border-radius: 0 0 16px 16px
+        border-radius: 0 0 16px 16px;
+        transform: translateX(0);
     }
 
     .closed-menu {
         opacity: 0;
         height: 0;
-        padding: 0
+        padding: 0;
+        transform: translateX(-120%);
     }
 
     .nav {
@@ -928,3 +930,126 @@ p {
 }
 
 
+/* Nuevos Edi */
+.text-primary {
+    color: #397a3e;
+}
+
+.d-ib {
+    display: inline-block;
+}
+
+.va-t {
+    vertical-align: top;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mx-auto {
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-fe {
+    justify-content: flex-end;
+}
+
+.flex-d-col {
+    flex-direction: column;
+}
+
+.max-w-40 {
+    max-width: 40px;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.ml-1 {
+    margin-left: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.pr-1 {
+    padding-right: 1rem;
+}
+
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.px-1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.cursor-p {
+    cursor: pointer;
+}
+
+.bot {
+    border: solid 0.5px rgb(0, 0, 0);
+    border-radius: 25px;
+}
+/* Fin Nuevo Edi */
+
+.inputUser input {
+    border: solid 0.5px rgb(116, 116, 116);
+    border-radius: 25px;
+    padding: 0.7rem 1.2rem;
+    outline: none;
+}

@@ -22,7 +22,7 @@ onMounted(() => {
 
 <template>
 	<div class="line-f"></div>
-	<div class="wrapper-f1">
+	<div class="wrapper-f1 mb-2">
 		<div class="layout-f1">
 			<img src="../../assets/LOGO.svg" alt="">
 			<p>{{ language.allRights }}</p>

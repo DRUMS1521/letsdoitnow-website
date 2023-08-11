@@ -31,6 +31,14 @@ const router = createRouter({
 					path: "/portfolio-details",
 					component: () => import('@/components/Web/TemplatePortfolio.vue')
 				},
+				{
+					path: "/doitbot",
+					component: () => import('@/components/Web/DoitBot.vue')
+				},
+				{
+					path: "/doitbot/chat",
+					component: () => import('@/components/Web/ChatBot.vue')
+				}
 			]
 		},
 		{
