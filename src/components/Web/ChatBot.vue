@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue'
 import Spinner from '@/components/General/SpinerComponent.vue';
 
 const msg = ref<string>('');
-const URL = 'https://botdoit.up.railway.app/api';
+const URL = 'https://api-chatbot.letsdoitnow.us/api';
 const dataHistory = ref<any>([]);
 const spinner = ref<Boolean>(false);
 
