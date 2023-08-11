@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue'
 import Spinner from '@/components/General/SpinerComponent.vue';
 
 const msg = ref<string>('');
-const URL = 'http://localhost:3000/api';
+const URL = 'http://44.210.136.115:3000';
 const dataHistory = ref<any>([]);
 const spinner = ref<Boolean>(false);
 
