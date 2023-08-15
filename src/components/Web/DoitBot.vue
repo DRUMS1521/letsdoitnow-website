@@ -140,7 +140,7 @@ onMounted(() => {
 				</div>
 			</div>
 			<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
-				<input class="w-100" type="text" placeholder="Escribe algo para empezar o selecciona" v-model="msg" @keypress.enter="sedChat(0)">
+				<input class="w-100" type="text" style="padding-right: 3rem;" placeholder="Escribe algo para empezar o selecciona" v-model="msg" @keypress.enter="sedChat(0)">
 				<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sedChat(0)">
 			</div>
 		</div>

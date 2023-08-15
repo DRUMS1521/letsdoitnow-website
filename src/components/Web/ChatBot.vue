@@ -71,7 +71,7 @@ onMounted(async () => {
 			<spinner v-if="spinner" />
         </div>
         <div class="d-flex ai-center inputUser mt-1" style="position: relative;">
-            <input class="w-100" type="text" placeholder="Escribe algo" v-model="msg" @keypress.enter="sendChat()" >
+            <input class="w-100" style=" padding-right: 3rem;" type="text" placeholder="Escribe algo" v-model="msg" @keypress.enter="sendChat()" >
             <img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sendChat()">
         </div>
     </div>
