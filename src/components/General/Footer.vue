@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
 import CardFooter from './../cards/cardFooter.vue';
+import axios from 'axios';
 
 const language = ref<any>({
 	allRights: "",
@@ -14,6 +15,26 @@ const language = ref<any>({
 	about: "",
 	privacy: ""
 });
+const emailToSend = ref<string>("");
+
+const sendEmail = async () => {
+	const apiKey = "5a9c1241dfabca2a6a70ea746e459af1-us13";
+	const listId = "fc0699a295";
+	if (emailToSend.value != "") {
+		try {
+			await axios.post(`https://us13.api.mailchimp.com/3.0/lists/${listId}/members/`, {
+				email_address: emailToSend.value,
+				status: "subscribed"
+			}, {
+				headers: {
+					"Authorization": `apikey ${apiKey}`
+				}
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	}
+}
 
 onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").footer
@@ -28,20 +49,17 @@ onMounted(() => {
 			<p>{{ language.allRights }}</p>
 			<h2 class="subtitle-2">{{ language.newsletter }}</h2>
 			<div class="input">
-				<input class="input-content" type="text" :placeholder="language.email">
-				<input class="input-button" type="button" value="">
+				<input class="input-content" type="text" :placeholder="language.email" v-model="emailToSend">
+				<input class="input-button" type="button" value="" @click="sendEmail()">
 			</div>
 		</div>
 		<div class="layout-f2">
 			<h3>{{ language.inforrmation }}</h3>
-			<card-footer :textFooter="language.about" :link1="'/about'" :textFooter2="language.careers"
-			 :link2="'/careers'" :textFooter3="'Blog'" :link3="'blog'" />
+			<card-footer :textFooter="language.about" :link1="'/about'" :textFooter2="language.careers" :link2="'/careers'" :textFooter3="'Blog'" :link3="'blog'" />
 		</div>
 		<div class="layout-f2">
 			<h3>{{ language.social }}</h3>
-			<card-footer :textFooter="'Instagram'" :link1="'https://www.instagram.com/lets.doit.now/'"
-				:textFooter2="'Linkedin'" :link2="'https://www.linkedin.com/company/letsdoitnowus/'" :textFooter3="'Chat'"
-				:link3="'https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20'" />
+			<card-footer :textFooter="'Instagram'" :link1="'https://www.instagram.com/lets.doit.now/'" :textFooter2="'Linkedin'" :link2="'https://www.linkedin.com/company/letsdoitnowus/'" :textFooter3="'Chat'" :link3="'https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20'" />
 		</div>
 		<div class="layout-f2">
 			<h3>{{ language.resources }}</h3>
