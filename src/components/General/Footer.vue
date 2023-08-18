@@ -1,44 +1,48 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { lang } from '../../stores/SwitchLang';
-import CardFooter from './../cards/cardFooter.vue';
-import axios from 'axios';
+	import { ref, onMounted } from 'vue';
+	import { lang } from '../../stores/SwitchLang';
+	import CardFooter from './../cards/cardFooter.vue';
+	import axios from 'axios';
+	import  { showToast, POSITION } from '../../stores/Toast.ts';
 
-const language = ref<any>({
-	allRights: "",
-	newsletter: "",
-	email: "",
-	inforrmation: "",
-	social: "",
-	careers: "",
-	resources: "",
-	about: "",
-	privacy: ""
-});
-const emailToSend = ref<string>("");
+	const language = ref < any > ({
+		allRights: "",
+		newsletter: "",
+		email: "",
+		inforrmation: "",
+		social: "",
+		careers: "",
+		resources: "",
+		about: "",
+		privacy: ""
+	});
+	const emailToSend = ref < string > ("");
 
-const sendEmail = async () => {
-	const apiKey = "5a9c1241dfabca2a6a70ea746e459af1-us13";
-	const listId = "fc0699a295";
-	if (emailToSend.value != "") {
+	const sendEmail = async () => {
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(emailToSend.value)) {
+			return showToast(`Ingrese un correo electrónico válido`, 'error', 3000, POSITION.BOTTOM_CENTER)
+		}
 		try {
-			await axios.post(`https://us13.api.mailchimp.com/3.0/lists/${listId}/members/`, {
+			const response = await axios.post(`https://api-chatbot.letsdoitnow.us/api/mailchimp`, {
 				email_address: emailToSend.value,
-				status: "subscribed"
-			}, {
-				headers: {
-					"Authorization": `apikey ${apiKey}`
-				}
+				status: 'subscribed',
 			});
-		} catch (error) {
-			console.log(error);
+			if (response.status === 200) {
+				showToast(`El Correo ${response.data.msg} guardado exitosamente`, 'success', 3000, POSITION.BOTTOM_CENTER)
+				emailToSend.value = "";
+			}else{
+				showToast(`Error al guardar el correo`, 'error', 3000, POSITION.BOTTOM_CENTER)
+			}
+		} catch (err) {
+			console.log(err)
+			showToast(`Error al guardar el correo: ${err.response.data.title}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
 	}
-}
 
-onMounted(() => {
-	language.value = lang(localStorage.getItem("Lang") === "Es").footer
-});
+	onMounted(() => {
+		language.value = lang(localStorage.getItem("Lang") === "Es").footer
+	});
 </script>
 
 <template>
@@ -50,7 +54,7 @@ onMounted(() => {
 			<h2 class="subtitle-2">{{ language.newsletter }}</h2>
 			<div class="input">
 				<input class="input-content" type="text" :placeholder="language.email" v-model="emailToSend">
-				<input class="input-button" type="button" value="" @click="sendEmail()">
+				<input class="input-button cursor-p" type="button" value="" @click="sendEmail()">
 			</div>
 		</div>
 		<div class="layout-f2">
@@ -66,4 +70,4 @@ onMounted(() => {
 			<card-footer :textFooter="language.privacy" />
 		</div>
 	</div>
-</template>
+</template>../../stores/Toast
