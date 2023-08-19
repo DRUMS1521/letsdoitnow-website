@@ -1,20 +1,43 @@
 <script setup lang="ts">
 	import { ref, onMounted } from 'vue';
-	import { dataNotion } from '../../stores/Notion.ts';
+	import axios from 'axios';
 	import CardBlogCategory from '../cards/cardBlogCategory.vue';
 	import CardBlogResume from '../cards/cardBlogResume.vue';
 
 
-	const documentos = ref([]);
+	const spinner = ref<Boolean>(false);
+	const documentos = ref<any>([]);
 
 	const getAllArticles = async () => {
-		try {
-			documentos.value = await dataNotion();
-			console.log(documentos.value);
-		} catch (error) {
-			console.error("Error al cargar los documentos:", error);
-		}
+		spinner.value = true;
+		const NOTION_API_URL = 'https://api.notion.com/v1/';
+		const NOTION_TOKEN = 'secret_sBX7qRpF7TFkuHuCvgPisR9tmXRpWEaZJE6334QtE9k';
+		const databaseId = 'd5fe6caffd084bff9e6710bc2750f0c7';
+
+		const res = await axios.post(`${NOTION_API_URL}databases/${databaseId}/query`, {}, {
+			headers: {
+				'Authorization': `Bearer ${NOTION_TOKEN}`,
+				'Notion-Version': '2021-05-13'
+			}
+		});
+		console.log(res.data);
+		
+		spinner.value = false;
 	};
+	/* const documentos = ref<any>([]);
+	const URL = 'https://api-chatbot.letsdoitnow.us/api';
+
+	const getAllArticles = async () => {
+		spinner.value = true;
+		let token = JSON.parse(localStorage.getItem('user')) | '';
+		try {
+			const res = await axios.post(`${URL}/chats/expert`, {"userId": "64d5d5d3877039bb218d3702", "expertId": "64d5d76f24206155ff312cc6"}, {});
+			dataHistory.value = res.data.slice().reverse();
+		} catch (error) {
+			console.log(error);
+		}
+		spinner.value = false;
+	}; */
 
 	onMounted(async () => {
 		await getAllArticles();

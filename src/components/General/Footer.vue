@@ -3,7 +3,7 @@
 	import { lang } from '../../stores/SwitchLang';
 	import CardFooter from './../cards/cardFooter.vue';
 	import axios from 'axios';
-	import  { showToast, POSITION } from '../../stores/Toast.ts';
+	import  { showToast, POSITION } from '../../stores/Toast';
 
 	const language = ref < any > ({
 		allRights: "",
@@ -34,7 +34,7 @@
 			}else{
 				showToast(`Error al guardar el correo`, 'error', 3000, POSITION.BOTTOM_CENTER)
 			}
-		} catch (err) {
+		} catch (err: any) {
 			console.log(err)
 			showToast(`Error al guardar el correo: ${err.response.data.title}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}

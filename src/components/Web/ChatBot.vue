@@ -10,7 +10,7 @@ const spinner = ref<Boolean>(false);
 
 const history = async () => {
 	spinner.value = true;
-	token = JSON.parse(localStorage.getItem('user'));
+	let token = JSON.parse(localStorage.getItem('user')) | '';
 	try {
 		const res = await axios.post(`${URL}/chats/expert`, {"userId": "64d5d5d3877039bb218d3702", "expertId": "64d5d76f24206155ff312cc6"}, {});
 		dataHistory.value = res.data.slice().reverse();
@@ -56,7 +56,7 @@ onMounted(async () => {
 	}
 
 	if (localStorage.getItem('chat') != null) {
-		msg.value = localStorage.getItem('chat');
+		msg.value = localStorage.getItem('chat') | '';
 		localStorage.removeItem('chat');
 		sendChat();
 	}
