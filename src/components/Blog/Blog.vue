@@ -3,41 +3,33 @@
 	import axios from 'axios';
 	import CardBlogCategory from '../cards/cardBlogCategory.vue';
 	import CardBlogResume from '../cards/cardBlogResume.vue';
+	import { showToast, POSITION } from '../../stores/Toast';
+	import { spinner } from '../../stores/Spinner';
 
 
 	const spinner = ref<Boolean>(false);
 	const documentos = ref<any>([]);
 
-	const getAllArticles = async () => {
-		spinner.value = true;
-		const NOTION_API_URL = 'https://api.notion.com/v1/';
-		const NOTION_TOKEN = 'secret_sBX7qRpF7TFkuHuCvgPisR9tmXRpWEaZJE6334QtE9k';
-		const databaseId = 'd5fe6caffd084bff9e6710bc2750f0c7';
-
-		const res = await axios.post(`${NOTION_API_URL}databases/${databaseId}/query`, {}, {
-			headers: {
-				'Authorization': `Bearer ${NOTION_TOKEN}`,
-				'Notion-Version': '2021-05-13'
-			}
-		});
-		console.log(res.data);
-		
-		spinner.value = false;
-	};
-	/* const documentos = ref<any>([]);
-	const URL = 'https://api-chatbot.letsdoitnow.us/api';
+	
+	/* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
 
 	const getAllArticles = async () => {
 		spinner.value = true;
-		let token = JSON.parse(localStorage.getItem('user')) | '';
 		try {
-			const res = await axios.post(`${URL}/chats/expert`, {"userId": "64d5d5d3877039bb218d3702", "expertId": "64d5d76f24206155ff312cc6"}, {});
-			dataHistory.value = res.data.slice().reverse();
-		} catch (error) {
-			console.log(error);
+			const response = await axios.get(`http://localhost:3000/api/notiondoit`);
+			/* const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`); */
+			if (response.status === 200) {
+				documentos.value = response;
+			}else{
+				showToast(`Error al cargar los datos`, 'error', 3000, POSITION.BOTTOM_CENTER)
+			}
+			console.log(response)
+		} catch (err: any) {
+			console.log(err)
+			showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
 		spinner.value = false;
-	}; */
+	};
 
 	onMounted(async () => {
 		await getAllArticles();
