@@ -8,8 +8,8 @@
 	const msg = ref<string>('');
 	const idUser = ref<string>('');
 	const token = ref<string>('');
-	const URL = 'http://localhost:3000/api';
-	/* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
+	/* const URL = 'http://localhost:3000/api'; */
+	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	const dataHistory = ref<Array>([]);
 	const listExpert = ref<Array>([]);
 	const myExpert = ref<string>('');
