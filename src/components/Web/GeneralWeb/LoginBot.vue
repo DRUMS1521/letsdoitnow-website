@@ -140,7 +140,7 @@
 <template>
 	<div class="modal">
 		<div class="modal-content">
-			<span class="close" @click="props.closeModal">&times;</span>
+			<span class="close"  @click="notAcount()">&times;</span>
 			<div v-if="!isregisterLimit">
 				<h2 class="modal-title" v-if="isLogin">Iniciar sesión</h2>
 				<h2 class="modal-title" v-else>Registro</h2>
