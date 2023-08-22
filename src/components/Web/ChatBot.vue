@@ -3,43 +3,93 @@
 	import { ref, onMounted } from 'vue'
 	import Spinner from '@/components/General/SpinerComponent.vue';
 	import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
+	import  { showToast, POSITION } from '../../stores/toast';
 
-	const msg = ref < string > ('');
-	const URL = 'https://api-chatbot.letsdoitnow.us/api';
-	const dataHistory = ref < any > ([]);
-	const spinner = ref < Boolean > (false);
-	const vewLogin = ref < Boolean > (false);
+	const msg = ref<string>('');
+	const idUser = ref<string>('');
+	const token = ref<string>('');
+	const URL = 'http://localhost:3000/api';
+	/* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
+	const dataHistory = ref<Array>([]);
+	const listExpert = ref<Array>([]);
+	const myExpert = ref<string>('');
+	const spinner = ref<Boolean>(false);
+	const vewLogin = ref<Boolean>(false);
+
+	const closeModal = async () => {
+		vewLogin.value = false;
+	};
+
+	const getExpert = async () => {
+		spinner.value = true;
+		try {
+			const res = await axios.post(`${URL}/experts`, {user: idUser.value}, {
+				headers: {
+					'token': token.value
+				}
+			});
+			if (res.status === 200) {
+				listExpert.value = res.data;
+				myExpert.value = res.data[res.data.length - 1];
+			} else {
+				vewLogin.value = true;
+			}
+		} catch (error) {
+			showToast('Error al cargar', 'error', 3000, POSITION.BOTTOM_CENTER)
+		}
+		spinner.value = false;
+	}
 
 	const history = async () => {
 		spinner.value = true;
-		let token = JSON.parse(localStorage.getItem('user')) | '';
 		try {
-			const res = await axios.post(`${URL}/chats/expert`, { "userId": "64d5d5d3877039bb218d3702", "expertId": "64d5d76f24206155ff312cc6" }, {});
+			const res = await axios.post(`${URL}/chats/expert`, { "userId": idUser.value, "expertId": myExpert.value._id }, { headers: { 'token': token.value } });
 			dataHistory.value = res.data.slice().reverse();
 		} catch (error) {
-			console.log(error);
+			showToast(`Error al cargar: ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
 		spinner.value = false;
 	}
 
 	const sendChat = async () => {
-		console.log(msg.value);
 		spinner.value = true;
 		if (msg.value != '') {
 			dataHistory.value.push({ question: msg.value, answer: '' });
 			viewEndAnswer()
-			await axios.post(`${URL}/chats`, { "userId": "64d5d5d3877039bb218d3702", "expertId": "64d5d76f24206155ff312cc6", "userQuestion": msg.value }, {})
+			await axios.post(`${URL}/chats`, { "userId": idUser.value, "expertId": myExpert.value._id, "userQuestion": msg.value }, { headers: { 'token': token.value } })
 				.then((res) => {
 					dataHistory.value[dataHistory.value.length - 1].answer = res.data.answer;
 					msg.value = '';
 					viewEndAnswer()
 				})
 				.catch((error) => {
-					console.log(error);
+					if(error.response.data.message == "You have exceeded the number of free queries.") {
+						showToast('Has excedido el número de consultas gratuitas', 'error', 3000, POSITION.BOTTOM_CENTER);
+						localStorage.setItem('limit', 'true');
+						vewLogin.value = true;
+					}else if(error.response.data.message == "User, you have exceeded the number of free queries.") {
+						localStorage.setItem('registerLimit', 'true');
+						vewLogin.value = true;
+					} else {
+						showToast(`Error al enviar: ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
+					}
 				});
 		}
 		spinner.value = false;
 		viewEndAnswer()
+	}
+
+	const appInit = async () => {
+		const session = localStorage.getItem('session');
+		if (session) {
+			const sessionSplit = session.split('-');
+			token.value = sessionSplit.slice(0, sessionSplit.length - 1);
+			idUser.value = sessionSplit[sessionSplit.length - 1];
+			await getExpert();
+			await history();
+		} else {
+			vewLogin.value = true;
+		}
 	}
 
 	const viewEndAnswer = () => {
@@ -53,27 +103,42 @@
 	}
 
 	onMounted(async () => {
-		await history();
-		if (localStorage.getItem('user')) {
-			await history();
+		if (localStorage.getItem('chat')) {
+			msg.value = localStorage.getItem('chat');
+			localStorage.removeItem('chat');
 		}
 
-		if (localStorage.getItem('chat') != null) {
-			msg.value = localStorage.getItem('chat') | '';
-			localStorage.removeItem('chat');
-			sendChat();
+		if (!localStorage.getItem('session')) {
+			vewLogin.value = true;
+		}else{
+			await appInit();
 		}
+
 		viewEndAnswer()
 	});
 </script>
 
 <template>
-	<p class="text-center px-1" style="color: brown; margin: 2rem auto 0; font-size: 12px; max-width: 450px;">"Esta
-		versión es una beta, el historial de las conversaciones puede ser visualizado por otras personas y será
-		eliminado de manera periódica. En un futuro próximo, tendrás la opción de guardarlo para consultarlo siempre que
-		lo necesites.</p>
+	<div>
+		<div class="max-w-550 px-1 mx-auto mb-1">
+			<div class="d-flex si-center py-1">
+				<img src="../../assets/expert.svg" alt="">
+				<div class="d-flex jc-fe flex-d-col">
+					<h3 class="m-0 text-left">{{ myExpert.name }}</h3>
+					<p>{{ myExpert.career }}</p>
+				</div>
+			</div>
+			<p>{{ myExpert.description }}</p>
+		</div>
+		<select name="" v-model="myExpert" @change="history()">
+			<option v-for="expert in listExpert" :value="expert">{{ expert.career }}</option>
+		</select>
+	</div>
 	<div class="d-ib va-t w-50 p-2 mt-1 bot">
 		<div class="answerbot pr-1">
+			<div v-if="dataHistory.length == 0">
+				<p class="botanswer" style="white-space: pre-line;">Hola, ¿Como puedo ayudarte hoy?</p>
+			</div>
 			<div v-for="chat in dataHistory">
 				<p class="send">{{ chat.question }}</p>
 				<p class="botanswer" style="white-space: pre-line;">{{ getAnswerEnd(chat.answer) }}</p>
@@ -82,16 +147,13 @@
 			<spinner v-if="spinner" />
 		</div>
 		<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
-			<input class="w-100" style=" padding-right: 3rem;" type="text" placeholder="Escribe algo" v-model="msg"
-				@keypress.enter="sendChat()">
-			<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt=""
-				@click="sendChat()">
+			<input class="w-100" style=" padding-right: 3rem;" type="text" placeholder="Escribe algo" v-model="msg" @keypress.enter="sendChat()">
+			<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sendChat()">
 		</div>
 	</div>
-	<p class="text-center mt-2">Dejanos saber que opinas <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6"
-			target="_blank">Aquí</a></p>
+	<p class="text-center mt-2">Dejanos saber que opinas <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6" target="_blank">Aquí</a></p>
 
-	<login-bot v-if="vewLogin" />
+	<login-bot v-if="vewLogin" :closeModal="closeModal" />
 </template>
 
 <style scoped>

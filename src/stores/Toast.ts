@@ -15,7 +15,7 @@ export { POSITION };
 https://github.com/Maronato/vue-toastification
 Ejemplo para usarlo Recuerden importar este archivo en la vista 
 import  { showToast, POSITION } from '../../stores/toast';
-showToast('El mensaje a mostrar', 'success', 3000, POSITION.BOTTOM_RIGHT)
+showToast('El mensaje a mostrar', 'success', 3000, POSITION.BOTTOM_CENTER)
 */
 
 /*
