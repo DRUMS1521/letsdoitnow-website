@@ -129,5 +129,20 @@
 		"text009": "03/AJPENNY",
 		"text010": "Revolutionizing Blinds Production with a Customized ERP",
 		"text011": "Access more information here"
+	},
+	"doitbot": {
+		"title": "Expert",
+		"text001": "Have a conversation with some of our experts. it will help you receive information in a more timely and focused manner.",
+		"text002": "Talk to experts",
+		"text003": "All experts available",
+		"text004": "Ask a question about us",
+		"text005": "How can artificial intelligence (AI) technology benefit my business?",
+		"text006": "What kind of technical support can I offer after the sale?",
+		"text007": "What about training in the use of your technology products or services?"
+	},
+	"chtbot": {
+		"text001": "Hello, how can I help you today?",
+		"text002": "Let us know what you think",
+		"text003": "Here"
 	}
 }

@@ -129,5 +129,20 @@
 		"text009": "03/AJPENNY",
 		"text010": "Revolucionando la Producción de Persianas con un ERP a Medida",
 		"text011": "Accede a más información aquí"
+	},
+	"doitbot": {
+		"title": "Experto",
+		"text001": "Ten una conversación con algunos de nuestros expertos. te servirá para recibir información de forma más puntual y centrada.",
+		"text002": "Habla con expertos",
+		"text003": "Todos los expertos disponibles",
+		"text004": "Pregunta sobre nosotros",
+		"text005": "¿Cómo puede la tecnología de inteligencia artificial (IA) beneficiar a mi negocio?",
+		"text006": "¿Qué tipo de soporte técnico puedo ofrecer después de la venta?",
+		"text007": "¿Que hay de la capacitación para el uso de sus productos o servicios de tecnológicos?"
+	},
+	"chtbot": {
+		"text001": "Hola, ¿Como puedo ayudarte hoy?",
+		"text002": "Dejanos saber que opinas",
+		"text003": "Aquí"
 	}
 }

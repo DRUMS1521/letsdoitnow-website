@@ -4,6 +4,7 @@
 	import Spinner from '@/components/General/SpinerComponent.vue';
 	import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
 	import  { showToast, POSITION } from '../../stores/toast';
+	import { lang } from '../../stores/SwitchLang';
 
 	const msg = ref<string>('');
 	const idUser = ref<string>('');
@@ -103,6 +104,7 @@
 	}
 
 	onMounted(async () => {
+		language.value = lang(localStorage.getItem("Lang") === "Es").home;
 		if (localStorage.getItem('chat')) {
 			msg.value = localStorage.getItem('chat');
 			localStorage.removeItem('chat');
@@ -137,7 +139,7 @@
 	<div class="d-ib va-t w-50 p-2 mt-1 bot">
 		<div class="answerbot pr-1">
 			<div v-if="dataHistory.length == 0">
-				<p class="botanswer" style="white-space: pre-line;">Hola, ¿Como puedo ayudarte hoy?</p>
+				<p class="botanswer" style="white-space: pre-line;">{{ language.text001 }}</p>
 			</div>
 			<div v-for="chat in dataHistory">
 				<p class="send">{{ chat.question }}</p>
@@ -151,7 +153,7 @@
 			<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sendChat()">
 		</div>
 	</div>
-	<p class="text-center mt-2">Dejanos saber que opinas <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6" target="_blank">Aquí</a></p>
+	<p class="text-center mt-2">{{ language.text002 }} <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6" target="_blank">{{language.text003}}</a></p>
 
 	<login-bot v-if="vewLogin" :closeModal="closeModal" />
 </template>

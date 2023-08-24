@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import router from '@/router';
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from 'vue';
+import { lang } from '../../stores/SwitchLang';
 
 const activeDiv = ref<number>(0);
 const menuExpert = ref<boolean>(true);
@@ -28,6 +29,8 @@ const toggleDiv = (n: number) => {
 };
 
 onMounted(() => {
+	language.value = lang(localStorage.getItem("Lang") === "Es").home;
+
 	window.addEventListener('resize', () => {
 		const currentWidth = window.innerWidth;
 		if (currentWidth < 768) {
@@ -40,14 +43,14 @@ onMounted(() => {
 </script>
 
 <template>
-	<h1>Do it <span class="rectangle">bot</span></h1>
+	<h1><span class="rectangle">Do it bot</span></h1>
 	<div class="boxBot">
 		<div class="menu cursor-p" @click="menuExpert = !menuExpert">
 			<img src="../../assets/menu.svg" alt="">
 		</div>
 		<div class="d-ib va-t w-50 expert z-950" :class="menuExpert ? 'open-menu' : 'closed-menu'">
-			<h2>Experto</h2>
-			<p>Ten una conversación con algunos de nuestros expertos. te servirá para recibir información de forma más puntual y centrada.</p>
+			<h2>{{ language.title }}</h2>
+			<p>{{ language.text001 }}</p>
 			<div>
 				<div @click="toggleDiv(1)" class="w-100 divExpert cursor-p">
 					<p class="d-ib va-t expertName">01 / VENTAS</p>
@@ -102,7 +105,7 @@ onMounted(() => {
 				<div>
 					<h2 class="m-0" style="font-size: 2rem;">Do it Bot</h2>
 					<ul>
-						<li class="text-left text-primary" style="margin-left: 25px; font-weight: 200; font-size: 1.5rem;"> Online</li>
+						<li class="text-left text-primary" style="margin-left: 25px; font-weight: 200; font-size: 1.5rem;">Online</li>
 					</ul>
 				</div>
 				<div>
@@ -111,7 +114,7 @@ onMounted(() => {
 			</div>
 			<div class="mt-2 mb-2">
 				<img class="max-w-40" src="../../assets/textImg.svg" alt="">
-				<p class="w-100 text-center"><b>Habla con expertos</b></p>
+				<p class="w-100 text-center"><b>{{ language.text002 }}</b></p>
 				<div class="btnRecom cursor-p" @click="sedChat(0)">
 					<p>Ventas</p>
 				</div>
@@ -122,21 +125,21 @@ onMounted(() => {
 					<p>Tecnología</p>
 				</div>
 				<div class="w-100 mt-1">
-					<p class="text-primary w-100 text-center">Todos los expertos disponibles</p>
+					<p class="text-primary w-100 text-center">{{ language.text003 }}</p>
 				</div>
 			</div>
 			<div class="mt-2">
 				<img src="../../assets/edit.svg" alt="">
-				<p class="w-100 text-center"><b>Pregunta sobre nosotros</b></p>
+				<p class="w-100 text-center"><b>{{ language.text004 }}</b></p>
 
 				<div class="btnRecom cursor-p" @click="sedChat(1)">
-					<p>¿Cómo puede la tecnología de inteligencia artificial (IA) beneficiar a mi negocio?</p>
+					<p>{{ language.text005 }}</p>
 				</div>
 				<div class="btnRecom cursor-p" @click="sedChat(2)">
-					<p>¿Qué tipo de soporte técnico puedo ofrecer después de la venta?</p>
+					<p>{{ language.text006 }}</p>
 				</div>
 				<div class="btnRecom cursor-p" @click="sedChat(3)">
-					<p>¿Que hay de la capacitación para el uso de sus productos o servicios de tecnológicos?</p>
+					<p>{{ language.text007 }}</p>
 				</div>
 			</div>
 			<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
