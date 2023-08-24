@@ -115,13 +115,7 @@ onBeforeMount(() => {
 		<div class="layout-5">
 			<card-review
 				:review="language.text030"
-				:company="'AJPenny'" :namePerson="'Penélope'" />
-			<card-review
-				:review="language.text031"
-				:company="'Manager Real/State Agency'" :namePerson="'Ian'" />
-			<card-review
-				:review="language.text032"
-				:company="'CEO, AliadaGO'" :namePerson="'Brandon'" />
+				:company="'AliadaGO'" :namePerson="'Juan José Alzate'" />
 		</div>
 		<p>{{ language.text033 }}<br>{{ language.text034 }}</p>
 		<a href="">

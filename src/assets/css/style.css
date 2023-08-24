@@ -42,8 +42,19 @@ p {
 
 .layout-card,
 .layout-card-review {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
     box-shadow: 7px 11px 22px 0 rgba(101, 101, 101, .25)
 }
+
+.layout-card:hover {
+    transform: translateY(3px);
+    box-shadow: none;
+  }
+  
+  .layout-card:active {
+    opacity: 0.5;
+  }
 
 .btn-icon,
 .name-review {
@@ -61,7 +72,12 @@ p {
     margin-left: 0;
     margin-right: 0;
     box-sizing: border-box;
-    font-family: Raleway, sans-serif
+    font-family: Raleway, sans-serif;
+    color: #ffff;
+}
+
+h4, li, h2, h3{
+    color: #333;
 }
 
 .title {
@@ -152,6 +168,7 @@ p {
 
 .rectangle {
 	background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);
+    color: #263f28;
 }
 .slider,
 input:checked+.slider {
@@ -268,11 +285,10 @@ i {
     gap: 32px
 }
 
-.links a {
-    color: #fff
-}
 
-.nav a:hover {
+
+.nav a:hover,
+.active {
     padding: 26px 16px 16px;
     background-color: #fff;
     color: #263f28;
@@ -497,9 +513,10 @@ p {
     align-items: center;
     flex-direction: column;
     padding: 3rem 2rem;
-    width: 300px;
+    width: 440px;
     height: fit-content;
-    border-radius: 15px
+    border-radius: 15px;
+    gap: 16px;
 }
 
 .name-review {
@@ -774,6 +791,14 @@ p {
 
 .img-details{
     width: 940px
+}
+
+.line-c{
+    
+    margin: 5% 25% ;
+    height: 5px;
+    background-color: #9cce7c;
+    border-radius: 5px;
 }
 
 
