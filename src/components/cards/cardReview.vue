@@ -22,9 +22,9 @@ const props = defineProps({
 			</div>
 		</div>
 		<p>{{ props.review }}</p>
-		<iframe width="420" height="315"
+		<!--<iframe width="420" height="315"
 		src="https://drive.google.com/file/d/1HCZ3nN2clj1o0zmT6nNgk4bZ5GPrF_GE/view?usp=sharing" style="border-radius: 6px;">
-		</iframe>
+		</iframe>-->
 		
 	</div>
 </template>
