@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { ref, onMounted } from 'vue';
 	import axios from 'axios';
-	import  { showToast, POSITION } from '../../../stores/toast';
+	import  { showToast, POSITION } from '../../../stores/Toast';
 	import Spinner from '@/components/General/SpinerComponent.vue';
 
 	const email = ref('');
@@ -11,7 +11,7 @@
 	const isLogin = ref(false);
 	const isLimit = ref(false);
 	const idUser = ref('');
-	const token = ref('');
+	const token = ref();
 	const isregisterLimit = ref(false);
 	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
@@ -33,7 +33,9 @@
 			const res = await axios.get(`${URL}/user/temp`);
 			if (res.status === 200) {
 				localStorage.setItem('session', res.data.token + '-' + res.data.user);
-				props.closeModal();
+				if (props.closeModal) {
+					props.closeModal();
+				}
 				window.location.reload();
 			} else {
 				showToast('Error al cargar', 'error', 3000, POSITION.BOTTOM_CENTER)
@@ -71,12 +73,14 @@
 				let res = await axios.post(`${URL}/user`, dataSend, {});
 				localStorage.setItem('session', res.data.token + '-' + res.data.user);
 				showToast('Registrado correctamente', 'success', 2000, POSITION.BOTTOM_CENTER);
-				props.closeModal();
+				if (props.closeModal) {
+					props.closeModal();
+				}
 				setTimeout(() => {
 					window.location.reload();
 				}, 1200);
 				cleanForm();
-			} catch (error) {
+			} catch (error: any) {
 				if (error.response.data.message == "A user with this email already exists.") {
 					showToast(`Correo registrado`, 'error', 3000, POSITION.BOTTOM_CENTER)
 				} else {
@@ -98,7 +102,9 @@
 				.then((res) => {
 					localStorage.setItem('session', res.data.token + '-' + res.data.user);
 					showToast('Iniciado correctamente', 'success', 2000, POSITION.BOTTOM_CENTER);
-					props.closeModal();
+					if (props.closeModal) {
+						props.closeModal();
+					}
 					setTimeout(() => {
 						window.location.reload();
 					}, 1200);
@@ -126,9 +132,9 @@
 		}
 
 		if (localStorage.getItem('session')) {
-			const session = localStorage.getItem('session');
-			const sessionSplit = session.split('-');
-			token.value = sessionSplit.slice(0, sessionSplit.length - 1);
+			const session = localStorage.getItem('session') || '';
+			const sessionSplit = session.split('-') || '';
+			token.value = sessionSplit.slice(0, sessionSplit.length - 1).toString();
 			idUser.value = sessionSplit[sessionSplit.length - 1];
 		}else {
 			token.value = "";
@@ -145,7 +151,7 @@
 				<h2 class="modal-title" v-if="isLogin">Iniciar sesión</h2>
 				<h2 class="modal-title" v-else>Registro</h2>
 				<p class="text-center mb-1" v-if="isLimit">Has alcanzado el límite de consultas gratuitas, regístrate para continuar usando el chat y no perder el historial.</p>
-				<form @submit.prevent="submitForm">
+				<form>
 					<div class="form-group" v-if="!isLogin">
 						<input v-model="name" type="text" placeholder="Nombre" required />
 					</div>

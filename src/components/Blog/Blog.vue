@@ -4,7 +4,7 @@
 	import CardBlogCategory from '../cards/cardBlogCategory.vue';
 	import CardBlogResume from '../cards/cardBlogResume.vue';
 	import { showToast, POSITION } from '../../stores/Toast';
-	import { spinner } from '../../stores/Spinner';
+	import spiner from '../General/SpinerComponent.vue';
 
 
 	const spinner = ref<Boolean>(false);
@@ -14,7 +14,7 @@
 	/* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
 
 	const getAllArticles = async () => {
-		spinner.value = true;
+		spiner.value = true;
 		try {
 			const response = await axios.get(`http://localhost:3000/api/notiondoit`);
 			/* const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`); */
@@ -28,7 +28,7 @@
 			console.log(err)
 			showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
-		spinner.value = false;
+		spiner.value = false;
 	};
 
 	onMounted(async () => {
@@ -55,6 +55,8 @@
 		<CardBlogResume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
 		<CardBlogResume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
 	</div>
+
+	<spiner v-if="spinner"/>
 
 </template>
 

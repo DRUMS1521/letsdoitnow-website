@@ -3,19 +3,26 @@
 	import { ref, onMounted } from 'vue'
 	import Spinner from '@/components/General/SpinerComponent.vue';
 	import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
-	import  { showToast, POSITION } from '../../stores/toast';
+	import { showToast, POSITION } from '../../stores/Toast';
 	import { lang } from '../../stores/SwitchLang';
 
-	const msg = ref<string>('');
-	const idUser = ref<string>('');
-	const token = ref<string>('');
+	const language = ref();
+	const msg = ref('');
+	const idUser = ref('');
+	const token = ref('');
 	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
-	const dataHistory = ref<Array>([]);
-	const listExpert = ref<Array>([]);
-	const myExpert = ref<string>('');
-	const spinner = ref<Boolean>(false);
-	const vewLogin = ref<Boolean>(false);
+	/* const dataHistory = ref<Array<Object>>([{question: '', answer: ''}]); */
+		const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
+	const listExpert = ref([{career: ''}]);
+	const myExpert = ref();
+	const spinner = ref(false);
+	const vewLogin = ref(false);
+
+	interface HistoryItem {
+		question: string;
+		answer: string;
+	}
 
 	const closeModal = async () => {
 		vewLogin.value = false;
@@ -84,7 +91,7 @@
 		const session = localStorage.getItem('session');
 		if (session) {
 			const sessionSplit = session.split('-');
-			token.value = sessionSplit.slice(0, sessionSplit.length - 1);
+			token.value = sessionSplit.slice(0, sessionSplit.length - 1).toString();
 			idUser.value = sessionSplit[sessionSplit.length - 1];
 			await getExpert();
 			await history();
@@ -104,9 +111,9 @@
 	}
 
 	onMounted(async () => {
-		language.value = lang(localStorage.getItem("Lang") === "Es").home;
+		language.value = lang(localStorage.getItem("Lang") === "Es").doitbot;
 		if (localStorage.getItem('chat')) {
-			msg.value = localStorage.getItem('chat');
+			msg.value = localStorage.getItem('chat') || '';
 			localStorage.removeItem('chat');
 		}
 
