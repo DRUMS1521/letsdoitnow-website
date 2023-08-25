@@ -6,16 +6,15 @@
 	import { showToast, POSITION } from '../../stores/Toast';
 	import { lang } from '../../stores/SwitchLang';
 
-	const language = ref();
+	const language = ref({});
 	const msg = ref('');
 	const idUser = ref('');
 	const token = ref('');
 	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
-	/* const dataHistory = ref<Array<Object>>([{question: '', answer: ''}]); */
-		const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
+	const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
 	const listExpert = ref([{career: ''}]);
-	const myExpert = ref();
+	const myExpert = ref({});
 	const spinner = ref(false);
 	const vewLogin = ref(false);
 
@@ -133,8 +132,8 @@
 			<div class="d-flex si-center py-1">
 				<img src="../../assets/expert.svg" alt="">
 				<div class="d-flex jc-fe flex-d-col">
-					<h3 class="m-0 text-left">{{ myExpert.name }}</h3>
-					<p>{{ myExpert.career }}</p>
+					<h3 class="m-0 text-left" v-if="myExpert.name">{{ myExpert.name }}</h3>
+					<p v-if="myExpert.career">{{ myExpert.career }}</p>
 				</div>
 			</div>
 			<p>{{ myExpert.description }}</p>
