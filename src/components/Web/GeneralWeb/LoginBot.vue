@@ -151,7 +151,7 @@
 				<h2 class="modal-title" v-if="isLogin">Iniciar sesión</h2>
 				<h2 class="modal-title" v-else>Registro</h2>
 				<p class="text-center mb-1" v-if="isLimit">Has alcanzado el límite de consultas gratuitas, regístrate para continuar usando el chat y no perder el historial.</p>
-				<form>
+				<div>
 					<div class="form-group" v-if="!isLogin">
 						<input v-model="name" type="text" placeholder="Nombre" required />
 					</div>
@@ -172,7 +172,7 @@
 					<p class="w-100 text-center mt-1" v-else>¿No tienes cuenta? regístrate <span class="cursor-p text-primary" @click="isLogin = false">aquí</span></p>
 	
 					<p class="w-100 text-center mt-1 text-primary cursor-p" v-if="!isLogin" @click="notAcount()">Continuar sin cuenta</p>
-				</form>
+				</div>
 			</div>
 			<div v-else>
 				<h2>Limite alcanzado</h2>
