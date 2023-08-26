@@ -16,8 +16,8 @@
 	const getAllArticles = async () => {
 		spiner.value = true;
 		try {
-			const response = await axios.get(`http://localhost:3000/api/notiondoit`);
-			/* const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`); */
+			/* const response = await axios.get(`http://localhost:3000/api/notiondoit`); */
+			const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`);
 			if (response.status === 200) {
 				documentos.value = response;
 			}else{

@@ -1,1 +1,0 @@
-import{_ as c,o,c as t,p as _,k as d,a as s}from"./index-c4bdd0bc.js";const n={},a=e=>(_("data-v-537dd02a"),e=e(),d(),e),p={class:"w-100 vh-100 d-flex ai-center jc-center spinnerCont"},i=a(()=>s("div",{class:"spinner"},[s("div"),s("div"),s("div")],-1)),r=[i];function v(e,l){return o(),t("div",p,r)}const f=c(n,[["render",v],["__scopeId","data-v-537dd02a"]]);export{f as s};
