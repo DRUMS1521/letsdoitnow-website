@@ -1,23 +1,23 @@
 <script setup lang="ts">
 	import axios from 'axios';
-	import { ref, onMounted } from 'vue'
+	import { ref, onMounted, computed } from 'vue'
 	import Spinner from '@/components/General/SpinerComponent.vue';
 	import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
 	import { showToast, POSITION } from '../../stores/Toast';
 	import { lang } from '../../stores/SwitchLang';
 
-	const language = ref();
+	const language = ref({});
 	const msg = ref('');
 	const idUser = ref('');
 	const token = ref('');
 	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
-	/* const dataHistory = ref<Array<Object>>([{question: '', answer: ''}]); */
-		const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
+	const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
 	const listExpert = ref([{career: ''}]);
-	const myExpert = ref();
+	const myExpert = ref({});
 	const spinner = ref(false);
 	const vewLogin = ref(false);
+	const cuestionList = ref([]);
 
 	interface HistoryItem {
 		question: string;
@@ -110,6 +110,23 @@
 		return endTagIndex !== -1 ? answer.substring(0, endTagIndex) : answer;
 	}
 
+	const listCuestion = () => {
+		if (dataHistory.value.length > 0) {
+			const lastAnswer = dataHistory.value[dataHistory.value.length - 1].answer;
+			const cuestionList = lastAnswer
+			.split('</end>')[lastAnswer.split('</end>').length - 1] // Tomar el último elemento
+			.replace(/\s/g, '') // Eliminar espacios y saltos de línea
+			.split(','); // Separar por coma y obtener un array de elementos
+
+			// Iterar sobre los elementos y mostrarlos uno por uno
+			cuestionList.forEach(element => {
+			console.log(element);
+			});
+			console.log(cuestionList)
+			// No necesitas devolver nada aquí, ya que solo estás mostrando los elementos en la consola
+		}
+	};
+
 	onMounted(async () => {
 		language.value = lang(localStorage.getItem("Lang") === "Es").doitbot;
 		if (localStorage.getItem('chat')) {
@@ -124,6 +141,7 @@
 		}
 
 		viewEndAnswer()
+		listCuestion();
 	});
 </script>
 
@@ -133,8 +151,8 @@
 			<div class="d-flex si-center py-1">
 				<img src="../../assets/expert.svg" alt="">
 				<div class="d-flex jc-fe flex-d-col">
-					<h3 class="m-0 text-left">{{ myExpert.name }}</h3>
-					<p>{{ myExpert.career }}</p>
+					<h3 class="m-0 text-left" v-if="myExpert.name">{{ myExpert.name }}</h3>
+					<p v-if="myExpert.career">{{ myExpert.career }}</p>
 				</div>
 			</div>
 			<p>{{ myExpert.description }}</p>
@@ -154,6 +172,11 @@
 			</div>
 			<div id="endChat" class="mt-2 w-100"></div>
 			<spinner v-if="spinner" />
+		</div>
+		<div v-if="dataHistory != 0">
+			<p class="send">{{ cuestionList }}</p>
+			<p class="send">{{ cuestionList[1] }}</p>
+			<p class="send">{{ cuestionList[2] }}</p>
 		</div>
 		<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
 			<input class="w-100" style=" padding-right: 3rem;" type="text" placeholder="Escribe algo" v-model="msg" @keypress.enter="sendChat()">

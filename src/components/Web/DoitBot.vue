@@ -3,7 +3,7 @@ import router from '@/router';
 import { ref, onMounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
 
-const language = ref();
+const language = ref({});
 const activeDiv = ref<number>(0);
 const menuExpert = ref<boolean>(true);
 const msg = ref<string>('');
