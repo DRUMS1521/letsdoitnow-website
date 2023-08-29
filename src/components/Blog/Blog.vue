@@ -16,14 +16,15 @@
 	const getAllArticles = async () => {
 		spiner.value = true;
 		try {
-			/* const response = await axios.get(`http://localhost:3000/api/notiondoit`); */
-			const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`);
+			/* const response = await axios.post(`http://localhost:3000/api/notiondoitpage`); */
+			const response = await axios.get(`http://localhost:3000/api/notiondoit`);
+			/* const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`); */
 			if (response.status === 200) {
-				documentos.value = response;
+				documentos.value = response.data;
 			}else{
 				showToast(`Error al cargar los datos`, 'error', 3000, POSITION.BOTTOM_CENTER)
 			}
-			console.log(response)
+			console.log(response.data)
 		} catch (err: any) {
 			console.log(err)
 			showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
@@ -37,7 +38,7 @@
 </script>
 
 <template>
-	<div class="wrapper-blog">
+	<!-- <div class="wrapper-blog">
 		<div class="last-entry">
 			<h1 class="subtitle">Norem ipsum dolor sit amet, consectetur adipiscing elit. <span class="rectangle">Etiam eu turpis</span> molestie, dictum est a</h1>
 			<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum  est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
@@ -45,6 +46,17 @@
 		</div>
 		<div>
 			<img src="../../assets/img-blog-background.png" alt="">
+		</div>
+	</div> -->
+
+	<div class="wrapper-blog text-left mt-2" v-for="article in documentos.results">
+		<div class="last-entry">
+			<h2 class="subtitle">{{ article.properties?.Titulo?.title[0]?.plain_text }}</h2>
+			<p class="mb-1">{{ article.properties?.Descripcion?.rich_text[0]?.plain_text }}</p>
+			<a class="btn-underline" :href="'/blog/' + article.id">Lee la entrada aquí</a>
+		</div>
+		<div class="text-center">
+			<img :src="article.cover?.external?.url" alt="" style="max-width: 100%; max-height: 350px;">
 		</div>
 	</div>
 

@@ -42,12 +42,21 @@ const router = createRouter({
 				{
 					path: "/doitbot/chat",
 					component: () => import('@/components/Web/ChatBot.vue')
+				},
+				{
+					path: "/blog",
+					children: [
+						{
+							path: "",
+							component: () => import('@/components/Blog/Blog.vue')
+						},
+						{
+							path: ":id",
+							component: () => import('@/components/Blog/ArticleDetail.vue')
+						}
+					]
 				}
 			]
-		},
-		{
-			path: "/blog",
-			component: () => import('@/components/Blog/Blog.vue')
 		}
 	]
 })
