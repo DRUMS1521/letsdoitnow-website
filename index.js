@@ -10,9 +10,16 @@ const notion = new Client({
 
   const results = await notion.databases.query({
     database_id: "d5fe6caffd084bff9e6710bc2750f0c7",
+    filter: {
+      property: 'Parent',
+      select: {
+        equals: 'Blogs-30ccabeaef754011b87b699d7c398261'
+      }
+    } 
   });
 
-  fs.writeFileSync('data-blog.json', JSON.stringify(results, null, 2));
+  console.log(results);
+  /* fs.writeFileSync('data-blog.json', JSON.stringify(results, null, 2)); */
 
 
 }

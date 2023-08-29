@@ -24,7 +24,7 @@
 		"titleweb": "Let's do it now: Desarrollo de Software y Apps para Empresas",
 		"desciptionweb": "Ofrecemos soluciones tecnológicas desarrolladas por talento latinoamericano con experiencia en los sectores de logística, manufactura y construcción.",
 		"keywords": "Desarrollo de Software y Apps para Empresas Latinas en New York, Empresas Desarrolladoras de Apps en Colombia, Empresas Desarrolladoras de Apps en New York, Empresas Desarrolladoras de Apps, Empresas Desarrolladoras Apps Colombia, Desarrollo de Software Multilingüe en New York, Desarrollo de Aplicaciones Móviles Escalables, Servicios de Desarrollo de Software en Español en New York, Empresas de Desarrollo de Software con Experiencia en Logística Construcción y Manufactura",
-		"imgweb": "",
+		"imgweb": "https://res.cloudinary.com/dtxf7vxdq/image/upload/w_500,h_500,c_scale/v1690841956/Let%C2%B4s%20do%20it%20now/ip9vbgwvb5adlc5qof6n.png",
 		"title01": "Software",
 		"title02": "de soluciones",
 		"title03": "Digitales",
@@ -69,7 +69,7 @@
 		"titleweb": "Let's do it now: El equipo de desarrollo bilingüe que crea tecnología para tu empresa",
 		"desciptionweb": "Con base en New York y un equipo de nómadas digitales construimos software y aplicaciones para empresas latinas que necesitan tecnología para gestionar su negocio.",
 		"keywords": "Desarrollo de Software a la Medida para Empresas, Equipo de Desarrollo de Software Dedicado, Consultoría Tecnológica para Empresas Latinas, Desarrollo de Apps Personalizadas para Empresas, Experiencia en Desarrollo de Software y Apps",
-		"imgweb": "",
+		"imgweb": "https://res.cloudinary.com/dtxf7vxdq/image/upload/w_500,h_500,c_scale/v1690841956/Let%C2%B4s%20do%20it%20now/vgzddx0ehiv1pwamnwfr.png",
 		"title001": "Empezamos con la curiosidad y resolvemos el problema",
 		"text002": "Sabemos que cada negocio tiene su propio problema. Nuestro trabajo comienza con la identificación del problema y su usuario.",
 		"text003": "Evaluación",
@@ -96,7 +96,7 @@
 		"titleweb": "Let's do it now: Nearshoring de Software y apps: Potencia tu Negocio con tecnología",
 		"desciptionweb": "Ofrecemos soluciones de software y apps a precios latinoamericanos para empresas que necesitan equipos nearshoring para desarrollo compartido o dedicado, adaptando tecnologías a las necesidades de cada negocio.",
 		"keywords": "Desarrollo de Aplicaciones Móviles para Empresas, Desarrollo de Software para la Gestión de Inventarios, Desarrollo de Apps para la Gestión de Rutas y Transporte, App para Gestión de Flotas y Logística, Aplicaciones ERP para la Planificación de Recursos Empresariales, Desarrollo de Apps para el Control de Producción y Calidad, Apps para la Gestión de Proyectos y Análisis de Datos, Desarrollo de Sitios Web Responsivos y Modernos, Servicios de Desarrollo de Aplicaciones Web a Medida",
-		"imgweb": "",
+		"imgweb": "https://res.cloudinary.com/dtxf7vxdq/image/upload/w_500,h_500,c_scale/v1690841956/Let%C2%B4s%20do%20it%20now/pelmpitgkd7ndjdd8ncv.png",
 		"title001": "Tu visión es ",
 		"title002": "nuestra misión",
 		"text002": "Transformamos tus ideas en soluciones digitales personalizadas.",
@@ -116,7 +116,7 @@
 		"titleweb": "Software y apps enfocadas en la logística, manufactura o construcción.",
 		"desciptionweb": "Nuestro equipo experto en tecnología e inteligencia artificial tiene experiencia creando software y aplicaciones para la gestión de flotas, inventarios o producción, entre otros.",
 		"keywords": "Desarrollo de App para Empresa de Logística: Caso de Éxito, Desarrollo de Software para Empresa de Construcción: Caso de Estudio, Aplicación Móvil para Empresa de Manufactura: Proyecto Destacado, Soluciones de Software para Empresas Latinas en New York: Ejemplos Prácticos, Apps Desarrolladas para Pequeñas Empresas Latinas: Muestra de Nuestro Trabajo",
-		"imgweb": "",
+		"imgweb": "https://res.cloudinary.com/dtxf7vxdq/image/upload/w_500,h_500,c_scale/v1690841956/Let%C2%B4s%20do%20it%20now/smwbxmi3vhppjr7vwiec.png",
 		"portfolio": "Portafolio",
 		"text001": "Aquí encontrarás una selección de los proyectos en los que hemos tenido el honor de trabajar.",
 		"text002": "¿Estás listo para ser nuestro próximo caso de éxito? ¡Hagámoslo ahora!",
@@ -129,5 +129,20 @@
 		"text009": "03/AJPENNY",
 		"text010": "Revolucionando la Producción de Persianas con un ERP a Medida",
 		"text011": "Accede a más información aquí"
+	},
+	"doitbot": {
+		"title": "Experto",
+		"text001": "Ten una conversación con algunos de nuestros expertos. te servirá para recibir información de forma más puntual y centrada.",
+		"text002": "Habla con expertos",
+		"text003": "Todos los expertos disponibles",
+		"text004": "Pregunta sobre nosotros",
+		"text005": "¿Cómo puede la tecnología de inteligencia artificial (IA) beneficiar a mi negocio?",
+		"text006": "¿Qué tipo de soporte técnico puedo ofrecer después de la venta?",
+		"text007": "¿Que hay de la capacitación para el uso de sus productos o servicios de tecnológicos?"
+	},
+	"chtbot": {
+		"text001": "Hola, ¿Como puedo ayudarte hoy?",
+		"text002": "Dejanos saber que opinas",
+		"text003": "Aquí"
 	}
 }

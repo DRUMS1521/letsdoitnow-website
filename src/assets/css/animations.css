@@ -1,0 +1,39 @@
+/* Animacion Aparicion derecha */
+.animar {
+	animation: miAnimacion .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	margin-left: 0;
+	z-index: 1400;
+}
+.hidden {
+	transform: translatex(100%);
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	opacity: 0;
+	animation: close .6s;
+	z-index: -1;
+}
+
+@keyframes close {
+	from {
+		transform: translatex(0);
+	}
+	50% {
+		transform: translatex(10px);
+	}
+	to {
+		transform: translatex(100%);
+	}
+}
+
+@keyframes miAnimacion {
+	from {
+		transform: translatex(10px);
+		display: none;
+		opacity: 0;
+	}
+	to {
+		transform: translatex(0);
+		display: initial;
+		opacity: 1;
+	}
+}
+/* Fin Animacion Aparicion derecha */

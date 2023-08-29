@@ -44,7 +44,7 @@ const isActive = (route: string) => {
 </script>
 
 <template>
-    <header class="header">
+    <header class="header" style="z-index: 1000;">
         <i @click="showMenu">
             <menu-ico svgColorClass="#D9D9D9" :height="'32'" :width="'32'" />
         </i>
