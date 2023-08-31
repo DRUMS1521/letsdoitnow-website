@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount  } from 'vue';
+import { ref, onBeforeMount, onMounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
 import { seoMeta } from '@/stores/SeoMeta'
 import Card from '../cards/card-1.vue'
@@ -7,11 +7,13 @@ import CardBlogCategory from '../cards/cardBlogCategory.vue';
 import CardBlogResume from '../cards/cardBlogResume.vue';
 import CardInformation from '../cards/cardInformation.vue'
 import CardReview from '../cards/cardReview.vue';
+import ZoomInAnimation from '../General/animations/ZoomInAnimation.vue';
+import FadeLeftAnimation from '../General/animations/FadeLeftAnimation.vue';
 
 /* function onBeforeMount(callback: () => void): void */
 
 const language = ref<any>({
-		langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", title01: "", title02: "", title03: "", text001: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: "", text012: "", text013: "", text014: "", text015: "", text016: "", text017: "", text018: "", text019: "", text020: "", text021: "", text022: "", text023: "", text024: "", text025: "", text026: "", text027: "", text028: "", text029: "", text030: ""
+	langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", title01: "", title02: "", title03: "", text001: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: "", text012: "", text013: "", text014: "", text015: "", text016: "", text017: "", text018: "", text019: "", text020: "", text021: "", text022: "", text023: "", text024: "", text025: "", text026: "", text027: "", text028: "", text029: "", text030: ""
 });
 
 const quote = (): void => {
@@ -27,25 +29,29 @@ onBeforeMount(() => {
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
 
 });
+
 </script>
 
 <template>
 	<div class="wrapper">
 		<div class="layout">
-			<h1 class="title">{{ language.title01 }}<br><span class="rectangle">{{ language.title02 }}</span><br>{{ language.title03 }}</h1>
-			<p class="pf">{{ language.text001 }}</p>
-			<div class="layout-btn">
-				<a>
-					<button class="btn-style-deg" @click="quote">
-						{{ language.text002 }}
-					</button>
-				</a>
-				<a  @click="$router.push('/portfolio')">
-					<button class="btn-underline">
-						{{ language.text003 }}
-					</button>
-				</a>
-			</div>
+			<ZoomInAnimation>
+				<h1 class="title">{{ language.title01 }}<br><span class="rectangle">{{ language.title02 }}</span><br>{{
+					language.title03 }}</h1>
+				<p class="pf">{{ language.text001 }}</p>
+				<div class="layout-btn">
+					<a>
+						<button class="btn-style-deg" @click="quote">
+							{{ language.text002 }}
+						</button>
+					</a>
+					<a @click="$router.push('/portfolio')">
+						<button class="btn-underline">
+							{{ language.text003 }}
+						</button>
+					</a>
+				</div>
+			</ZoomInAnimation>
 		</div>
 	</div>
 
@@ -56,7 +62,9 @@ onBeforeMount(() => {
 			<card :imgIcon="3" :text="language.text006" />
 			<card :imgIcon="4" :text="language.text007" />
 		</div>
+		
 		<div class="layout-2">
+			<ZoomInAnimation>
 			<h2 class="subtitle">{{ language.text008 }}</h2>
 			<p class="pf">{{ language.text009 }}</p>
 			<a @click="$router.push('/services')">
@@ -64,31 +72,31 @@ onBeforeMount(() => {
 					{{ language.text010 }}
 				</button>
 			</a>
+		</ZoomInAnimation>
 		</div>
 	</div>
 
 	<div class="wrapper-3">
 		<div>
-			<card-information :imgIcon="1" :text="language.text011"
-				:longText="language.text012" />
+			<FadeLeftAnimation>
+			<card-information :imgIcon="1" :text="language.text011" :longText="language.text012" /></FadeLeftAnimation>
 		</div>
 		<div>
-			<card-information :imgIcon="2" :text="language.text013"
-				:longText="language.text014" />
+			<card-information :imgIcon="2" :text="language.text013" :longText="language.text014" />
 		</div>
 		<div>
-			<card-information :imgIcon="3" :text="language.text015"
-				:longText="language.text016" />
+			<card-information :imgIcon="3" :text="language.text015" :longText="language.text016" />
 		</div>
 		<div>
-			<card-information :imgIcon="4" :text="language.text017"
-				:longText="language.text018" />
+			<card-information :imgIcon="4" :text="language.text017" :longText="language.text018" />
 		</div>
 	</div>
 
 	<div class="wrapper-6">
 		<div class="layout-3">
-			<h3 class="subtitle">{{ language.text019 }}<br><span class="rectangle">{{ language.text020 }}</span><br>{{ language.text021 }}</h3>
+			<ZoomInAnimation>
+			<h3 class="subtitle">{{ language.text019 }}<br><span class="rectangle">{{ language.text020 }}</span><br>{{
+				language.text021 }}</h3>
 			<p class="pf">{{ language.text022 }}</p>
 			<div class="layout-btn">
 				<a @click="$router.push('/blog')">
@@ -97,6 +105,7 @@ onBeforeMount(() => {
 					</button>
 				</a>
 			</div>
+		</ZoomInAnimation>
 		</div>
 		<div class="layout-4">
 			<card-blog-resume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'"
@@ -107,15 +116,14 @@ onBeforeMount(() => {
 	</div>
 
 	<div class="wrapper-4">
-		<card-blog-category :text="language.text024" :text2="language.text025" :text3="language.text026" :text4="language.text027" :text5="language.text028" />
+		<card-blog-category :text="language.text024" :text2="language.text025" :text3="language.text026"
+			:text4="language.text027" :text5="language.text028" />
 	</div>
 
 	<div class="wrapper-5">
 		<h2>{{ language.text029 }}</h2>
 		<div class="layout-5">
-			<card-review
-				:review="language.text030"
-				:company="'AliadaGO'" :namePerson="'Juan José Alzate'" />
+			<card-review :review="language.text030" :company="'AliadaGO'" :namePerson="'Juan José Alzate'" />
 		</div>
 		<p>{{ language.text033 }}<br>{{ language.text034 }}</p>
 		<a href="">

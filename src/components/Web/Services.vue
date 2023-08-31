@@ -18,7 +18,7 @@ const freeConsulation = (): void => {
 </script>
 
 <template>
-	<div class="wrapper-serv">
+	<div class="m-8">
 		<h1 class="subtitle">{{ language.title001 }}<span class="rectangle">{{ language.title002 }}</span></h1>
 		<p style="text-align: center;">{{ language.text002 }}<br>{{ language.text003 }}</p>
 		<div class="layout-serv">

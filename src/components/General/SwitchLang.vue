@@ -19,7 +19,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="languaje">
+	<div class="languaje mt-4">
 		<h5>English</h5>
 		<label class="switch">
 			<input type="checkbox" ref="check" @click="changeLanguage($event)">
