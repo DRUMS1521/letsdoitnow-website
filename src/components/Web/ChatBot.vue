@@ -119,7 +119,7 @@
 	};
 
 	onMounted(async () => {
-		language.value = lang(localStorage.getItem("Lang") === "Es").doitbot;
+		language.value = lang(localStorage.getItem("Lang") === "Es").chatbot;
 		if (localStorage.getItem('chat')) {
 			msg.value = localStorage.getItem('chat') || '';
 			localStorage.removeItem('chat');
@@ -148,7 +148,7 @@
 			</div>
 			<p>{{ myExpert.description }}</p>
 		</div>
-		<select name="" v-model="myExpert" @change="history()">
+		<select class="p-4 py-2 outline-none bg-[#e9f5ec] border-0" name="" v-model="myExpert" @change="history()">
 			<option v-for="expert in listExpert" :value="expert">{{ expert.career }}</option>
 		</select>
 	</div>
