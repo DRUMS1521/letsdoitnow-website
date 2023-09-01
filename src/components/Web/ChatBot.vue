@@ -146,7 +146,7 @@
 					<p v-if="myExpert.career">{{ myExpert.career }}</p>
 				</div>
 			</div>
-			<p>{{ myExpert.description }}</p>
+			<p>{{ myExpert.description }} </p>
 		</div>
 		<select class="p-4 py-2 outline-none bg-[#e9f5ec] border-0" name="" v-model="myExpert" @change="history()">
 			<option v-for="expert in listExpert" :value="expert">{{ expert.career }}</option>
