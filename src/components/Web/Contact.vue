@@ -26,31 +26,31 @@ const linkedin = (): void => {
 </script>
 
 <template>
-	<div class="wrapper-port">
-		<h1 class="subtitle">Cont<span class="rectangle">acto</span></h1>
+	<div class="m-8">
+		<h1 class="subtitle text-start mb-4">Cont<span class="rectangle">acto</span></h1>
 		<p>Estamos aquí para ayudarte.</p>
         <p>Si tienes alguna pregunta, no dudes en enviar un mensaje.</p>
         <p style="margin-bottom: 2rem;">¡Nos encantaría saber más de ti!</p>
     </div>
 
     <div>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7Asfml3Ok-UwKCCDTdRQ8cnXgVxrcjulOXPQhe0xaFNBgbA/viewform?embedded=true" width="800" height="3341" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7Asfml3Ok-UwKCCDTdRQ8cnXgVxrcjulOXPQhe0xaFNBgbA/viewform?embedded=true" width="100%" height="1500">Loading…</iframe>
     </div>
 
     <div class="line-c"></div>
 
     <h2 style="color: #263F28; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 2rem;">Encuéntranos en nuestras redes sociales</h2>
 
-    <div style="display: flex; flex-direction: row; justify-content: space-evenly;">
-        <div class="layout-card" @click="whatsapp">
+    <div class="flex flex-row justify-evenly min-[320px]:max-sm:flex-col items-center">
+        <div class="layout-card m-4" @click="whatsapp">
             <img src="../../assets/message-icon.svg" alt="">
             <h3>Let's Do It Now</h3>
         </div>
-        <div class="layout-card" @click="linkedin">
+        <div class="layout-card m-4" @click="linkedin">
             <img src="../../assets/linkedin-icon.svg" alt="">
             <h3>Let's Do It Now</h3>
         </div>
-        <div class="layout-card" @click="instagram">
+        <div class="layout-card m-4" @click="instagram">
             <img src="../../assets/instagram-icon.svg" alt="">
             <h3>lets.doit.now</h3>
         </div>
