@@ -13,8 +13,8 @@
 	const article = ref<any>([]);
 	const page = ref<any>([]);
 
-    /* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
-	const URL = 'http://localhost:3000/api';
+    const URL = 'https://api-chatbot.letsdoitnow.us/api';
+	/* const URL = 'http://localhost:3000/api'; */
 
     const getPage = async () => {
         spinner.value = true;
