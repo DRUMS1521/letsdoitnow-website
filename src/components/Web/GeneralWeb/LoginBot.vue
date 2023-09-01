@@ -13,7 +13,6 @@
 	const idUser = ref('');
 	const token = ref();
 	const isregisterLimit = ref(false);
-	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	const spinner = ref(false);
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -164,12 +163,15 @@
 					<div class="form-group" v-if="!isLogin">
 						<input v-model="confirmPassword" type="password" placeholder="Confirmar password" required />
 					</div>
+					<div class="my-4" v-if="!isLogin">
+						<p class="text-xs">Al registrarte aceptas nuestros <a href="/terminos-y-condiciones" target="_blank" class="text-primary font-bold">términos y condiciones</a> y <a href="/politica-de-privacidad" target="_blank" class="text-primary font-bold">política de privacidad</a>.</p>
+					</div>
 					<button class="submit" @click="login()" v-if="isLogin">Iniciar sesión</button>
 					<button class="submit" @click="register()" v-else>Registrarse</button>
 	
-					<p class="w-100 text-center mt-1" v-if="!isLogin">¿Ya tienes cuenta? inicia sesión <span class="cursor-p text-primary" @click="isLogin = true">aquí</span></p>
+					<p class="w-100 text-center mt-1" v-if="!isLogin">¿Ya tienes cuenta? inicia sesión <span class="cursor-p text-primary font-bold" @click="isLogin = true">aquí</span></p>
 	
-					<p class="w-100 text-center mt-1" v-else>¿No tienes cuenta? regístrate <span class="cursor-p text-primary" @click="isLogin = false">aquí</span></p>
+					<p class="w-100 text-center mt-1" v-else>¿No tienes cuenta? regístrate <span class="cursor-p text-primary font-bold" @click="isLogin = false">aquí</span></p>
 	
 					<p class="w-100 text-center mt-1 text-primary cursor-p" v-if="!isLogin" @click="notAcount()">Continuar sin cuenta</p>
 				</div>

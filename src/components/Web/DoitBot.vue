@@ -1,22 +1,36 @@
 <script setup lang="ts">
 import router from '@/router';
+import axios from 'axios';
 import { ref, onMounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
+import { showToast, POSITION } from '../../stores/Toast';
+import Spinner from '@/components/General/SpinerComponent.vue';
+import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
 
 const language = ref({});
+const URL = 'https://api-chatbot.letsdoitnow.us/api';
 const activeDiv = ref<number>(0);
 const menuExpert = ref<boolean>(true);
 const msg = ref<string>('');
+const idUser = ref('');
+const token = ref('');
+const listExpert = ref([{career: ''}]);
+const spinner = ref(false);
+const vewLogin = ref(false);
 
-const sedChat = (n: number) => {
+const closeModal = async () => {
+	vewLogin.value = false;
+};
+
+const sedChat = (n: number, msgSend: string) => {
 	if (n == 0 && msg.value != '') {
 		localStorage.setItem('chat', msg.value);
 	} else if (n == 1) {
-		localStorage.setItem('chat', '¿Cómo puede la tecnología de inteligencia artificial (IA) beneficiar a mi negocio?');
+		localStorage.setItem('chat', msgSend);
 	} else if (n == 2) {
-		localStorage.setItem('chat', '¿Qué tipo de soporte técnico puedo ofrecer después de la venta?');
+		localStorage.setItem('chat', msgSend);
 	} else if (n == 3) {
-		localStorage.setItem('chat', '¿Que hay de la capacitación para el uso de sus productos o servicios de tecnológicos?');
+		localStorage.setItem('chat', msgSend);
 	}
 	router.push('/doitbot/chat');
 };
@@ -29,8 +43,27 @@ const toggleDiv = (n: number) => {
 	}
 };
 
-onMounted(() => {
-	language.value = lang(localStorage.getItem("Lang") === "Es").chtbot;
+const getExpert = async () => {
+	spinner.value = true;
+	try {
+		const res = await axios.post(`${URL}/experts`, {user: idUser.value}, {
+			headers: {
+				'token': token.value
+			}
+		});
+		if (res.status === 200) {
+			listExpert.value = res.data;
+		} else {
+			vewLogin.value = true;
+		}
+	} catch (error) {
+		showToast('Error al cargar', 'error', 3000, POSITION.BOTTOM_CENTER)
+	}
+	spinner.value = false;
+}
+
+onMounted(async () => {
+	language.value = lang(localStorage.getItem("Lang") === "Es").doitbot;
 
 	window.addEventListener('resize', () => {
 		const currentWidth = window.innerWidth;
@@ -40,61 +73,47 @@ onMounted(() => {
 			menuExpert.value = true;
 		}
 	});
+
+	const session = localStorage.getItem('session');
+	if (session) {
+		const sessionSplit = session.split('-');
+		token.value = sessionSplit.slice(0, sessionSplit.length - 1).toString();
+		idUser.value = sessionSplit[sessionSplit.length - 1];
+		await getExpert();
+	} else {
+		vewLogin.value = true;
+	}
 });
 </script>
 
 <template>
-	<h1><span class="rectangle">Do it bot</span></h1>
+	<h1 class="mt-8"><span class="rectangle text-4xl">Do it bot</span></h1>
 	<div class="boxBot">
 		<div class="menu cursor-p" @click="menuExpert = !menuExpert">
 			<img src="../../assets/menu.svg" alt="">
 		</div>
 		<div class="d-ib va-t w-50 expert z-950" :class="menuExpert ? 'open-menu' : 'closed-menu'">
-			<h2>{{ language.title }}</h2>
-			<p>{{ language.text001 }}</p>
-			<div>
-				<div @click="toggleDiv(1)" class="w-100 divExpert cursor-p">
-					<p class="d-ib va-t expertName">01 / VENTAS</p>
+			<h2>{{ language?.title }}</h2>
+			<p>{{ language?.text001 }}</p>
+			<spinner v-if="spinner" />
+			<div v-for="(expert, i) in listExpert" :key="i">
+				<div @click="toggleDiv(i + 1)" class="w-100 divExpert cursor-p">
+					<p class="d-ib va-t expertName">{{ i + 1 }} / <span class="uppercase">{{ expert?.career }}</span></p>
 					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
 				</div>
 
 				<transition name="fade" mode="out-in">
-					<div v-if="activeDiv === 1" :key="'div1'" class="fade-div animar cursor-p" @click="$router.push('/doitbot/chat')">
+					<div v-if="activeDiv === i + 1" :key="'div1'" class="fade-div animar cursor-p" @click="$router.push('/doitbot/chat')">
 						<div class="d-flex si-center py-1">
 							<img src="../../assets/expert.svg" alt="">
 							<div class="d-flex jc-fe flex-d-col">
-								<h3 class="m-0">Juan</h3>
-								<p>Vendedor</p>
+								<h3 class="m-0 capitalize text-left">{{ expert?.name }}</h3>
+								<p class="capitalize text-left">{{ expert?.career }}</p>
 							</div>
 						</div>
-						<p>Profesional altamente capacitado en identificar las necesidades de los clientes, comunicar el valor de un producto o servicio.</p>
+						<p>{{ expert?.description }}</p>
 					</div>
 				</transition>
-
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">02 / FINANZAS</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">03/ RECURSOS HUMANOS</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">04 / CRECIMIENTO</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">05 / OPERACIONES</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">06 / LOGÍSTICA</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
-				<div class="w-100 divExpert">
-					<p class="d-ib va-t expertName">07 / TECNOLOGÍA</p>
-					<img class="d-ib va-t expertArrow" src="../../assets/Arrow-1.svg" alt="">
-				</div>
 			</div>
 		</div>
 		<div class="d-ib va-t w-50 bot">
@@ -115,14 +134,14 @@ onMounted(() => {
 			</div>
 			<div class="mt-2 mb-2">
 				<img class="max-w-40" src="../../assets/textImg.svg" alt="">
-				<p class="w-100 text-center"><b>{{ language.text002 }}</b></p>
-				<div class="btnRecom cursor-p" @click="sedChat(0)">
+				<p class="w-100 text-center"><b>{{ language?.text002 }}</b></p>
+				<div class="btnRecom cursor-p" @click="sedChat(0, '')">
 					<p>Ventas</p>
 				</div>
-				<div class="btnRecom cursor-p">
+				<div class="btnRecom cursor-p" @click="sedChat(0, '')">
 					<p>Operaciones</p>
 				</div>
-				<div class="btnRecom cursor-p">
+				<div class="btnRecom cursor-p" @click="sedChat(0, '')">
 					<p>Tecnología</p>
 				</div>
 				<div class="w-100 mt-1">
@@ -131,23 +150,24 @@ onMounted(() => {
 			</div>
 			<div class="mt-2">
 				<img src="../../assets/edit.svg" alt="">
-				<p class="w-100 text-center"><b>{{ language.text004 }}</b></p>
+				<p class="w-100 text-center"><b>{{ language?.text004 }}</b></p>
 
-				<div class="btnRecom cursor-p" @click="sedChat(1)">
-					<p>{{ language.text005 }}</p>
+				<div class="btnRecom cursor-p" @click="sedChat(1, language?.text005)">
+					<p>{{ language?.text005 }}</p>
 				</div>
-				<div class="btnRecom cursor-p" @click="sedChat(2)">
-					<p>{{ language.text006 }}</p>
+				<div class="btnRecom cursor-p" @click="sedChat(2, language?.text006)">
+					<p>{{ language?.text006 }}</p>
 				</div>
-				<div class="btnRecom cursor-p" @click="sedChat(3)">
-					<p>{{ language.text007 }}</p>
+				<div class="btnRecom cursor-p" @click="sedChat(3, language?.text007)">
+					<p>{{ language?.text007 }}</p>
 				</div>
 			</div>
 			<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
-				<input class="w-100" type="text" style="padding-right: 3rem;" placeholder="Escribe algo para empezar o selecciona" v-model="msg" @keypress.enter="sedChat(0)">
-				<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sedChat(0)">
+				<input class="w-100" type="text" style="padding-right: 3rem;" placeholder="Escribe algo para empezar o selecciona" v-model="msg" @keypress.enter="sedChat(0, '')">
+				<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sedChat(0, '')">
 			</div>
 		</div>
+		<login-bot v-if="vewLogin" :closeModal="closeModal" />
 	</div>
 </template>
 

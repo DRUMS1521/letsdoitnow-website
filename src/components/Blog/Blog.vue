@@ -5,31 +5,30 @@
 	import CardBlogResume from '../cards/cardBlogResume.vue';
 	import { showToast, POSITION } from '../../stores/Toast';
 	import spiner from '../General/SpinerComponent.vue';
+	import router from '@/router';
 
 
-	const spinner = ref<Boolean>(false);
+	const spinner = ref<Boolean>(true);
 	const documentos = ref<any>([]);
 
-	
-	/* const URL = 'https://api-chatbot.letsdoitnow.us/api'; */
+	const URL = 'https://api-chatbot.letsdoitnow.us/api';
+	/* const URL = 'http://localhost:3000/api'; */
 
 	const getAllArticles = async () => {
-		spiner.value = true;
+		spinner.value = true;
 		try {
-			/* const response = await axios.post(`http://localhost:3000/api/notiondoitpage`); */
-			const response = await axios.get(`http://localhost:3000/api/notiondoit`);
-			/* const response = await axios.get(`https://api-chatbot.letsdoitnow.us/api/notiondoit`); */
+			/* const response = await axios.post(`${URL}/notiondoitpage`); */
+			const response = await axios.post(`${URL}/notiondoit`, {pageId: '41d9c321a8ab4d62a2877a6a90c2d836'});
 			if (response.status === 200) {
 				documentos.value = response.data;
 			}else{
 				showToast(`Error al cargar los datos`, 'error', 3000, POSITION.BOTTOM_CENTER)
 			}
-			console.log(response.data)
 		} catch (err: any) {
 			console.log(err)
 			showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
-		spiner.value = false;
+		spinner.value = false;
 	};
 
 	onMounted(async () => {
@@ -38,56 +37,23 @@
 </script>
 
 <template>
-	<!-- <div class="wrapper-blog">
-		<div class="last-entry">
-			<h1 class="subtitle">Norem ipsum dolor sit amet, consectetur adipiscing elit. <span class="rectangle">Etiam eu turpis</span> molestie, dictum est a</h1>
-			<p>Norem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum  est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-			<button class="btn-underline" style="margin-top: 2rem;">Lee la entrada aquí</button>
-		</div>
-		<div>
-			<img src="../../assets/img-blog-background.png" alt="">
-		</div>
-	</div> -->
 
-	<div class="wrapper-blog text-left mt-2" v-for="article in documentos.results">
-		<div class="last-entry">
-			<h2 class="subtitle">{{ article.properties?.Titulo?.title[0]?.plain_text }}</h2>
-			<p class="mb-1">{{ article.properties?.Descripcion?.rich_text[0]?.plain_text }}</p>
-			<a class="btn-underline" :href="'/blog/' + article.id">Lee la entrada aquí</a>
+	<div v-for="(article, i) in documentos.results" :key="i">
+		<div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
+			<div class="text-center" v-if="(i + 1) % 2 == 0" @click="router.push(`/blog/${article.id}`)">
+				<img :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
+			</div>
+			<div class="my-12 cursor-pointer" @click="router.push(`/blog/${article.id}`)">
+				<h2 class="subtitle">{{ article.properties?.Titulo?.title[0]?.plain_text }}</h2>
+				<p class="mb-1">{{ article.properties?.Descripcion?.rich_text[0]?.plain_text }}</p>
+				<a class="btn-underline" :href="'/blog/' + article.id">Lee la entrada aquí</a>
+			</div>
+			<div class="text-center" v-if="(i + 1) % 2 != 0" @click="router.push(`/blog/${article.id}`)">
+				<img :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
+			</div>
 		</div>
-		<div class="text-center">
-			<img :src="article.cover?.external?.url" alt="" style="max-width: 100%; max-height: 350px;">
-		</div>
+		<div style="box-shadow: 1px 5px 5px; height: 1px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i"></div>
 	</div>
-
-	<div class="line-port"></div>
-
-	<div class="wrapper-blog-2">
-		<CardBlogResume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
-		<CardBlogResume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
-		<CardBlogResume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
-	</div>
-
 	<spiner v-if="spinner"/>
 
 </template>
-
-<style>
-	.wrapper-blog {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: center;
-		padding: 0 4rem;
-	}
-
-	.last-entry {
-		margin: 3rem;
-	}
-
-	.wrapper-blog-2 {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		align-items: center;
-		justify-items: center;
-	}
-</style>

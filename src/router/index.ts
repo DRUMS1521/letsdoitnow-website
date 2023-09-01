@@ -21,7 +21,16 @@ const router = createRouter({
 				},
 				{
 					path: "/portfolio",
-					component: () => import('@/components/Web/Portfolio.vue')
+					children: [
+						{
+							path: "",
+							component: () => import('@/components/Web/Portfolio.vue')
+						},
+						{
+							path: ":id",
+							component: () => import('@/components/Blog/ArticleDetail.vue')
+						}
+					]
 				},
 				{
 					path: "/careers",
@@ -55,6 +64,15 @@ const router = createRouter({
 							component: () => import('@/components/Blog/ArticleDetail.vue')
 						}
 					]
+				},
+				{
+					path: "/terminos-y-condiciones",
+					component: () => import('@/components/General/TermsAndConditions.vue')
+				},
+				{
+					path: "/politica-de-privacidad",
+					component: () => import('@/components/General/TermsAndConditions.vue')
+					
 				}
 			]
 		}

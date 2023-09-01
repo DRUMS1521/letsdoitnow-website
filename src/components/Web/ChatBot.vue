@@ -10,7 +10,6 @@
 	const msg = ref('');
 	const idUser = ref('');
 	const token = ref('');
-	/* const URL = 'http://localhost:3000/api'; */
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
 	const listExpert = ref([{career: ''}]);
@@ -38,7 +37,7 @@
 			});
 			if (res.status === 200) {
 				listExpert.value = res.data;
-				myExpert.value = res.data[res.data.length - 1];
+				myExpert.value = res.data[0];
 			} else {
 				vewLogin.value = true;
 			}
@@ -51,8 +50,9 @@
 	const history = async () => {
 		spinner.value = true;
 		try {
-			const res = await axios.post(`${URL}/chats/expert`, { "userId": idUser.value, "expertId": myExpert.value._id }, { headers: { 'token': token.value } });
-			dataHistory.value = res.data.slice().reverse();
+			const res = await axios.post(`${URL}/chats/expert`, { "userId": idUser.value, "expertId": myExpert.value?._id }, { headers: { 'token': token.value } });
+			dataHistory.value = res.data.reverse();
+			listCuestion();
 		} catch (error) {
 			showToast(`Error al cargar: ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
@@ -64,9 +64,9 @@
 		if (msg.value != '') {
 			dataHistory.value.push({ question: msg.value, answer: '' });
 			viewEndAnswer()
-			await axios.post(`${URL}/chats`, { "userId": idUser.value, "expertId": myExpert.value._id, "userQuestion": msg.value }, { headers: { 'token': token.value } })
+			await axios.post(`${URL}/chats`, { "userId": idUser.value, "expertId": myExpert.value?._id, "userQuestion": msg.value }, { headers: { 'token': token.value } })
 				.then((res) => {
-					dataHistory.value[dataHistory.value.length - 1].answer = res.data.answer;
+					history();
 					msg.value = '';
 					viewEndAnswer()
 				})
@@ -111,19 +111,10 @@
 	}
 
 	const listCuestion = () => {
+		const regex = /(\¿.+?\?)/g;
 		if (dataHistory.value.length > 0) {
 			const lastAnswer = dataHistory.value[dataHistory.value.length - 1].answer;
-			const cuestionList = lastAnswer
-			.split('</end>')[lastAnswer.split('</end>').length - 1] // Tomar el último elemento
-			.replace(/\s/g, '') // Eliminar espacios y saltos de línea
-			.split(','); // Separar por coma y obtener un array de elementos
-
-			// Iterar sobre los elementos y mostrarlos uno por uno
-			cuestionList.forEach(element => {
-			console.log(element);
-			});
-			console.log(cuestionList)
-			// No necesitas devolver nada aquí, ya que solo estás mostrando los elementos en la consola
+			cuestionList.value = lastAnswer.split('</end>')[lastAnswer.split('</end>').length - 1].match(regex);
 		}
 	};
 
@@ -173,10 +164,10 @@
 			<div id="endChat" class="mt-2 w-100"></div>
 			<spinner v-if="spinner" />
 		</div>
-		<div v-if="dataHistory != 0">
-			<p class="send">{{ cuestionList }}</p>
-			<p class="send">{{ cuestionList[1] }}</p>
-			<p class="send">{{ cuestionList[2] }}</p>
+		<div class="mt-8" v-if="dataHistory != 0">
+			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[0], sendChat()">{{ cuestionList[0] }}</p>
+			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[1], sendChat()">{{ cuestionList[1] }}</p>
+			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[2], sendChat()">{{ cuestionList[2] }}</p>
 		</div>
 		<div class="d-flex ai-center inputUser mt-1" style="position: relative;">
 			<input class="w-100" style=" padding-right: 3rem;" type="text" placeholder="Escribe algo" v-model="msg" @keypress.enter="sendChat()">
