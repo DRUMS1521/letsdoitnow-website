@@ -164,7 +164,7 @@
 			<div id="endChat" class="mt-2 w-100"></div>
 			<spinner v-if="spinner" />
 		</div>
-		<div class="mt-8" v-if="dataHistory != 0">
+		<div class="mt-8" v-if="dataHistory != 0 && cuestionList">
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[0], sendChat()">{{ cuestionList[0] }}</p>
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[1], sendChat()">{{ cuestionList[1] }}</p>
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[2], sendChat()">{{ cuestionList[2] }}</p>
