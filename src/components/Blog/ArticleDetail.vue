@@ -9,7 +9,7 @@
 	const routeParam = ref<string>('');
 
     const spinner = ref<Boolean>(true);
-    const idPage = ref<String>();
+	const idPage = ref<string | undefined>(undefined);
 	const article = ref<any>([]);
 	const page = ref<any>([]);
 
@@ -56,7 +56,9 @@
 	};
 
     onMounted(async () => {
-		idPage.value = route.params.id;
+		if (typeof route.params.id === 'string') {
+			idPage.value = route.params.id;
+		}
 		await getPage();
         await getArticles();
     });

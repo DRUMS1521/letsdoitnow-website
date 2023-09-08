@@ -22,7 +22,6 @@ const quote = (): void => {
 const freeConsulation = (): void => {
 	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
 }
-
 onBeforeMount(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").home;
 
@@ -33,313 +32,183 @@ onBeforeMount(() => {
 </script>
 
 <template>
-	<div class="wrapper">
-		<div class="layout">
-			<ZoomInAnimation>
-				<h1 class="title">{{ language.title01 }}<br><span class="rectangle">{{ language.title02 }}</span><br>{{
-					language.title03 }}</h1>
-				<p class="pf">{{ language.text001 }}</p>
-				<div class="layout-btn">
-					<a>
-						<button class="btn-style-deg" @click="quote">
-							{{ language.text002 }}
-						</button>
-					</a>
-					<a @click="$router.push('/portfolio')">
-						<button class="btn-underline">
-							{{ language.text003 }}
-						</button>
-					</a>
-				</div>
-			</ZoomInAnimation>
-		</div>
-	</div>
-
-	<div class="wrapper-2">
-		<div class="grid-card">
-			<card :imgIcon="1" :text="language.text004" />
-			<card :imgIcon="2" :text="language.text005" />
-			<card :imgIcon="3" :text="language.text006" />
-			<card :imgIcon="4" :text="language.text007" />
-		</div>
-		
-		<div class="layout-2">
-			<ZoomInAnimation>
-			<h2 class="subtitle">{{ language.text008 }}</h2>
-			<p class="pf">{{ language.text009 }}</p>
-			<a @click="$router.push('/services')">
-				<button class="btn-style-deg">
-					{{ language.text010 }}
-				</button>
-			</a>
-		</ZoomInAnimation>
-		</div>
-	</div>
-
-	<div class="wrapper-3">
-		<div>
-			<FadeLeftAnimation>
-			<card-information :imgIcon="1" :text="language.text011" :longText="language.text012" /></FadeLeftAnimation>
-		</div>
-		<div>
-			<card-information :imgIcon="2" :text="language.text013" :longText="language.text014" />
-		</div>
-		<div>
-			<card-information :imgIcon="3" :text="language.text015" :longText="language.text016" />
-		</div>
-		<div>
-			<card-information :imgIcon="4" :text="language.text017" :longText="language.text018" />
-		</div>
-	</div>
-
-	<div class="wrapper-6">
-		<div class="layout-3">
-			<ZoomInAnimation>
-			<h3 class="subtitle">{{ language.text019 }}<br><span class="rectangle">{{ language.text020 }}</span><br>{{
-				language.text021 }}</h3>
-			<p class="pf">{{ language.text022 }}</p>
-			<div class="layout-btn">
-				<a @click="$router.push('/blog')">
-					<button class="btn-style-deg">
-						{{ language.text023 }}
+	<div class=" px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 animate-fade-right opacity-0 bg-image">
+		<div class="lg:py-24">
+			<h1 class="text-4xl font-bold sm:text-5xl text-[#263F28]">{{ language?.title01 }}<br><span class=""
+					style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{
+						language?.title02 }}</span><br>{{
+		language?.title03 }}</h1>
+			<p class="mt-4 text-gray-600 text-lg">{{ language?.text001 }}</p>
+			<div class="mt-4 flex flex-row items-center gap-7">
+				<a>
+					<button
+						class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
+						@click="quote">
+						{{ language?.text002 }}
+					</button>
+				</a>
+				<a @click="$router.push('/portfolio')">
+					<button
+						class="text-m font-bold text-[#333333] underline relative text-gray-600 hover:text-black transition-colors duration-300 hover:after:bg-black hover:after:w-full">
+						{{ language?.text003 }}
 					</button>
 				</a>
 			</div>
-		</ZoomInAnimation>
-		</div>
-		<div class="layout-4">
-			<card-blog-resume :title="'El cambio inevitable'" :category="'Inteligencia Artificial'"
-				:nameCreator="'Marysabel'" :timeRead="'8min'" />
-			<card-blog-resume :title="'Desencadenando el Poder de la Inteligencia Artificial'"
-				:category="'Inteligencia Artificial'" :nameCreator="'Marysabel'" :timeRead="'8min'" />
 		</div>
 	</div>
 
-	<div class="wrapper-4">
-		<card-blog-category :text="language.text024" :text2="language.text025" :text3="language.text026"
-			:text4="language.text027" :text5="language.text028" />
+	<div class="px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 bg-image-2 z-0">
+
+		<div class="animate-fade-in opacity-0 text-center">
+			<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28]">{{ language?.text008 }}</h2>
+			<p class="my-4 text-gray-600 text-lg">{{ language?.text009 }}</p>
+			<a @click="$router.push('/services')">
+				<button
+					class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
+					{{ language?.text010 }}
+				</button>
+			</a>
+		</div>
+		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 justify-items-center">
+			<a class="w-60 flex flex-col items-center rounded-xl p-8 shadow-xl transition hover:border-[#9CCE7C] hover:shadow-[#9CCE7C]/60 hover:scale-105"
+				href="">
+				<img src="../../assets/icon-global.svg" alt="" class="w-[60px]">
+
+				<h2 class="mt-4 text-xl font-bold text-[#333333] text-center">{{ language.text004 }}</h2>
+			</a>
+			<a class="w-60 flex flex-col items-center rounded-xl p-8 shadow-xl transition hover:border-[#9CCE7C] hover:shadow-[#9CCE7C]/60 hover:scale-105"
+				href="">
+				<img src="../../assets/icon-pc.svg" alt="" class="w-[60px]">
+
+				<h2 class="mt-4 text-xl font-bold text-[#333333] text-center">{{ language.text005 }}</h2>
+			</a>
+			<a class="w-60 flex flex-col items-center rounded-xl p-8 shadow-xl transition hover:border-[#9CCE7C] hover:shadow-[#9CCE7C]/60 hover:scale-105"
+				href="">
+				<img src="../../assets/icon-phone.svg" alt="" class="w-[60px]">
+
+				<h2 class="mt-4 text-xl font-bold text-[#333333] text-center">{{ language.text006 }}</h2>
+			</a>
+			<a class="w-60 flex flex-col items-center rounded-xl p-8 shadow-xl transition hover:border-[#9CCE7C] hover:shadow-[#9CCE7C]/60 hover:scale-105"
+				href="">
+				<img src="../../assets/icon-web.svg" alt="" class="w-[60px]">
+
+				<h2 class="mt-4 text-xl font-bold text-[#333333] text-center">{{ language.text007 }}</h2>
+			</a>
+		</div>
+
+
 	</div>
 
-	<div class="wrapper-5">
-		<h2>{{ language.text029 }}</h2>
-		<div class="layout-5">
-			<card-review :review="language.text030" :company="'AliadaGO'" :namePerson="'Juan José Alzate'" />
+	<div class="bg-[#E1FFDC] grid grid-cols-1 gap-8 md:grid-cols-2 p-8 lg:p-60 sm:p-20">
+		<div>
+			<a class="block p-8" href="">
+				<img src="../../assets/icon-line.svg" alt="" class="jumping-element">
+
+				<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text011 }}</h2>
+
+				<p class="mt-1 text-m text-[#333333]">
+					{{ language.text012 }}
+				</p>
+			</a>
 		</div>
-		<p>{{ language.text033 }}<br>{{ language.text034 }}</p>
-		<a href="">
-			<button class="btn-style-deg" @click="freeConsulation">
+		<div>
+			<a class="block p-8" href="">
+				<img src="../../assets/icon-draw.svg" alt="" class="jumping-element">
+
+				<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text013 }}</h2>
+
+				<p class="mt-1 text-m text-[#333333]">
+					{{ language.text014 }}
+				</p>
+			</a>
+		</div>
+		<a class="block p-8" href="">
+			<img src="../../assets/icon-people.svg" alt="" class="jumping-element">
+
+			<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text015 }}</h2>
+
+			<p class="mt-1 text-m text-[#333333]">
+				{{ language.text016 }}
+			</p>
+		</a>
+		<div>
+			<a class="block p-8" href="">
+				<img src="../../assets/icon-people-2.svg" alt="" class="jumping-element">
+
+				<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text017 }}</h2>
+
+				<p class="mt-1 text-m text-[#333333]">
+					{{ language.text018 }}
+				</p>
+			</a>
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 text-center">
+		<h3 class="text-2xl font-bold sm:text-3xl text-[#263F28]">{{ language?.text019 }} <span
+				style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{
+					language?.text020 }}</span> {{
+		language?.text021 }}</h3>
+		<p class="my-4 text-gray-600 text-lg">{{ language?.text022 }}</p>
+		<div class="">
+			<a @click="$router.push('/blog')">
+				<button
+					class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
+					{{ language?.text023 }}
+				</button>
+			</a>
+		</div>
+	</div>
+
+
+	<div class="bg-[#79DB92] p-5">
+		<h1 class="text-[#333] font-semibold text-lg text-center mb-4">{{ language.text036 }}</h1>
+		<div
+			class="mx-auto max-w-screen-xl px-4 8 sm:px-6 lg:px-8 flex flex-col justify-between items-center lg:flex lg:flex-row">
+			<a href=""
+				class="text-black hover:text-gray-600 transition-colors duration-300 hover:after:bg-black hover:after:w-full">{{
+					language.text024 }}</a>
+			<a href=""
+				class="text-black hover:text-gray-600 transition-colors duration-300 hover:after:bg-black hover:after:w-full">{{
+					language.text025 }}</a>
+			<a href=""
+				class="text-black hover:text-gray-600 transition-colors duration-300 hover:after:bg-black hover:after:w-full">{{
+					language.text026 }}</a>
+			<a href=""
+				class="text-black hover:text-gray-600 transition-colors duration-300 hover:after:bg-black hover:after:w-full">{{
+					language.text027 }}</a>
+			<a href=""
+				class="text-black hover:text-gray-600 transition-colors duration-300 hover:after:bg-black hover:after:w-full">{{
+					language.text028 }}</a>
+		</div>
+	</div>
+
+	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+		<h2 class="mt-4 text-2xl font-bold text-[#263F28] text-center">{{ language.text029 }}</h2>
+
+			<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
+				<div class="flex items-center gap-4">
+					<img alt="Man" src="../../assets/clients/aliaga_go.png" class="h-14 w-14 rounded-full object-cover" />
+
+					<div>
+						<p class="mt-0.5 text-lg font-semibold text-gray-900">Juan José Alzate</p>
+						<p class="mt-0.5 text-lg font-medium text-gray-900">AliadaGO</p>
+					</div>
+				</div>
+
+				<p class="mt-4 text-gray-700">
+					{{language.text030}}
+				</p>
+			</blockquote>
+		<p class="mt-4 text-xl font-medium text-[#263F28] text-center">{{ language.text033 }}<br>{{ language.text034 }}</p>
+		<div class="flex justify-center my-8">
+			<button class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300" @click="freeConsulation">
 				{{ language.text035 }}
 			</button>
-		</a>
+		</div>
 	</div>
 </template>
 
 <style scoped>
-.wrapper {
-	width: auto;
-	height: 600px;
-	display: flex;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	flex-direction: column;
-	justify-items: center;
-	justify-content: center;
-	background-image: url("../../assets/recurso-1.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
 
-.layout {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 500px;
-	text-align: left;
-	margin-left: 32px;
-	margin-bottom: 10%;
-}
-
-.layout-btn {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-.layout-img {
-	width: 0%;
-	display: flex;
-	justify-items: flex-end;
-}
-
-.wrapper-2 {
-	max-height: fit-content;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	background-image: url("../../assets/background-1.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.grid-card {
-	display: grid;
-	align-items: center;
-	justify-items: center;
-	grid-template-columns: 1fr 1fr;
-	margin-top: 250px;
-	height: 500px;
-	justify-content: space-between;
-}
-
-.layout-2 {
-	margin-top: 40px;
-	width: 600px;
-	text-align: right;
-	margin-left: 32px;
-}
-
-.wrapper-3 {
-	max-height: fit-content;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	background-color: #E1FFDC;
-	justify-items: center;
-	padding: 15% 0;
-}
-
-.layout-3 {
-	width: 420px;
-	text-align: left;
-	margin-right: 15%;
-}
-
-.layout-4 {
-	padding: 10% 0;
-}
-
-.wrapper-4 {
-	padding: 25px;
-	background-color: #79DB92;
-	;
-}
-
-.wrapper-5 {
-	margin-top: 50px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.wrapper-5 h2 {
-	width: 650px;
-	color: #263F28;
-	letter-spacing: 0.8px;
-	font-weight: 700;
-}
-
-.layout-5 {
-	width: 100%;
-	margin-bottom: 100px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.wrapper-5 button {
-	margin-top: 32px;
-}
-
-.wrapper-6 {
-	max-height: fit-content;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	justify-items: center;
-	align-items: center;
-}
-
-@media screen and (max-width: 768px) {
-	.wrapper {
-		height: 500px;
-		display: flex;
-		background-image: none;
-	}
-
-	.wrapper-2 {
-		max-height: fit-content;
-		display: flex;
-		flex-direction: column-reverse;
-		background-image: url("../../assets/background-1.svg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: 60%;
-	}
-
-	.layout {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: fit-content;
-		text-align: left;
-		margin-left: 32px;
-		margin-bottom: 10%;
-	}
-
-	.grid-card {
-		display: flex;
-		align-items: center;
-		justify-items: center;
-		flex-direction: column;
-		grid-template-columns: 1fr;
-		margin-top: 0px;
-		margin-bottom: 1rem;
-		height: 660px;
-		justify-content: space-between;
-	}
-
-	.layout-2 {
-		margin-top: 40px;
-		margin-bottom: 40px;
-		width: fit-content;
-		text-align: center;
-		margin: 40px 32px;
-	}
-
-	.layout-btn {
-		align-items: flex-start;
-		flex-direction: column;
-	}
-
-	.wrapper-3 {
-		max-height: fit-content;
-		background-color: #E1FFDC;
-		justify-items: center;
-		padding: 15% 10%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: fit-content;
-	}
-
-	.wrapper-6 {
-		max-height: fit-content;
-		display: flex;
-		flex-direction: column;
-		justify-items: center;
-	}
-
-	.layout-3 {
-		width: fit-content;
-		margin-right: 0;
-		padding: 1rem;
-	}
-
-	.wrapper-5 h2 {
-		display: flex;
-		width: fit-content;
-	}
-
-	.layout-5 {
-		flex-direction: column;
-	}
-}
 </style>

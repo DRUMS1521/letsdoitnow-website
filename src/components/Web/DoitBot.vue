@@ -7,16 +7,27 @@ import { showToast, POSITION } from '../../stores/Toast';
 import Spinner from '@/components/General/SpinerComponent.vue';
 import LoginBot from '@/components/Web/GeneralWeb/LoginBot.vue';
 
-const language = ref({});
+const language = ref<Doitbotlanguage>();
 const URL = 'https://api-chatbot.letsdoitnow.us/api';
 const activeDiv = ref<number>(0);
 const menuExpert = ref<boolean>(true);
 const msg = ref<string>('');
 const idUser = ref('');
 const token = ref('');
-const listExpert = ref([{career: ''}]);
+const listExpert = ref([{career: '', name: '', description: ''}]);
 const spinner = ref(false);
 const vewLogin = ref(false);
+
+interface Doitbotlanguage {
+	title: string;
+	text001: string;
+	text002: string;
+	text003: string;
+	text004: string;
+	text005: string;
+	text006: string;
+	text007: string;
+}
 
 const closeModal = async () => {
 	vewLogin.value = false;
@@ -145,20 +156,20 @@ onMounted(async () => {
 					<p>Tecnología</p>
 				</div>
 				<div class="w-100 mt-1">
-					<p class="text-primary w-100 text-center">{{ language.text003 }}</p>
+					<p class="text-primary w-100 text-center">{{ language?.text003 }}</p>
 				</div>
 			</div>
 			<div class="mt-2">
 				<img src="../../assets/edit.svg" alt="">
 				<p class="w-100 text-center"><b>{{ language?.text004 }}</b></p>
 
-				<div class="btnRecom cursor-p" @click="sedChat(1, language?.text005)">
+				<div class="btnRecom cursor-p" v-if="language?.text005" @click="sedChat(1, language?.text005)">
 					<p>{{ language?.text005 }}</p>
 				</div>
-				<div class="btnRecom cursor-p" @click="sedChat(2, language?.text006)">
+				<div class="btnRecom cursor-p" v-if="language?.text006" @click="sedChat(2, language?.text006)">
 					<p>{{ language?.text006 }}</p>
 				</div>
-				<div class="btnRecom cursor-p" @click="sedChat(3, language?.text007)">
+				<div class="btnRecom cursor-p" v-if="language?.text007" @click="sedChat(3, language?.text007)">
 					<p>{{ language?.text007 }}</p>
 				</div>
 			</div>

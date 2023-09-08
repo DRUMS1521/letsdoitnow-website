@@ -10,8 +10,8 @@ const props = defineProps({
 </script>
 
 <template>
-	<div class="card-style-green">
-		<h2>{{ titleText }}</h2>
+	<div class="">
+		<h2 class="text-[#397A3E] font-medium">{{ titleText }}</h2>
 		<p>{{ descriptionText }}</p>
 	</div>
 </template>

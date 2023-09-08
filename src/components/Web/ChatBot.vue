@@ -6,17 +6,23 @@
 	import { showToast, POSITION } from '../../stores/Toast';
 	import { lang } from '../../stores/SwitchLang';
 
-	const language = ref({});
+	const language = ref<Chatlanguage>();
 	const msg = ref('');
 	const idUser = ref('');
 	const token = ref('');
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	const dataHistory = ref<HistoryItem[]>([{ question: '', answer: '' }]);
 	const listExpert = ref([{career: ''}]);
-	const myExpert = ref({});
+	const myExpert = ref<{ _id: string, name: string, career: string, description: string }>({ _id: '', name: '', career: '', description: ''});
 	const spinner = ref(false);
 	const vewLogin = ref(false);
-	const cuestionList = ref([]);
+	const cuestionList = ref<string[]>([]);
+
+	interface Chatlanguage {
+		text001: string;
+		text002: string;
+		text003: string;
+	}
 
 	interface HistoryItem {
 		question: string;
@@ -114,7 +120,10 @@
 		const regex = /(\¿.+?\?)/g;
 		if (dataHistory.value.length > 0) {
 			const lastAnswer = dataHistory.value[dataHistory.value.length - 1].answer;
-			cuestionList.value = lastAnswer.split('</end>')[lastAnswer.split('</end>').length - 1].match(regex);
+			const matchResult = lastAnswer.split('</end>')[lastAnswer.split('</end>').length - 1].match(regex);
+			if (matchResult !== null) {
+				cuestionList.value = matchResult;
+			}
 		}
 	};
 
@@ -155,7 +164,7 @@
 	<div class="d-ib va-t w-50 p-2 mt-1 bot">
 		<div class="answerbot pr-1">
 			<div v-if="dataHistory.length == 0">
-				<p class="botanswer" style="white-space: pre-line;">{{ language.text001 }}</p>
+				<p class="botanswer" style="white-space: pre-line;">{{ language?.text001 }}</p>
 			</div>
 			<div v-for="chat in dataHistory">
 				<p class="send">{{ chat.question }}</p>
@@ -164,7 +173,7 @@
 			<div id="endChat" class="mt-2 w-100"></div>
 			<spinner v-if="spinner" />
 		</div>
-		<div class="mt-8" v-if="dataHistory != 0 && cuestionList">
+		<div class="mt-8" v-if="dataHistory.length != 0 && cuestionList">
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[0], sendChat()">{{ cuestionList[0] }}</p>
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[1], sendChat()">{{ cuestionList[1] }}</p>
 			<p class="send cursor-pointer text-xs" @click="msg = cuestionList[2], sendChat()">{{ cuestionList[2] }}</p>
@@ -174,7 +183,7 @@
 			<img style="right: 10px; position: absolute;" class="cursor-p" src="../../assets/send.svg" alt="" @click="sendChat()">
 		</div>
 	</div>
-	<p class="text-center mt-2">{{ language.text002 }} <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6" target="_blank">{{language.text003}}</a></p>
+	<p class="text-center mt-2">{{ language?.text002 }} <a href="https://forms.gle/Nj27Lg1eXGhv6eeT6" target="_blank">{{language?.text003}}</a></p>
 
 	<login-bot v-if="vewLogin" :closeModal="closeModal" />
 </template>
