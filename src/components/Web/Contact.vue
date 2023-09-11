@@ -26,20 +26,18 @@ const linkedin = (): void => {
 </script>
 
 <template>
-	<div class="m-8">
-		<h1 class="subtitle text-start mb-4">Cont<span class="rectangle">acto</span></h1>
-		<p>Estamos aquí para ayudarte.</p>
-        <p>Si tienes alguna pregunta, no dudes en enviar un mensaje.</p>
-        <p style="margin-bottom: 2rem;">¡Nos encantaría saber más de ti!</p>
+	<div class="m-8 animation-fade-in">
+		<h1 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">Contacto</h1>
+		<p class="text-center">Estamos aquí para ayudarte.</p>
+        <p class="text-center">Si tienes alguna pregunta, no dudes en enviar un mensaje.</p>
+        <p class="text-center mb-8">¡Nos encantaría saber más de ti!</p>
     </div>
 
     <div>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7Asfml3Ok-UwKCCDTdRQ8cnXgVxrcjulOXPQhe0xaFNBgbA/viewform?embedded=true" width="100%" height="1500">Loading…</iframe>
     </div>
 
-    <div class="line-c"></div>
-
-    <h2 style="color: #263F28; letter-spacing: 0.8px; font-weight: 700; margin-bottom: 2rem;">Encuéntranos en nuestras redes sociales</h2>
+    <h2 class="text-lg font-semibold sm:text-3xl text-[#263F28] text-center mb-4">Encuéntranos en nuestras redes sociales</h2>
 
     <div class="flex flex-row justify-evenly min-[320px]:max-sm:flex-col items-center">
         <div class="layout-card m-4" @click="whatsapp">

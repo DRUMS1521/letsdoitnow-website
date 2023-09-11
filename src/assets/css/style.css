@@ -8,10 +8,22 @@ body {
 }
 
 .bg-image-2 {
-	background-image: url("../../assets/background-1.svg");
-	background-repeat: no-repeat;
-	background-size: cover;
-  }
+  background-image: url("../../assets/background-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-image-3 {
+  background-image: url("../../assets/background-3.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-image-4 {
+  background-image: url("../../assets/background-4.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*ANIMACIONES*/
 @keyframes fadeLeft {
   0% {
@@ -71,4 +83,3 @@ body {
 .jumping-element {
   animation: jump 3s ease-in-out infinite;
 }
-
