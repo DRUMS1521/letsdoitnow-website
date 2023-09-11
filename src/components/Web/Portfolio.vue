@@ -44,8 +44,8 @@
 
 <template>
 	<div class="wrapper-port pt-16">
-		<h1 class="subtitle"><span class="rectangle">{{ language.portfolio }}</span></h1>
-		<p>{{ language.text001 }}<br>{{ language.text002 }}</p>
+		<h1 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4 animation-fade-in"><span style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{ language.portfolio }}</span></h1>
+		<p class="text-center">{{ language.text001 }}<br>{{ language.text002 }}</p>
 
 		<div v-for="(article, i) in documentos.results" :key="i">
 			<div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
