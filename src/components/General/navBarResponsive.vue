@@ -98,7 +98,7 @@ const isActive = (route: string) => {
                     </a>
 
                     <div class="hidden sm:flex">
-                        <a class="rounded-md bg-none px-5 py-2.5 text-m font-bold text-white border border-[#79DB92] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300" href="/">
+                        <a class="rounded-md bg-none px-5 py-2.5 text-m font-bold text-white border border-[#79DB92] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300" href="https://chatbot.letsdoitnow.us/doitbot/chat">
                             {{ language.menu.doit }}
                         </a>
                     </div>

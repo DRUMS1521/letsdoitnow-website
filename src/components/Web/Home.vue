@@ -35,9 +35,7 @@ onBeforeMount(() => {
 	<div class=" px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 animate-fade-right opacity-0 bg-image">
 		<div class="lg:py-24">
 			<h1 class="text-4xl font-bold sm:text-5xl text-[#263F28]">{{ language?.title01 }}<br><span class=""
-					style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{
-						language?.title02 }}</span><br>{{
-		language?.title03 }}</h1>
+					style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{ language?.title02 }}</span><br>{{ language?.title03 }}</h1>
 			<p class="mt-4 text-gray-600 text-lg">{{ language?.text001 }}</p>
 			<div class="mt-4 flex flex-row items-center gap-7">
 				<a>
