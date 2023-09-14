@@ -128,7 +128,7 @@
 	};
 
 	onMounted(async () => {
-		/* windows.location.href = 'https://chatbot.letsdoitnow.us/doitbot/chat'; */
+		windows.location.href = 'https://chatbot.letsdoitnow.us/doitbot/chat';
 		language.value = lang(localStorage.getItem("Lang") === "Es").chatbot;
 		if (localStorage.getItem('chat')) {
 			msg.value = localStorage.getItem('chat') || '';

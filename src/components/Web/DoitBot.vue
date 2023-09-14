@@ -74,7 +74,7 @@ const getExpert = async () => {
 }
 
 onMounted(async () => {
-	/* window.location.href = 'https://chatbot.letsdoitnow.us/doitbot' */
+	window.location.href = 'https://chatbot.letsdoitnow.us/doitbot'
 	language.value = lang(localStorage.getItem("Lang") === "Es").doitbot;
 
 	window.addEventListener('resize', () => {
