@@ -63,7 +63,7 @@
 					<img v-else :src="article.cover?.file?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
 				</div>
 			</div>
-			<div style="box-shadow: 1px 5px 5px; height: 1px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i"></div>
+			<div class="h-[1px]" style="box-shadow: 1px 5px 5px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i"></div>
 		</div>
 		<spiner v-if="spinner"/>
 	</div>
