@@ -94,7 +94,13 @@
 
 		<!-- Parrafos -->
 		<div v-if="block?.type == 'paragraph' && block?.paragraph?.rich_text[0]?.plain_text != ''" class="max-w-screen-md mx-auto prose lg:prose-lg">
-			<p>{{ block?.paragraph?.rich_text[0]?.plain_text }}</p>
+			<p>
+				<span v-for="text in block?.paragraph?.rich_text">
+					<a class="text-lime-600" v-if="text.href" :href="text.href">{{ text.plain_text }}</a>
+					<span v-else>{{ text.plain_text }}</span>
+				</span>
+			</p>
+			<!-- <p>{{ block?.paragraph?.rich_text[0]?.plain_text }}</p> -->
 		</div>
 		<!-- Fin Parrafos -->
 
