@@ -32,6 +32,7 @@ const language = ref<LangInter>({
 const router = useRouter();
 const showMobileMenu = ref<Boolean>(false);
 const showMenu = () => {
+	console.log("click");
 	showMobileMenu.value = !showMobileMenu.value;
 }
 
@@ -56,39 +57,46 @@ const isActive = (route: string) => {
 					</a>
 				</div>
 
-				<div class="md:block" :class="{'hident': showMobileMenu}">
-					<nav aria-label="Global">
-						<ul class="flex items-center gap-6 text-sm">
+				<div :class="showMobileMenu ? 'view' : 'noview'">
+					<!-- <div class="relative text-sm">
+						<ul class="md:absolute md:bg-white md:left-0 md:static md:bg-transparent md:flex md:items-center md:gap-6 md:relative text-sm z-10">
+						<li>
+							<a class="text-green-900 font-bold hover:text-green-600 px-6 py-4 md:py-0 md:bg-white md:rounded-b-2xl" href="/">Home</a>
+						</li>
+						</ul>
+					</div> -->
+					<nav aria-label="Global" class="md:relative">
+						<ul class="md:flex items-center md:gap-6 text-sm  absolute md:relative bg-white md:transparent left-0 md:left-auto top-16 md:top-auto md:static md:bg-transparent z-10">
 							<li>
-								<a class="text-white text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/">
 									{{ language.menu.home }}
 								</a>
 							</li>
 
 							<li>
-								<a class="text-white text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/about">
 									{{ language.menu.about }}
 								</a>
 							</li>
 
 							<li>
-								<a class="text-white text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/services">
 									{{ language.menu.services }}
 								</a>
 							</li>
 
 							<li>
-								<a class="text-white text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/portfolio">
 									{{ language.menu.portfolio }}
 								</a>
 							</li>
 
 							<li>
-								<a class="text-white text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/blog">
 									{{ language.menu.blog }}
 								</a>
@@ -125,3 +133,14 @@ const isActive = (route: string) => {
 		</div>
 	</header>
 </template>
+
+<style scoped>
+@media screen and (max-width: 768px) {
+	.view {
+		display: block;
+	}
+	.noview {
+		display: none;
+	}
+}
+</style>
