@@ -2,7 +2,7 @@
 import Footer from '../components/General/Footer.vue';
 import NavBarResponsive from "../components/General/navBarResponsive.vue";
 import SwitchLang from '../components/General/SwitchLang.vue';
-import BotSales from '../components/SalesBot/BotSales.vue';
+/* import BotSales from '../components/SalesBot/BotSales.vue'; */
 </script>
 
 <template>
@@ -11,6 +11,6 @@ import BotSales from '../components/SalesBot/BotSales.vue';
 		<NavBarResponsive />
 		<router-view />
 		<Footer />
-		<BotSales />
+		<!-- <BotSales /> -->
 	</div>
 </template>
