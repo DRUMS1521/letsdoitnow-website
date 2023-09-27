@@ -56,7 +56,6 @@ const isActive = (route: string) => {
 						<img src="../../assets/logo-header.svg" alt="">
 					</a>
 				</div>
-
 				<div :class="showMobileMenu ? 'view' : 'noview'">
 					<nav aria-label="Global" class="md:relative">
 						<ul class="p-4 pb-2 drop-shadow-xl drop-shadow-xl md:flex items-center md:gap-6 text-sm absolute md:relative bg-white md:transparent right-0 md:right-auto top-16 md:top-auto md:static md:bg-transparent z-10">
