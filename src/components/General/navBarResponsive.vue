@@ -66,36 +66,36 @@ const isActive = (route: string) => {
 						</ul>
 					</div> -->
 					<nav aria-label="Global" class="md:relative">
-						<ul class="md:flex items-center md:gap-6 text-sm  absolute md:relative bg-white md:transparent left-0 md:left-auto top-16 md:top-auto md:static md:bg-transparent z-10">
-							<li>
+						<ul class="p-4 pb-2 drop-shadow-xl drop-shadow-xl md:flex items-center md:gap-6 text-sm absolute md:relative bg-white md:transparent right-0 md:right-auto top-16 md:top-auto md:static md:bg-transparent z-10">
+							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/">
 									{{ language.menu.home }}
 								</a>
 							</li>
 
-							<li>
+							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/about">
 									{{ language.menu.about }}
 								</a>
 							</li>
 
-							<li>
+							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/services">
 									{{ language.menu.services }}
 								</a>
 							</li>
 
-							<li>
+							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/portfolio">
 									{{ language.menu.portfolio }}
 								</a>
 							</li>
 
-							<li>
+							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/blog">
 									{{ language.menu.blog }}
