@@ -51,24 +51,22 @@ onMounted(() => {
 			<div class="lg:grid lg:grid-cols-2">
 				<div class="border-b border-gray-100 py-8 lg:order-last lg:border-b-0 lg:border-s lg:py-16 lg:ps-16">
 					<div class="block text-teal-600 lg:hidden">
-						<img src="../../assets/LOGO.svg" alt="" class="w-24">
+						<img src="../../assets/LOGO.svg" alt="" class="w-24 mx-auto md:mx-0">
 					</div>
 
 					<div class="mt-8 space-y-4 lg:mt-0">
 						<span class="hidden h-1 w-10 rounded bg-[#9cce7c] lg:block"></span>
 
-						<div>
+						<div class="text-center md:text-left">
 							<h2 class="text-2xl font-medium text-[#397a3e]">{{ language.newsletter }}</h2>
 						</div>
 
 						<form class="mt-6 w-full">
-							<div
-								class="rounded-md border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
-								<input type="text" :placeholder="language.email" v-model="emailToSend" class="w-full border-none sm:text-sm" />
+							<div class="rounded-md border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
+								<input type="text" :placeholder="language.email" v-model="emailToSend" class="w-full sm:text-sm mb-8 md:mb-0 outline-none border p-4 py-2" />
 
 								<button value="" @click="sendEmail()"
-									class="mt-1 w-full rounded bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#333333] transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">
-									OK
+									class="mt-1 w-full rounded bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-6 py-3 text-sm font-bold uppercase tracking-wide text-[#333333] transition-none hover:bg-teal-600 sm:mt-0 sm:w-auto sm:shrink-0">OK
 								</button>
 							</div>
 						</form>
@@ -80,7 +78,7 @@ onMounted(() => {
 						<img src="../../assets/LOGO.svg" alt="" class="w-24">
 					</div>
 
-					<div class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+					<div class="mt-8 grid gap-8 grid-cols-3">
 						<div>
 							<p class="font-medium text-gray-900">{{ language.inforrmation }}</p>
 
@@ -142,7 +140,7 @@ onMounted(() => {
 						</div>
 					</div>
 
-					<div class="mt-8 border-t border-gray-100 pt-8">
+					<div class="md:mt-8 border-t border-gray-100 md:pt-8">
 						<p class="mt-8 text-xs text-gray-500">
 							{{ language.allRights }}
 						</p>
