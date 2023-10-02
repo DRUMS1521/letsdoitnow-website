@@ -25,21 +25,21 @@ const chat = (): void => {
 
 <template>
 	<div class="bg-image-3 md:h-[600px] flex flex-col animate-fade-in">
-		<div class="mx-auto max-w-[950px] flex flex-col gap-20">
-			<div class="flex flex-col text-left text-white w-[400px] ml-20 mt-[15%]">
+		<div class="mx-auto px-4 flex flex-col gap-20">
+			<div class="flex flex-col text-left text-white md:w-[400px] md:ml-20 mt-[15%]">
 				<h2 class="text-2xl font-bold text-white">{{ language.title001 }}</h2>
 				<p class="font-medium pt-2">{{ language.text002 }}</p>
 			</div>
-			<div class="flex flex-col lg:flex-row justify-around items-center gap-3">
-				<div class="flex flex-col justify-center  w-[300px] h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
+			<div class="flex flex-col lg:flex-row justify-around items-center md:gap-3">
+				<div class="flex flex-col justify-center mb-4 md:mb-0 w-[300px] md:h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
 					<h1 class="font-bold text-xl text-[#263F28]">{{ language.text003 }}</h1>
 					<p>{{ language.text004 }}</p>
 				</div>
-				<div class="flex flex-col justify-center  w-[300px] h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
+				<div class="flex flex-col justify-center mb-4 md:mb-0 w-[300px] md:h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
 					<h1 class="font-bold text-xl text-[#263F28]">{{ language.text005 }}</h1>
 					<p>{{ language.text006 }}</p>
 				</div>
-				<div class="flex flex-col justify-center  w-[300px] h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
+				<div class="flex flex-col justify-center mb-4 md:mb-0 w-[300px] md:h-[200px] p-8 rounded-lg bg-white shadow-md transition hover:border-[#9CCE7C] hover:scale-105">
 					<h1 class="font-bold text-xl text-[#263F28]">{{ language.text007 }}</h1>
 					<p>{{ language.text008 }}</p>
 				</div>
@@ -49,29 +49,29 @@ const chat = (): void => {
 				{{ language.text016 }}
 			</button>
 			</a>
-			<div class="ml-20">
-				<div class="my-8 w-[548px] h-[2px] bg-gray-600 sm:w-auto"></div>
-				<p style="width: auto;">{{ language.text009 }}</p>
+			<div class="md:ml-20">
+				<div class="my-8 md:w-[548px] h-[2px] bg-gray-600 sm:w-auto"></div>
+				<p style="width: auto;" class="text-white mb-8">{{ language.text009 }}</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="mt-[30%] mb-[10%] flex items-center justify-center mx-auto bg-image-4">
-		<div class="h-[30rem] grid grid-cols-3 justify-items-center w-auto">
-			<div class="flex items-start">
-				<div class="flex flex-col justify-center w-[400px] h-[230px] p-8 bg-[#dff1dc]">
+		<div class="md:h-[30rem] md:grid md:grid-cols-3 justify-items-center w-auto px-4">
+			<div class="flex items-start mb-4 md:mb-0">
+				<div class="flex flex-col justify-center md:w-[400px] h-[230px] p-8 bg-[#dff1dc]">
 					<h2 class="font-bold text-xl text-[#333333]">{{ language.text010 }}</h2>
 					<p>{{ language.text011 }}</p>
 				</div>
 			</div>
-			<div class="flex items-center">
-				<div class="flex flex-col justify-center w-[400px] h-[230px] p-8 bg-[#c4e5bf]">
+			<div class="flex items-center mb-4 md:mb-0">
+				<div class="flex flex-col justify-center md:w-[400px] h-[230px] p-8 bg-[#c4e5bf]">
 					<h2 class="font-bold text-xl text-[#333333]">{{ language.text012 }}</h2>
 					<p>{{ language.text013 }}</p>
 				</div>
 			</div>
-			<div class="flex items-end">
-				<div class="flex flex-col justify-center w-[400px] h-[230px] p-8 bg-[#a4d79c]">
+			<div class="flex items-end mb-4 md:mb-0">
+				<div class="flex flex-col justify-center md:w-[400px] h-[230px] p-8 bg-[#a4d79c]">
 					<h2 class="font-bold text-xl text-[#333333]">{{ language.text014 }}</h2>
 					<p>{{ language.text015 }}</p>
 				</div>
