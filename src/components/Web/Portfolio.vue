@@ -10,6 +10,7 @@
 
 	const spinner = ref<Boolean>(true);
 	const documentos = ref<any>([]);
+	const langSelect = ref(localStorage.getItem("Lang"));
 
 	const language = ref<any>({
 		langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", 
@@ -45,10 +46,10 @@
 <template>
 	<div class="wrapper-port pt-16">
 		<h1 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4 animation-fade-in"><span style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{ language.portfolio }}</span></h1>
-		<p class="text-center">{{ language.text001 }}<br>{{ language.text002 }}</p>
+		<p class="text-center mb-8">{{ language.text001 }}<br>{{ language.text002 }}</p>
 
 		<div v-for="(article, i) in documentos.results" :key="i" class="max-w-screen-xl mx-auto">
-			<div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
+			<div v-if="article.properties?.Lang?.select?.name == langSelect" class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
 				<div class="text-center" v-if="(i + 1) % 2 == 0" @click="router.push(`/portfolio/${article.id}`)">
 					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
 					<img v-else :src="article.cover?.file?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
@@ -56,14 +57,14 @@
 				<div class="my-12 mx-4 cursor-pointer" @click="router.push(`/portfolio/${article.id}`)">
 					<h2 class="subtitle">{{ article.properties?.Titulo?.title[0]?.plain_text }}</h2>
 					<p class="mb-1">{{ article.properties?.Descripcion?.rich_text[0]?.plain_text }}</p>
-					<a class="btn-underline" :href="'/portfolio/' + article.id">Lee la entrada aquí</a>
+					<a class="btn-underline text-lime-700" :href="'/portfolio/' + article.id">{{ language.text003 }}</a>
 				</div>
 				<div class="text-center" v-if="(i + 1) % 2 != 0" @click="router.push(`/portfolio/${article.id}`)">
 					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
 					<img v-else :src="article.cover?.file?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
 				</div>
 			</div>
-			<div class="h-[1px]" style="box-shadow: 1px 5px 5px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i"></div>
+			<div class="h-[1px]" style="box-shadow: 1px 5px 5px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i && article.properties?.Lang?.select?.name == langSelect"></div>
 		</div>
 		<spiner v-if="spinner"/>
 	</div>
