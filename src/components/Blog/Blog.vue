@@ -1,12 +1,9 @@
 <script setup lang="ts">
 	import { ref, onMounted } from 'vue';
 	import axios from 'axios';
-	import CardBlogCategory from '../cards/cardBlogCategory.vue';
-	import CardBlogResume from '../cards/cardBlogResume.vue';
 	import { showToast, POSITION } from '../../stores/Toast';
 	import spiner from '../General/SpinerComponent.vue';
 	import router from '@/router';
-
 
 	const spinner = ref<Boolean>(true);
 	const documentos = ref<any>([]);

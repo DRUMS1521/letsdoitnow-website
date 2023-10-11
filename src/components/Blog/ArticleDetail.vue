@@ -4,9 +4,11 @@
 	import { useRoute } from 'vue-router';
 	import { showToast, POSITION } from '../../stores/Toast';
 	import spiner from '../General/SpinerComponent.vue';
+import router from '@/router';
 
 	const route = useRoute();
 	const routeParam = ref<string>('');
+	const langSelect = ref(localStorage.getItem("Lang"));
 
     const spinner = ref<Boolean>(true);
 	const idPage = ref<string | undefined>(undefined);
@@ -61,6 +63,14 @@
 		}
 		await getPage();
         await getArticles();
+
+		console.log(langSelect.value, page.value.properties.Lang.select.name)
+		if (langSelect.value != page.value.properties.Lang.select.name) {
+			idPage.value = page.value.properties.changeLang.url;
+			await getPage();
+			await getArticles();
+			router.replace(`${route.matched[1].path}/${page.value.properties.changeLang.url}`)
+		}
     });
 </script>
 
