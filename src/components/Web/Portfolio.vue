@@ -10,6 +10,7 @@
 
 	const spinner = ref<Boolean>(true);
 	const documentos = ref<any>([]);
+	const documentView = ref<any>([]);
 	const langSelect = ref(localStorage.getItem("Lang"));
 
 	const language = ref<any>({
@@ -40,6 +41,9 @@
 		language.value = lang(localStorage.getItem("Lang") === "Es").portfolio
 		seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
 		await getAllArticles();
+		
+		documentView.value = JSON.stringify(documentos.value.results.filter((item: any) => item.properties.Lang?.select?.name == langSelect.value));
+		documentView.value = JSON.parse(documentView.value);
 	})
 </script>
 
@@ -48,7 +52,7 @@
 		<h1 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4 animation-fade-in"><span style="background: linear-gradient(180deg, rgba(121, 219, 146, 0.00) 57.28%, #79DB92 57.29%);">{{ language.portfolio }}</span></h1>
 		<p class="text-center mb-8">{{ language.text001 }}<br>{{ language.text002 }}</p>
 
-		<div v-for="(article, i) in documentos.results" :key="i" class="max-w-screen-xl mx-auto">
+		<div v-for="(article, i) in documentView" :key="i" class="max-w-screen-xl mx-auto">
 			<div v-if="article.properties?.Lang?.select?.name == langSelect" class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
 				<div class="text-center" v-if="(i + 1) % 2 == 0" @click="router.push(`/portfolio/${article.id}`)">
 					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">

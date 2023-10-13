@@ -64,20 +64,28 @@ import router from '@/router';
 		await getPage();
         await getArticles();
 
-		console.log(langSelect.value, page.value.properties.Lang.select.name)
 		if (langSelect.value != page.value.properties.Lang.select.name) {
-			idPage.value = page.value.properties.changeLang.url;
-			await getPage();
-			await getArticles();
-			router.replace(`${route.matched[1].path}/${page.value.properties.changeLang.url}`)
+			if (page.value.properties.changeLang.url) {
+				idPage.value = page.value.properties.changeLang.url;
+			} else if (page.value.properties.changeLang.rich_text[0].plain_text) {
+				idPage.value = page.value.properties.changeLang.rich_text[0].plain_text;
+			}
+			if (idPage.value) {
+				await getPage();
+				await getArticles();
+				router.replace(`${route.matched[1].path}/${idPage.value}`)
+			}
 		}
     });
 </script>
 
 <template>
 	<!-- Titulo del articulo -->
-	<div :style="`background-image: url(${page?.cover?.external?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-900 grayscale" v-if="page?.properties?.Titulo?.title[0].plain_text">
-		<h1 class="text-white text-4xl font-bold drop-shadow-lg max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
+	<div v-if="page?.cover?.external?.url && page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.external?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-600 grayscale bg-blend-overlay">
+		<h1 class="text-white text-4xl font-bold drop-shadow-lg shadow-black max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
+	</div>
+	<div v-if="page?.cover?.file && page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.file?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-600 grayscale bg-blend-overlay">
+		<h1 class="text-white text-4xl font-bold drop-shadow-lg shadow-black max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
 	</div>
 	<!-- Fin Titulo del articulo -->
 	
