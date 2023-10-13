@@ -52,6 +52,6 @@
 		</div>
 		<div style="box-shadow: 1px 5px 5px; height: 1px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i && article.properties?.Lang?.select?.name == langSelect"></div>
 	</div>
-	<spiner v-if="spinner"/>
+	<spiner v-if="spinner" />
 
 </template>
