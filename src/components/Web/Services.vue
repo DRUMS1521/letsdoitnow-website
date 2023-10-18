@@ -65,8 +65,7 @@ const freeConsulation = (): void => {
 			<button class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300" @click="freeConsulation">
 				{{ language.text012 }}
 			</button>
-			</a>
+		</a>
 
-</div></template>
-
- 
+	</div>
+</template>
