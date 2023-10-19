@@ -29,7 +29,7 @@ const message = ref('');
 
 // Función para enviar el formulario
 const enviarFormulario = async () => {
-    const googleFormsURL = 'http://localhost:3000/api/googleForm';
+    const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
 
   // Crea un objeto con los datos del formulario
     const formData = {
