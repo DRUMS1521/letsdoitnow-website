@@ -28,7 +28,8 @@ const investment = ref('');
 const message = ref('');
 
 // Función para enviar el formulario
-const enviarFormulario = async () => {
+const enviarFormulario = async (e: any) => {
+    e.preventDefault();
     const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
 
   // Crea un objeto con los datos del formulario
@@ -96,7 +97,7 @@ const linkedin = (): void => {
     </div> -->
 
     <div class="w-[600px] mx-auto">
-        <form @submit.prevent="enviarFormulario" class="mt-8 mb-16">
+        <form @submit="enviarFormulario"  class="mt-8 mb-16">
             <label for="name">Nombre completo</label>
             <input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="name" id="name" placeholder="Name" v-model="name">
 
