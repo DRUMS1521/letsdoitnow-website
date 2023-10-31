@@ -4,7 +4,7 @@
 	import { useRoute } from 'vue-router';
 	import { showToast, POSITION } from '../../stores/Toast';
 	import spiner from '../General/SpinerComponent.vue';
-import router from '@/router';
+	import router from '@/router';
 
 	const route = useRoute();
 	const routeParam = ref<string>('');
@@ -28,7 +28,6 @@ import router from '@/router';
                 showToast(`Error al cargar los datos`, 'error', 3000, POSITION.BOTTOM_CENTER)
             }
         } catch (err: any) {
-            console.log(err)
             showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
         }
         spinner.value = false;
@@ -44,7 +43,6 @@ import router from '@/router';
                 showToast(`Error al cargar los datos`, 'error', 3000, POSITION.BOTTOM_CENTER)
             }
         } catch (err: any) {
-            console.log(err)
             showToast(`Error al cargar los datos: ${err}`, 'error', 3000, POSITION.BOTTOM_CENTER)
         }
         spinner.value = false;
@@ -81,11 +79,11 @@ import router from '@/router';
 
 <template>
 	<!-- Titulo del articulo -->
-	<div v-if="page?.cover?.external?.url && page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.external?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-600 grayscale bg-blend-overlay">
-		<h1 class="text-white text-4xl font-bold drop-shadow-lg shadow-black max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
+	<div v-if="page?.cover?.external && page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.external?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-900 grayscale">
+		<h1 class="text-white text-4xl font-bold drop-shadow-lg max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
 	</div>
-	<div v-if="page?.cover?.file && page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.file?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-600 grayscale bg-blend-overlay">
-		<h1 class="text-white text-4xl font-bold drop-shadow-lg shadow-black max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
+	<div v-else-if="page?.properties?.Titulo?.title[0].plain_text" :style="`background-image: url(${page?.cover?.file?.url})`" class="h-64 mt-8 p-8 flex justify-center items-center bg-no-repeat bg-cover bg-center bg-zinc-900 grayscale">
+		<h1 class="text-white text-4xl font-bold drop-shadow-lg max-w-2xl">{{ page?.properties?.Titulo?.title[0].plain_text }}</h1>
 	</div>
 	<!-- Fin Titulo del articulo -->
 	

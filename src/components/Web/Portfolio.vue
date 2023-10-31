@@ -55,8 +55,8 @@
 		<div v-for="(article, i) in documentView" :key="i" class="max-w-screen-xl mx-auto">
 			<div v-if="article.properties?.Lang?.select?.name == langSelect" class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
 				<div class="text-center" v-if="(i + 1) % 2 == 0" @click="router.push(`/portfolio/${article.id}`)">
-					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
-					<img v-else :src="article.cover?.file?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
+					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer max-w-full max-h-96 mr-2" alt="">
+					<img v-else :src="article.cover?.file?.url" class="cursor-pointer max-w-full max-h-96 mr-2" alt="">
 				</div>
 				<div class="my-12 mx-4 cursor-pointer" @click="router.push(`/portfolio/${article.id}`)">
 					<h2 class="subtitle">{{ article.properties?.Titulo?.title[0]?.plain_text }}</h2>
@@ -64,8 +64,8 @@
 					<a class="btn-underline text-lime-700" :href="'/portfolio/' + article.id">{{ language.text003 }}</a>
 				</div>
 				<div class="text-center" v-if="(i + 1) % 2 != 0" @click="router.push(`/portfolio/${article.id}`)">
-					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
-					<img v-else :src="article.cover?.file?.url" class="cursor-pointer" alt="" style="max-width: 100%; max-height: 350px;">
+					<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer max-w-full max-h-96 ml-2" alt="">
+					<img v-else :src="article.cover?.file?.url" class="cursor-pointer max-w-full max-h-96 ml-2" alt="">
 				</div>
 			</div>
 			<div class="h-[1px]" style="box-shadow: 1px 5px 5px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i && article.properties?.Lang?.select?.name == langSelect"></div>

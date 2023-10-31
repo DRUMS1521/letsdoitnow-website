@@ -73,6 +73,11 @@ const router = createRouter({
 					path: "/politica-de-privacidad",
 					component: () => import('@/components/General/TermsAndConditions.vue')
 
+				},
+				{
+					path: "/pricing",
+					component: () => import('@/components/Web/Pricing.vue')
+
 				}
 			]
 		}

@@ -24,6 +24,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.bg-image-5 {
+  background-image: url("../../assets/bg-services.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /*ANIMACIONES*/
 @keyframes fadeLeft {
   0% {
