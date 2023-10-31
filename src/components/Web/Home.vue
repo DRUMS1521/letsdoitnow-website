@@ -86,7 +86,7 @@ onBeforeMount(() => {
 
 	<div class="px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text038 }}</h2>
-		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32">
+		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32 overflow-auto">
 			<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px]">
 			<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px]">
 			<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px]">
@@ -300,19 +300,19 @@ onBeforeMount(() => {
 		<div class="flex flex-col">
 			<a>
 				<button @click="viewProjects = 1" 
-					class="w-[194px] h-[150px] rounded-t-md border-2 border-l-[20px] border-l-[#79DB92]  border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300">
+					class="w-[194px] h-[150px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 1}">
 					<img src="../../assets/brandLogos/planium.png" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 2"
-					class="w-[194px] h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300">
+					class="w-[194px] h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 2}">
 					<img src="../../assets/brandLogos/ajpenny.png" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 3"
-					class="w-[194px] h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300">
+					class="w-[194px] h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 3}">
 					<img src="../../assets/brandLogos/aliadago.png" alt="">
 				</button>
 			</a>
@@ -398,7 +398,7 @@ onBeforeMount(() => {
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl my-20">
+	<div class="mx-auto max-w-screen-xl my-20 px-8">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-16">{{ language.text064 }}</h2>
 		<div>
 			<div class="sm:hidden">
@@ -417,26 +417,26 @@ onBeforeMount(() => {
 				<div class="border-b border-gray-200">
 					<nav class="-mb-px flex gap-6" aria-label="Tabs">
 						<a @click="viewAreas = 1"
-							class="shrink-0 border-b-2 border-[#9CCE7C] px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer">
+							class="shrink-0 border-b-2 px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer" :class="{'border-[#9CCE7C]': viewAreas == 1, 'border-transparent': viewAreas != 1}">
 							{{ language.text065 }}
 						</a>
 
 						<a @click="viewAreas = 2"
-							class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer">
+							class="shrink-0 border-b-2 px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer" :class="{'border-[#9CCE7C]': viewAreas == 2, 'border-transparent': viewAreas != 2}">
 							{{ language.text066 }}
 						</a>
 
 						<a @click="viewAreas = 3"
-							class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer">
+							class="shrink-0 border-b-2 px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer" :class="{'border-[#9CCE7C]': viewAreas == 3, 'border-transparent': viewAreas != 3}">
 							{{ language.text067 }}
 						</a>
 
 						<a @click="viewAreas = 4"
-							class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer">
+							class="shrink-0 border-b-2 px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer" :class="{'border-[#9CCE7C]': viewAreas == 4, 'border-transparent': viewAreas != 4}">
 							{{ language.text068 }}
 						</a>
 						<a @click="viewAreas = 5"
-							class="shrink-0 border-b-2 border-transparent px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer">
+							class="shrink-0 border-b-2 px-1 pb-4 text-xl font-bold text-[#333333] hover:border-gray-300 hover:text-gray-700 cursor-pointer" :class="{'border-[#9CCE7C]': viewAreas == 5, 'border-transparent': viewAreas != 5}">
 							{{ language.text069 }}
 						</a>
 					</nav>
