@@ -14,6 +14,7 @@ interface LangInter {
 		blog: string;
 		contact: string;
 		doit: string;
+		pricing: string;
 	}
 }
 
@@ -25,7 +26,8 @@ const language = ref<LangInter>({
 		"portfolio": "",
 		"blog": "",
 		"contact": "",
-		"doit": ""
+		"doit": "",
+		"pricing": ""
 	}
 });
 
@@ -58,7 +60,8 @@ const isActive = (route: string) => {
 				</div>
 				<div :class="showMobileMenu ? 'view' : 'noview'">
 					<nav aria-label="Global" class="md:relative">
-						<ul class="p-4 pb-2 drop-shadow-xl drop-shadow-xl md:flex items-center md:gap-6 text-sm absolute md:relative bg-white md:transparent right-0 md:right-auto top-16 md:top-auto md:static md:bg-transparent z-10">
+						<ul
+							class="p-4 pb-2 drop-shadow-xl drop-shadow-xl md:flex items-center md:gap-6 text-sm absolute md:relative bg-white md:transparent right-0 md:right-auto top-16 md:top-auto md:static md:bg-transparent z-10">
 							<li class="mb-4 md:mb-0">
 								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
 									href="/">
@@ -93,6 +96,13 @@ const isActive = (route: string) => {
 									{{ language.menu.blog }}
 								</a>
 							</li>
+
+							<li class="mb-4 md:mb-0">
+								<a class="md:text-white text-black text-lg font-bold transition-all hover:bg-white hover:text-green-900 hover:pb-4 hover:pt-6 hover:px-6 hover:rounded-b-2xl"
+									href="/pricing">
+									{{ language.menu.pricing }}
+								</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -113,7 +123,8 @@ const isActive = (route: string) => {
 					</div>
 
 					<div class="block md:hidden">
-						<button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75" @click="showMenu()">
+						<button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+							@click="showMenu()">
 							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
 								stroke="currentColor" stroke-width="2">
 								<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -131,8 +142,8 @@ const isActive = (route: string) => {
 	.view {
 		display: block;
 	}
+
 	.noview {
 		display: none;
 	}
-}
-</style>
+}</style>
