@@ -42,15 +42,18 @@ const freeConsulation = (): void => {
 
 	<div class="px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text004 }}</h2>
-		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32">
-			<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px]">
-			<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px]">
-			<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px]">
-			<img src="../../assets/brandLogos/aliadago.png" alt="" class="w-[150px] h-[91px]">
-			<img src="../../assets/brandLogos/ajpenny.png" alt="" class="w-[174px] h-[130px]">
-			<img src="../../assets/brandLogos/managedproperty.png" alt="" class="w-[100px] h-[100px]">
-			<img src="../../assets/brandLogos/camelonair.png" alt="" class="w-[150px] h-[73px]">
-		</div>
+<!-- 		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32 overflow-auto"> -->	
+		<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden overflow-hidden">
+			<div class="carrusel flex items-center gap-8">
+				<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px] flex-shrink-0 ">
+				<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/aliadago.png" alt="" class="w-[150px] h-[91px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/ajpenny.png" alt="" class="w-[174px] h-[130px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/managedproperty.png" alt="" class="w-[100px] h-[100px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/camelonair.png" alt="" class="w-[150px] h-[73px] flex-shrink-0 ml-4">
+			</div>
+		</div>		
 	</div>
 
 	<div class="bg-[#dff1dc] px-32 py-20">

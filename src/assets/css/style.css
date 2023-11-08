@@ -30,6 +30,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@keyframes scroll {
+	100% {
+		transform: translateX(-66.66%);
+	}
+}
+
+.carrusel{
+	animation: scroll 15s linear infinite;
+}
+
 /*ANIMACIONES*/
 @keyframes fadeLeft {
   0% {

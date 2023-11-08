@@ -80,8 +80,8 @@ onBeforeMount(() => {
 	<div class="px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text038 }}</h2>
 <!-- 		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32 overflow-auto"> -->	
-		<div class="max-w-[800px] mx-auto overflow-hidden">
-			<div class="carrusel flex items-center">
+		<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden overflow-hidden">
+			<div class="carrusel flex items-center gap-8">
 				<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px] flex-shrink-0 ">
 				<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px] flex-shrink-0 ml-4">
 				<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px] flex-shrink-0 ml-4">
@@ -208,6 +208,61 @@ onBeforeMount(() => {
 				</span>
 			</a>
 		</div>
+	</div>
+
+	<div class=" mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden">
+		<div class="carrusel flex flex-row gap-10">
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/jesus.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Jesus Bastidas</h1>
+				<p class="font-medium text-xl text-[#475569]">Frontend Developer</p>
+				<p class="font-medium">#javascript #vuejs</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/edinson.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Edinson Acevedo</h1>
+				<p class="font-medium text-xl text-[#475569]">Fullstack Developer</p>
+				<p class="font-medium">#javascript #vuejs #nodejs #backend</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/alejandra.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Alejandra Martinez</h1>
+				<p class="font-medium text-xl text-[#475569]">Product Owner</p>
+				<p class="font-medium">#scrummaster</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/jahaziel.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Jahaziel Hernandez</h1>
+				<p class="font-medium text-xl text-[#475569]">Backend Developer</p>
+				<p class="font-medium">#javascript #python</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/daniela.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Daniela Gomez</h1>
+				<p class="font-medium text-xl text-[#475569]">UX/UI Designer</p>
+				<p class="font-medium">#uxresearch #figma</p>
+			</div>
+		</div>
+	</div>
 	</div>
 
 	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 ">
@@ -778,14 +833,5 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-@keyframes scroll {
-	100% {
-		transform: translateX(-66.66%);
-	}
-}
-
-.carrusel{
-	animation: scroll 15s linear infinite;
-}
 
 </style>

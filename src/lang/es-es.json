@@ -99,11 +99,11 @@
 		"text067": "Logística",
 		"text068": "Manufactura",
 		"text069": "Startups",
-		"text070": "En LetsDoItNow, entendemos los retos y necesidades de la industria de la construcción. Hemos innovado soluciones que van desde la planificación de proyectos hasta la gestión operativa en el sitio de trabajo, garantizando una ejecución más eficiente y proyectos entregados a tiempo.",
-		"text071": "La industria automotriz es dinámica y en constante evolución. En LetsDoItNow, hemos revolucionado procesos, desde la cadena de suministro hasta la experiencia del cliente, llevando la innovación al corazón de la producción y venta de vehículos.",
-		"text072": "La eficiencia es el alma de la logística. En LetsDoItNow, hemos diseñado sistemas que agilizan flujos de trabajo, reducen costes y maximizan el rendimiento, permitiendo a las empresas operar de manera más ágil y rentable.",
-		"text073": "En LetsDoItNow, sabemos que la manufactura moderna exige precisión y velocidad. Nuestras soluciones integran tecnologías de vanguardia que aseguran calidad, optimizando la producción y asegurando que cada producto cumpla con los más altos estándares.",
-		"text074": " Las startups requieren soluciones ágiles y adaptativas. En LetsDoItNow, somos especialistas en proporcionar herramientas a medida que impulsan la innovación y el crecimiento, llevando a las startups desde la idea hasta la realización.",
+		"text070": "Construye el futuro con LetsDoItNow. Nuestra experiencia en gestión de proyectos sienta las bases para la eficiencia y la entrega puntual. 🛠️ Construye con excelencia.s a tiempo.",
+		"text071": "Cambia de marcha y acelera con LetsDoItNow. Impulsamos la innovación desde la producción hasta el asfalto, potenciando tu negocio automotriz. 🌟 Avanza con nuestras soluciones transformadoras.",
+		"text072": "Redefine la eficiencia en logística con LetsDoItNow. Nuestros sistemas a medida reducen costos y potencian el rendimiento. 🚀 Entrega el éxito con rapidez y precisión.",
+		"text073": "Eleve su manufactura con LetsDoItNow. Integramos tecnología de primera para una precisión y ritmo inigualables, asegurando una producción de máxima calidad. 🏭 Fabrique con confianza.",
+		"text074": "Lanza tu startup a nuevas alturas con LetsDoItNow. Nuestras soluciones ágiles impulsan el crecimiento y la innovación, convirtiendo visiones en victorias. 🚀 Despega con nosotros.",
 		"text075": "Mira nuestras soluciones para gestión de proyectos",
 		"text076": "Mira nuestras soluciones para automotriz",
 		"text077": "Mira nuestras soluciones para logística",
@@ -139,7 +139,14 @@
 		"text017": "Conoce a nuestro equipo",
 		"text018": "nuestro equipo",
 		"text019": "Trabajo de Cultura Remota",
-		"text020": "Nuestros valores son el corazón de nuestro negocio: impulsamos el aprendizaje constante y el crecimiento, valoramos la excelencia combinada con el respeto y la confianza, y promovemos un trabajo en equipo sólido e innovador. Nuestra mentalidad competitiva, similar a la de un atleta, nos lleva a dar lo mejor en todo momento. Y sí, a veces cometemos errores, pero los vemos como una oportunidad para aprender y mejorar."
+		"text020": "Nuestros valores son el corazón de nuestro negocio: impulsamos el aprendizaje constante y el crecimiento, valoramos la excelencia combinada con el respeto y la confianza, y promovemos un trabajo en equipo sólido e innovador. Nuestra mentalidad competitiva, similar a la de un atleta, nos lleva a dar lo mejor en todo momento. Y sí, a veces cometemos errores, pero los vemos como una oportunidad para aprender y mejorar.",
+		"text021": "Co-Founders",
+		"text022": "Los cofundadores de LetsDoItNow representan una combinación armoniosa de espíritu emprendedor e intuición tecnológica. Con antecedentes diversos en finanzas, desarrollo tecnológico, gestión y recursos humanos, constituyen un equipo interdisciplinario y bien equilibrado. Juntos, fusionan habilidades y experiencias distintas, estableciendo un camino visionario para la empresa.",
+		"text023": "Marketing & Ventas",
+		"text024": "El equipo de Marketing y Ventas de LetsDoItNow se define por su enfoque innovador y su dedicación inquebrantable. En un mercado en rápida evolución, se mantienen a la vanguardia, estableciendo conexiones genuinas y transmitiendo mensajes claros e impactantes.",
+		"text025": "Tech Team",
+		"text026": "El equipo técnico de LetsDoItNow se destaca como un referente de innovación y experiencia. Con antecedentes que abarcan diversos sectores y experiencia tanto en startups como en gigantes tecnológicos consolidados, aportan una rica amalgama de habilidades. Desde meticulosos gestores de proyectos hasta visionarios diseñadores UX/UI y desarrolladores diestros, este equipo constantemente expande los límites de lo digitalmente posible."
+
 	},
 	"services": {
 		"langweb": "es",
