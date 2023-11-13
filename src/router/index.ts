@@ -83,6 +83,11 @@ const router = createRouter({
 					path: "/about/team",
 					component: () => import('@/components/Web/AboutTeam.vue')
 
+				},
+				{
+					path: "/event",
+					component: () => import('@/components/Web/Event.vue')
+
 				}
 			]
 		}
