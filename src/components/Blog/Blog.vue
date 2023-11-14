@@ -7,6 +7,8 @@
 
 	const spinner = ref<Boolean>(true);
 	const documentos = ref<any>([]);
+	const documentView = ref<any>([]);
+	const langSelect = ref(localStorage.getItem("Lang"));
 
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	/* const URL = 'http://localhost:3000/api'; */
@@ -30,12 +32,15 @@
 
 	onMounted(async () => {
 		await getAllArticles();
+
+		documentView.value = JSON.stringify(documentos.value.results.filter((item: any) => item.properties.Lang?.select?.name == langSelect.value));
+		documentView.value = JSON.parse(documentView.value);
 	});
 </script>
 
 <template>
 
-	<div v-for="(article, i) in documentos.results" :key="i">
+	<div v-for="(article, i) in documentView" :key="i">
 		<div class="grid grid-cols-1 lg:grid-cols-2 items-center justify-items-center items-center px-16 text-left mt-2">
 			<div class="text-center" v-if="(i + 1) % 2 == 0" @click="router.push(`/blog/${article.id}`)">
 				<img v-if="article?.cover?.external" :src="article.cover?.external?.url" class="cursor-pointer max-w-full max-h-96 mr-2" alt="">
@@ -53,6 +58,6 @@
 		</div>
 		<div style="box-shadow: 1px 5px 5px; height: 1px; width: 90%; margin: 2rem auto;" v-if="documentos.results.length - 1 != i"></div>
 	</div>
-	<spiner v-if="spinner"/>
+	<spiner v-if="spinner" />
 
 </template>

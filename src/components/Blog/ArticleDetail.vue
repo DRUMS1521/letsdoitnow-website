@@ -63,10 +63,16 @@
         await getArticles();
 
 		if (langSelect.value != page.value.properties.Lang.select.name) {
-			idPage.value = page.value.properties.changeLang.url;
-			await getPage();
-			await getArticles();
-			router.replace(`${route.matched[1].path}/${page.value.properties.changeLang.url}`)
+			if (page.value.properties.changeLang.url) {
+				idPage.value = page.value.properties.changeLang.url;
+			} else if (page.value.properties.changeLang.rich_text[0].plain_text) {
+				idPage.value = page.value.properties.changeLang.rich_text[0].plain_text;
+			}
+			if (idPage.value) {
+				await getPage();
+				await getArticles();
+				router.replace(`${route.matched[1].path}/${idPage.value}`)
+			}
 		}
     });
 </script>
