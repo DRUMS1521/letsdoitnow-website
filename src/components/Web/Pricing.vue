@@ -15,6 +15,12 @@ onMounted(() => {
 const jobs = (): void => {
     window.open("https://www.linkedin.com/company/letsdoitnowus/jobs/", '_blank')
 }
+const freeConsulation = (): void => {
+	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
+}
+const quote = (): void => {
+	window.open("https://7j1l5jqb43v.typeform.com/to/kSlNtr0J", '_blank');
+}
 </script>
 
 <template>
@@ -63,7 +69,7 @@ const jobs = (): void => {
             <a>
                 <button
                     class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
-                    @click="">
+                    @click="freeConsulation">
                     Contrata nuestro equipo
                 </button>
             </a>
@@ -103,7 +109,7 @@ const jobs = (): void => {
             <a>
                 <button
                     class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
-                    @click="">
+                    @click="freeConsulation">
                     Contrata nuestro equipo
                 </button>
             </a>
@@ -131,7 +137,7 @@ const jobs = (): void => {
             <a>
                 <button
                     class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
-                    @click="">
+                    @click="freeConsulation">
                     Contrata nuestro equipo
                 </button>
             </a>
@@ -159,7 +165,7 @@ const jobs = (): void => {
         <h2 class="text-2xl font-bold sm:text-3xl text-[#263F28]">¿Tienes una visión? Estamos aquí para escucharte.</h2>
         <p class="my-4 text-gray-600 text-lg">Estamos aquí para escucharte. Comparte las aspiraciones de tu proyecto y
             trabajemos juntos para hacerlas realidad.</p>
-        <a @click="$router.push('/services')">
+        <a @click="quote">
             <button
                 class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
                 Solicitar un presupuesto

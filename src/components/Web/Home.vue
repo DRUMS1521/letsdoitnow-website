@@ -20,11 +20,6 @@ const viewProjects = ref<number>(1)
 
 const viewAreas = ref<number>(1)
 
-const buttonProjects = true;
-const buttonPlanium = true;
-const buttonAliada = true;
-
-
 const quote = (): void => {
 	window.open("https://7j1l5jqb43v.typeform.com/to/kSlNtr0J", '_blank');
 }
@@ -33,9 +28,7 @@ const bot = (): void => {
 }
 const freeConsulation = (): void => {
 	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
-}
-
-
+} 
 
 onBeforeMount(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").home;
@@ -86,15 +79,18 @@ onBeforeMount(() => {
 
 	<div class="px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text038 }}</h2>
-		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32 overflow-auto">
-			<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px]">
-			<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px]">
-			<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px]">
-			<img src="../../assets/brandLogos/aliadago.png" alt="" class="w-[150px] h-[91px]">
-			<img src="../../assets/brandLogos/ajpenny.png" alt="" class="w-[174px] h-[130px]">
-			<img src="../../assets/brandLogos/managedproperty.png" alt="" class="w-[100px] h-[100px]">
-			<img src="../../assets/brandLogos/camelonair.png" alt="" class="w-[150px] h-[73px]">
-		</div>
+<!-- 		<div class="flex flex-row items-center justify-center gap-10 lg:gap-32 overflow-auto"> -->	
+		<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden overflow-hidden">
+			<div class="carrusel flex items-center gap-8">
+				<img src="../../assets/brandLogos/sidoc.png" alt="" class="w-[211px] h-[86px] flex-shrink-0 ">
+				<img src="../../assets/brandLogos/planium.png" alt="" class="w-[107px] h-[108px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/carrazo.png" alt="" class="w-[157px] h-[137px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/aliadago.png" alt="" class="w-[150px] h-[91px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/ajpenny.png" alt="" class="w-[174px] h-[130px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/managedproperty.png" alt="" class="w-[100px] h-[100px] flex-shrink-0 ml-4">
+				<img src="../../assets/brandLogos/camelonair.png" alt="" class="w-[150px] h-[73px] flex-shrink-0 ml-4">
+			</div>
+		</div>		
 	</div>
 
 	<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -118,10 +114,11 @@ onBeforeMount(() => {
 			</a>
 		</div>
 		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 justify-items-center">
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring
+			shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
-					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
+					class="absolute inset-y-0 left-0 w-[0.5px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
 
 
 				<span class="relative text-sm font-medium text-[#333333] transition-colors group-hover:text-[#333333]">
@@ -135,7 +132,7 @@ onBeforeMount(() => {
 					</button>
 				</span>
 			</a>
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
 					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
@@ -150,7 +147,7 @@ onBeforeMount(() => {
 					</button>
 				</span>
 			</a>
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
 					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
@@ -165,7 +162,7 @@ onBeforeMount(() => {
 					</button>
 				</span>
 			</a>
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
 					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
@@ -180,7 +177,7 @@ onBeforeMount(() => {
 					</button>
 				</span>
 			</a>
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden focus:outline-none focus:ring shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
 					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
@@ -195,7 +192,7 @@ onBeforeMount(() => {
 					</button>
 				</span>
 			</a>
-			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring"
+			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
 				<span
 					class="absolute inset-y-0 left-0 w-[1px] bg-[#7ADC93] transition-all group-hover:w-full group-active:bg-[#7ADC93]"></span>
@@ -213,6 +210,61 @@ onBeforeMount(() => {
 		</div>
 	</div>
 
+	<div class=" mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden">
+		<div class="carrusel flex flex-row gap-10">
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/jesus.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Jesus Bastidas</h1>
+				<p class="font-medium text-xl text-[#475569]">Frontend Developer</p>
+				<p class="font-medium">#javascript #vuejs</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/edinson.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Edinson Acevedo</h1>
+				<p class="font-medium text-xl text-[#475569]">Fullstack Developer</p>
+				<p class="font-medium">#javascript #vuejs #nodejs #backend</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/alejandra.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Alejandra Martinez</h1>
+				<p class="font-medium text-xl text-[#475569]">Product Owner</p>
+				<p class="font-medium">#scrummaster</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/jahaziel.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Jahaziel Hernandez</h1>
+				<p class="font-medium text-xl text-[#475569]">Backend Developer</p>
+				<p class="font-medium">#javascript #python</p>
+			</div>
+		</div>
+		<div class="flex flex-row items-center gap-4">
+			<div>
+			<img src="../../assets/team/daniela.png" alt="" class="w-[100px] border rounded-full">
+			</div>
+			<div class="w-[300px]">
+				<h1 class="font-semibold text-2xl text-[#263F28]">Daniela Gomez</h1>
+				<p class="font-medium text-xl text-[#475569]">UX/UI Designer</p>
+				<p class="font-medium">#uxresearch #figma</p>
+			</div>
+		</div>
+	</div>
+	</div>
+
 	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 ">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text052 }}</h2>
 		<div class="flex flex-row gap-10 items-center justify-between ml-[15%] mr-[15%]">
@@ -224,7 +276,7 @@ onBeforeMount(() => {
 	<div class="bg-[#E1FFDC] p-4 lg:p-10 sm:p-20">
 		<div class="mx-auto max-w-screen-xl grid grid-cols-1 gap-8 md:grid-cols-2">
 			<div>
-				<a class="block p-8" href="">
+				<a class="block p-8">
 					<img src="../../assets/icon-line.svg" alt="" class="jumping-element">
 
 					<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text011 }}</h2>
@@ -235,7 +287,7 @@ onBeforeMount(() => {
 				</a>
 			</div>
 			<div>
-				<a class="block p-8" href="">
+				<a class="block p-8">
 					<img src="../../assets/icon-draw.svg" alt="" class="jumping-element">
 
 					<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text013 }}</h2>
@@ -245,7 +297,7 @@ onBeforeMount(() => {
 					</p>
 				</a>
 			</div>
-			<a class="block p-8" href="">
+			<a class="block p-8">
 				<img src="../../assets/icon-people.svg" alt="" class="jumping-element">
 
 				<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text015 }}</h2>
@@ -255,7 +307,7 @@ onBeforeMount(() => {
 				</p>
 			</a>
 			<div>
-				<a class="block p-8" href="">
+				<a class="block p-8">
 					<img src="../../assets/icon-people-2.svg" alt="" class="jumping-element">
 
 					<h2 class="mt-4 text-xl font-semibold text-[#397A3E]">{{ language.text017 }}</h2>
@@ -279,7 +331,7 @@ onBeforeMount(() => {
 			<div class="text-center">
 				<p class="my-4 text-white text-lg">{{ language.text055 }}</p>
 				<a class="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer"
-					@click="$router.push('/services')">
+					@click="freeConsulation">
 					<span class="absolute -end-full transition-all group-hover:end-4">
 						<svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
 							viewBox="0 0 24 24" stroke="currentColor">
@@ -301,19 +353,19 @@ onBeforeMount(() => {
 			<a>
 				<button @click="viewProjects = 1" 
 					class="w-[194px] h-[150px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 1}">
-					<img src="../../assets/brandLogos/planium.png" alt="">
+					<img src="../../assets/brandLogos/planium.svg" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 2"
 					class="w-[194px] h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 2}">
-					<img src="../../assets/brandLogos/ajpenny.png" alt="">
+					<img src="../../assets/brandLogos/ajpenny.svg" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 3"
 					class="w-[194px] h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 3}">
-					<img src="../../assets/brandLogos/aliadago.png" alt="">
+					<img src="../../assets/brandLogos/aliadago.svg" alt="">
 				</button>
 			</a>
 		</div>
@@ -495,13 +547,63 @@ onBeforeMount(() => {
 		<p class="text-[#333333] text-xl text-center">{{ language.text022 }}</p>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 grid grid-cols-3 items-center gap-4">
 		<h2 class="mt-4 text-2xl font-bold text-[#263F28] text-center">{{ language.text029 }}</h2>
 
 		<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
+			<div class="flex justify-start gap-0.5 text-green-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
 			<div class="flex items-center gap-4">
-				<img alt="Man" src="../../assets/clients/aliaga_go.png" class="h-14 w-14 rounded-full object-cover" />
-
 				<div>
 					<p class="mt-0.5 text-lg font-semibold text-gray-900">Juan José Alzate</p>
 					<p class="mt-0.5 text-lg font-medium text-gray-900">AliadaGO</p>
@@ -512,6 +614,203 @@ onBeforeMount(() => {
 				{{ language.text030 }}
 			</p>
 		</blockquote>
+
+		<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
+			<div class="flex justify-start gap-0.5 text-green-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="grey"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+			<div class="flex items-center gap-4">
+				<div>
+					<p class="mt-0.5 text-lg font-semibold text-gray-900">Lorena Gómez</p>
+					<p class="mt-0.5 text-lg font-medium text-gray-900">CEO Manufactruring</p>
+				</div>
+			</div>
+
+			<p class="mt-4 text-gray-700">
+				Our partnership with Let's Do It Now was transformative. They didn't just revamp our digital platform; they made it a dynamic user hub that truly stands out
+			</p>
+		</blockquote>
+
+		<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
+			<div class="flex justify-start gap-0.5 text-green-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+			<div class="flex items-center gap-4">
+				<div>
+					<p class="mt-0.5 text-lg font-semibold text-gray-900">Nick Johnson</p>
+					<p class="mt-0.5 text-lg font-medium text-gray-900">CTO FinTech Innovation</p>
+				</div>
+			</div>
+
+			<p class="mt-4 text-gray-700">
+				Let's Do It Now excelled in scaling our IT needs. Their team went beyond our expectations, delivering cutting-edge solutions essential for our growth.
+			</p>
+		</blockquote>
+
+		<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
+			<div class="flex justify-start gap-0.5 text-green-500">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="grey"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+			<div class="flex items-center gap-4">
+				<div>
+					<p class="mt-0.5 text-lg font-semibold text-gray-900">Jesús Martínez</p>
+					<p class="mt-0.5 text-lg font-medium text-gray-900">PM Healthcare Management</p>
+				</div>
+			</div>
+
+			<p class="mt-4 text-gray-700">
+				The team at Let's Do It Now is synonymous with timely and quality delivery. They enhanced our mobile app, elevating our customer satisfaction to new heights.
+			</p>
+		</blockquote>
+
+		<div>
 		<p class="mt-4 text-xl font-medium text-[#263F28] text-center">{{ language.text033 }}<br>{{ language.text034 }}
 		</p>
 		<div class="flex justify-center my-8">
@@ -528,9 +827,11 @@ onBeforeMount(() => {
 				<span class="text-m font-bold transition-all group-hover:me-4">
 					{{ language?.text035 }}
 				</span>
-			</a>
+			</a></div>
 		</div>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -76,7 +76,7 @@ const chat = (): void => {
 				<p class="my-4 text-gray-600 text-base text-left">{{ language.text008 }}</p>
 				<button
 					class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
-					@click="freeConsulation">
+					@click="$router.push('/about/team')">
 					{{ language.text017 }}
 				</button>
 			</div>
