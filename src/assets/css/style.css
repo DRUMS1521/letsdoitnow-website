@@ -31,6 +31,12 @@ body {
   background-size: cover;
 }
 
+.bg-image-6 {
+  background-image: url("../../assets/background-event.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 @keyframes scroll {
 	100% {
 		transform: translateX(-66.66%);
