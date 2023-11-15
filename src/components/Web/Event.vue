@@ -91,30 +91,27 @@ const timeDisplay = timeLeft;
 </script>
 
 <template>
-	<div class="bg-image-6 py-20">
-		<div class="flex flex-col items-center gap-8 py-20">
-			<h1 class="text-white text-3xl font-medium">Taller Gratuito Presencial</h1>
+	<div class="bg-image-6 py-20 px-8">
+		<div class="flex flex-col items-center gap-8 pb-20">
+			<p class="text-white text-3xl font-medium">Taller Gratuito Presencial</p>
 			<h1 class="text-white text-5xl font-bold">Testea tu idea y saca tu MVP en 3 horas con ChatGPT</h1>
 			<img src="../../assets/eventResources/googlechatGPT.svg" alt="">
 		</div>
 		<div class="bg-white p-4 mx-auto max-w-screen-xl">
-			<h1 class="text-[#333333] font-bold text-2xl text-center">Un espacio práctico para los empresarios y
-				emprendedores</h1>
+			<p class="text-[#333333] font-bold text-2xl text-center">Un espacio práctico para los empresarios y emprendedores</p>
 		</div>
 		<div class="flex flex-col items-center gap-8 py-20">
 			<div class="max-w-2xl text-center text-green-500 mx-auto">
-				<p class="text-[3.75rem] md:text-[4.5rem] lg:text-[6rem] font-fantasy leading-[0.8] md:leading-[0.6] lg:leading-[0.4] ">
-					{{ timeDisplay }}<br><span class="text-4xl font-thin">DD - HH:MM:SS</span>
+				<p class="text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] font-sans leading-[0.6] md:leading-[0.4] lg:leading-[0.3] ">{{ timeDisplay }}<br><span class="text-[1rem] font-thin">Dias Horas Minutos Segundos</span>
 				</p>
 			</div>
-			<h1 class="text-white text-4xl font-medium text-center">Bogotá, 23 de Noviembre del 2023<br>3:00pm - 6:00pm<br>
+			<p class="text-white text-4xl font-medium text-center">Bogotá, 23 de Noviembre del 2023<br>3:00pm - 6:00pm<br>
 			<span class="text-white text-4xl font-bold">Calle 70 #8-19 Kapital House</span><br>
-			<span class="text-white text-2xl font-bold">Organiza: Let's Do It Now, Casa de Software</span></h1>
+			<span class="text-white text-2xl font-bold">Organiza: Let's Do It Now, Casa de Software</span></p>
 		</div>
-		<div class="mx-auto max-w-screen-xl flex flex-row justify-center gap-8">
-			<h1 class="text-white text-4xl font-bold">Cupos limitados</h1>
-			<a
-				class="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer">
+		<div class="mx-auto max-w-screen-xl md:flex flex-row justify-center gap-8">
+			<p class="text-white text-4xl font-bold">Cupos limitados</p>
+			<a class="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer mt-4 md:mt-0" href="#contac">
 				<span class="absolute -end-full transition-all group-hover:end-4">
 					<svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 						stroke="currentColor">
@@ -129,48 +126,35 @@ const timeDisplay = timeLeft;
 			</a>
 		</div>
 		<div class="bg-white p-4 mx-auto max-w-screen-xl mt-20">
-			<h1 class="text-[#333333] font-bold text-2xl text-center">Aprende a transformar tus ideas en productos</h1>
+			<p class="text-[#333333] font-bold text-2xl text-center">Aprende a transformar tus ideas en productos</p>
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl flex flex-col items-center mt-20">
+	<div class="mx-auto max-w-screen-xl flex flex-col items-center my-20 px-8">
 		<img src="../../assets/eventResources/title-2.svg" alt="" class="">
-		<div class="flex flex-row items-center">
-			<img src="../../assets/eventResources/jp.png" alt="">
+		<div class="md:flex flex-row items-center">
+			<img src="../../assets/eventResources/jp.png" alt="" class="mx-auto mb-4 md:mb-0">
 			<div class="flex flex-col gap-4">
-				<p>En <span class="text-bold">MVP FLASH</span>, te enseñamos a convertir tus ideas en proyectos reales en
-					solo 3 horas. Este taller está
-					creado para empresarios y líderes que buscan
-					innovar. Aquí combinamos métodos de planificación
-					efectivos, usados por los profesionales de Google, con
-					las últimas herramientas de inteligencia artificial.</p>
-				<p>Durante el taller, aprenderás técnicas para desarrollar
-					rápidamente tus proyectos, encontrar soluciones
-					prácticas a desafíos comunes y adaptarte a un enfoque
-					de trabajo más ágil y actual. Es una oportunidad directa
-					y concreta para mejorar tus habilidades de gestión de
-					proyectos y estrategia empresarial.</p>
-				<h1 class="font-bold text-[#79D48B] text-2xl">Es tu entrada a una nueva forma
-					de pensar y trabajar.</h1>
+				<p>En <span class="text-bold"><b>MVP FLASH</b></span>, te enseñamos a convertir tus ideas en <b>proyectos reales en solo 3 horas.</b> Este taller está creado para <b>empresarios y líderes</b> que buscan <b>innovar.</b> Aquí combinamos métodos de planificación efectivos, usados por los profesionales de <b>Google,</b> con las últimas herramientas de <b>inteligencia artificial.</b><br><br>Durante el taller, aprenderás técnicas para <b>desarrollar rápidamente tus proyectos,</b> encontrar soluciones prácticas a desafíos comunes y adaptarte a un enfoque de trabajo más <b>ágil y actual.</b> Es una oportunidad directa y concreta para mejorar tus habilidades de <b>gestión de proyectos y estrategia empresarial.</b></p>
+				<p class="font-bold text-[#79D48B] text-2xl">Es tu entrada a una nueva forma de pensar y trabajar.</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="px-20 py-10 bg-[#DAFFD5]">
+	<div class="px-8 md:px-20 py-10 bg-[#DAFFD5]">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">Aliados</h2>
-		<div class="flex flex-row items-center justify-between">
-			<img src="../../assets/eventResources/kapital.png" alt="" class="h-[50px] ">
-			<img src="../../assets/eventResources/milton.png" alt="" class="h-[50px]">
-			<img src="../../assets/eventResources/celes.png" alt="" class="h-[50px]">
-			<img src="../../assets/eventResources/tml.png" alt="" class="h-[100px]">
+		<div class="flex flex-row items-center justify-between overflow-auto">
+			<img src="../../assets/eventResources/kapital.png" alt="" class="h-[45px] bd:h-[50px] mr-2 ">
+			<img src="../../assets/eventResources/milton.png" alt="" class="h-[45px] bd:h-[50px] mr-2">
+			<img src="../../assets/eventResources/celes.png" alt="" class="h-[45px] bd:h-[50px] mr-2">
+			<img src="../../assets/eventResources/tml.png" alt="" class="h-[50px] bd:h-[100px mr-2]">
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl flex flex-col gap-8 items-center my-10">
-		<h1 class="text-[#79D48B] text-5xl font-bold pb-20">Metodología Design Sprint de Google</h1>
+	<div class="mx-auto max-w-screen-xl flex flex-col gap-8 items-center my-10 px-8">
+		<p class="text-[#79D48B] text-4xl md:text-5xl font-bold pb-20 text-center">Metodología Design Sprint de Google</p>
 		<img src="../../assets/eventResources/designSprint.svg" alt="">
-		<a
-			class="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer">
+		<a class="group relative inline-flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer" href="#contac">
 			<span class="absolute -end-full transition-all group-hover:end-4">
 				<svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 					stroke="currentColor">
@@ -178,22 +162,19 @@ const timeDisplay = timeLeft;
 				</svg>
 			</span>
 
-			<span class="text-m font-bold transition-all group-hover:me-4">
-				Inscríbete Ya
-			</span>
+			<span class="text-m font-bold transition-all group-hover:me-4">Inscríbete Ya</span>
 		</a>
 	</div>
 
-	<div class="flex flex-col items-center bg-[#333333] py-20">
-		<h1 class="text-[#79D48B] text-5xl font-bold pb-4">5 días en 3 horas</h1>
-		<h1 class="text-white text-2xl font-bold pb-10">Cronograma del taller</h1>
+	<div class="flex flex-col items-center bg-[#333333] py-20 px-8">
+		<p class="text-[#79D48B] text-5xl text-center font-bold pb-4">5 días en 3 horas</p>
+		<p class="text-white text-2xl font-bold pb-10">Cronograma del taller</p>
 		<img src="../../assets/eventResources/cronograma.png" alt="">
 	</div>
 
-	<div class="flex flex-col items-center bg-[#79D48B] py-10">
+	<div class="flex flex-col items-center bg-[#79D48B] py-10 px-8">
 		<img src="../../assets/eventResources/mvpflash.svg" alt="">
-		<a
-			class="mt-10 group relative inline-flex items-center overflow-hidden rounded-lg bg-white px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer">
+		<a class="mt-10 group relative inline-flex items-center overflow-hidden rounded-lg bg-white px-8 py-3 text-[#333333] focus:outline-none focus:ring active:bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] cursor-pointer" href="#contac">
 			<span class="absolute -end-full transition-all group-hover:end-4">
 				<svg class="h-5 w-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 					stroke="currentColor">
@@ -201,83 +182,57 @@ const timeDisplay = timeLeft;
 				</svg>
 			</span>
 
-			<span class="text-m font-bold transition-all group-hover:me-4">
-				Llámanos
-			</span>
+			<span class="text-m font-bold transition-all group-hover:me-4">Llámanos</span>
 		</a>
 	</div>
 
-	<div>
+	<div class="px-6">
 		<div class="flex flex-col items-center pt-10">
-			<h1 class="text-[#333333] text-5xl font-bold pb-4">Casos de Éxito</h1>
-			<h1 class="text-[#333333] text-2xl font-bold pb-10">Productos que hemos desarrollado con esta tecnología</h1>
+			<p class="text-[#333333] text-5xl text-center font-bold pb-4">Casos de Éxito</p>
+			<p class="text-[#333333] text-2xl font-bold pb-10">Productos que hemos desarrollado con esta tecnología</p>
 		</div>
-		<div class="mx-auto max-w-screen-xl flex flex-row p-20 items-center mx-20">
-			<div class="flex flex-col">
-				<a>
+		<div class="mx-auto max-w-screen-xl md:flex flex-row md:p-20 items-center mx-20">
+			<div class="md:flex flex-col">
 					<button @click="viewProjects = 1"
-						class="w-[194px] h-[150px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
+						class="w-[100px] md:w-[194px] h-[100px] md:h-[150px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
 						:class="{ 'border-l-[20px] border-l-[#79DB92]': viewProjects == 1 }">
 						<img src="../../assets/brandLogos/planium.svg" alt="">
 					</button>
-				</a>
-				<a>
 					<button @click="viewProjects = 2"
-						class="w-[194px] h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
+						class="w-[100px] md:w-[194px] h-[100px] md:h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
 						:class="{ 'border-l-[20px] border-l-[#79DB92]': viewProjects == 2 }">
 						<img src="../../assets/brandLogos/ajpenny.svg" alt="">
 					</button>
-				</a>
-				<a>
 					<button @click="viewProjects = 3"
-						class="w-[194px] h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
+						class="w-[100px] md:w-[194px] h-[100px] md:h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300"
 						:class="{ 'border-l-[20px] border-l-[#79DB92]': viewProjects == 3 }">
 						<img src="../../assets/brandLogos/aliadago.svg" alt="">
 					</button>
-				</a>
 			</div>
-			<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 1">
+			<div class="grid grid-cols-1 md:grid-cols-2 items-center px-5 py-10 gap-8 animate-fade-in" v-if="viewProjects == 1">
 				<div>
 					<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text057 }}</h2>
 					<p class="my-4 text-[#333333] text-lg">{{ language.text058 }}</p>
-					<a @click="$router.push('/portfolio')">
-						<button
-							class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
-							{{ language.text059 }}
-						</button>
-					</a>
 				</div>
 				<div>
 					<img src="../../assets/planium-home.png" alt="">
 				</div>
 			</div>
 
-			<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 2">
+			<div class="grid grid-cols-1 md:grid-cols-2 items-center px-5 py-10 gap-8 animate-fade-in" v-if="viewProjects == 2">
 				<div>
 					<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text080 }}</h2>
 					<p class="my-4 text-[#333333] text-lg">{{ language.text031 }}</p>
-					<a @click="$router.push('/portfolio')">
-						<button
-							class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
-							{{ language.text059 }}
-						</button>
-					</a>
 				</div>
 				<div>
 					<img src="../../assets/ajpenny-home.png" alt="">
 				</div>
 			</div>
 
-			<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 3">
+			<div class="grid grid-cols-1 md:grid-cols-2 items-center px-5 py-10 gap-8 animate-fade-in" v-if="viewProjects == 3">
 				<div>
 					<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text082 }}</h2>
 					<p class="my-4 text-[#333333] text-lg">{{ language.text083 }}</p>
-					<a @click="$router.push('/portfolio')">
-						<button
-							class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
-							{{ language.text059 }}
-						</button>
-					</a>
 				</div>
 				<div>
 					<img src="../../assets/aliadago-home.png" alt="">
@@ -286,77 +241,79 @@ const timeDisplay = timeLeft;
 		</div>
 	</div>
 
-	<div class="bg-[#79D48B] py-10">
-		<h1 class="text-[#333333] text-5xl font-bold pb-4 text-center">Mentores</h1>
-		<div class="grid grid-cols-3 gap-8 max-w-[900px] mx-auto">
+	<div class="bg-[#79D48B] py-10 px-8">
+		<p class="text-[#333333] text-5xl font-bold pb-4 text-center">Mentores</p>
+		<div class="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-[900px] mx-auto">
 			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/miltonp.png" alt="" class="h-[200px]">
-				<h1 class="font-bold text-[#333333] text-2xl">Milton Suárez</h1>
+				<img src="../../assets/eventResources/miltonp.png" alt="" class="max-h-[200px]">
+				<p class="font-bold text-[#333333] text-2xl">Milton Suárez</p>
 				<p class="font-medium text-[#333333] text-lg">Fullstack Marketer</p>
 			</div>
 			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/juanes.png" alt="" class="h-[200px]">
-				<h1 class="font-bold text-[#333333] text-2xl">Juan Esteban Paca</h1>
+				<img src="../../assets/eventResources/juanes.png" alt="" class="max-h-[200px]">
+				<p class="font-bold text-[#333333] text-2xl">Juan Esteban Paca</p>
 				<p class="font-medium text-[#333333] text-lg">CGO en Let's Do It Now</p>
 			</div>
 			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/joan.png" alt="" class="h-[200px]">
-				<h1 class="font-bold text-[#333333] text-2xl">Joan Ariza</h1>
+				<img src="../../assets/eventResources/joan.png" alt="" class="max-h-[200px]">
+				<p class="font-bold text-[#333333] text-2xl">Joan Ariza</p>
 				<p class="font-medium text-[#333333] text-lg">CEO en TLM</p>
 			</div>
-		</div>
-		<div class="grid grid-cols-2 gap-8 max-w-[700px] mx-auto mt-8">
+		<!-- </div>
+		<div class="grid grid-cols-2 gap-8 max-w-[700px] mx-auto mt-8"> -->
 			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/victor.png" alt="" class="h-[200px]">
-				<h1 class="font-bold text-[#333333] text-2xl">Víctor Carreño</h1>
+				<img src="../../assets/eventResources/victor.png" alt="" class="max-h-[200px]">
+				<p class="font-bold text-[#333333] text-2xl">Víctor Carreño</p>
 				<p class="font-medium text-[#333333] text-lg">Fullstack Dev en Let's Do It Now</p>
 			</div>
 			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/diana.png" alt="" class="h-[200px]">
-				<h1 class="font-bold text-[#333333] text-2xl">Diana Sánchez</h1>
+				<img src="../../assets/eventResources/diana.png" alt="" class="max-h-[200px]">
+				<p class="font-bold text-[#333333] text-2xl">Diana Sánchez</p>
 				<p class="font-medium text-[#333333] text-lg">CSO en Celes</p>
 			</div>
-			<!-- <div class="flex flex-col items-center">
-                <img src="../../assets/eventResources/edi.png" alt="" class="h-[200px]">
-                <h1 class="font-bold text-[#333333] text-2xl">Edinson Acevedo</h1>
-                <p class="font-medium text-[#333333] text-lg">Backend Dev en Let's Do It Now</p>
-            </div> -->
+			<div class="flex flex-col items-center">
+                <img src="../../assets/eventResources/jp.png" alt="" class="max-h-[200px]">
+                <p class="font-bold text-[#333333] text-2xl">Juan P. Sierra</p>
+                <p class="font-medium text-[#333333] text-lg">CEO de Let's Do It Now</p>
+            </div>
 		</div>
 	</div>
 
-	<div class="bg-[#333333] py-10 px-20">
-		<h1 class="text-white text-4xl font-bold pb-4">En este evento se beneficiarán empresarios que quieran:</h1>
-		<div class="pb-4">
-			<h1 class="text-[#79D48B] text-2xl font-bold">1: Desarrollar Rápido de Proyectos</h1>
-			<p class="text-white text-lg font-medium">Aprende a transformar tus ideas en prototipos funcionales en pocas
-				horas, utilizando metodologías ágiles y efectivas.</p>
+	<div class="bg-[#333333] py-20 px-8">
+		<div class="max-w-[800px] mx-0 md:mx-auto">
+			<p class="text-white text-4xl text-center font-bold pb-4">En este evento se beneficiarán empresarios que quieran:</p>
+			<div class="pb-4">
+				<p class="text-[#79D48B] text-2xl font-bold">1: Desarrollar Rápido de Proyectos</p>
+				<p class="text-white text-lg font-medium">Aprende a transformar tus ideas en prototipos funcionales en pocas
+					horas, utilizando metodologías ágiles y efectivas.</p>
+			</div>
+			<div class="pb-4">
+				<p class="text-[#79D48B] text-2xl font-bold">2: Tener Herramientas Innovadoras</p>
+				<p class="text-white text-lg font-medium">Gana habilidades prácticas en el uso de inteligencia artificial para
+					optimizar la planificación y ejecución de tus proyectos.</p>
+			</div>
+			<div class="pb-4">
+				<p class="text-[#79D48B] text-2xl font-bold">3: Encontrar Soluciones Efectivas</p>
+				<p class="text-white text-lg font-medium">Mejora tu capacidad para identificar problemas y encontrar soluciones
+					creativas y eficientes, esenciales en el mundo empresarial actual.</p>
+			</div>
+			<div class="pb-4">
+				<p class="text-[#79D48B] text-2xl font-bold">4: Aumentar su Red de Contactos</p>
+				<p class="text-white text-lg font-medium">Conecta con otros empresarios y líderes innovadores, ampliando tu
+					red profesional y abriendo nuevas oportunidades de colaboración.</p>
+			</div>
+			<div class="pb-10">
+				<p class="text-[#79D48B] text-2xl font-bold">5: Tener una mentalidad de Innovación</p>
+				<p class="text-white text-lg font-medium">Adopta un enfoque fresco y dinámico en tus proyectos, manteniéndote
+					a la vanguardia en un mercado en constante cambio.</p>
+			</div>
+			<p class="text-white text-3xl md:text-5xl font-bold text-center">Es hora de poner en marcha tu idea</p>
 		</div>
-		<div class="pb-4">
-			<h1 class="text-[#79D48B] text-2xl font-bold">2: Tener Herramientas Innovadoras</h1>
-			<p class="text-white text-lg font-medium">Gana habilidades prácticas en el uso de inteligencia artificial para
-				optimizar la planificación y ejecución de tus proyectos.</p>
-		</div>
-		<div class="pb-4">
-			<h1 class="text-[#79D48B] text-2xl font-bold">3: Encontrar Soluciones Efectivas</h1>
-			<p class="text-white text-lg font-medium">Mejora tu capacidad para identificar problemas y encontrar soluciones
-				creativas y eficientes, esenciales en el mundo empresarial actual.</p>
-		</div>
-		<div class="pb-4">
-			<h1 class="text-[#79D48B] text-2xl font-bold">4: Aumentar su Red de Contactos</h1>
-			<p class="text-white text-lg font-medium">Conecta con otros empresarios y líderes innovadores, ampliando tu
-				red profesional y abriendo nuevas oportunidades de colaboración.</p>
-		</div>
-		<div class="pb-10">
-			<h1 class="text-[#79D48B] text-2xl font-bold">5: Tener una mentalidad de Innovación</h1>
-			<p class="text-white text-lg font-medium">Adopta un enfoque fresco y dinámico en tus proyectos, manteniéndote
-				a la vanguardia en un mercado en constante cambio.</p>
-		</div>
-		<h1 class="text-white text-5xl font-bold text-center">Es hora de poner en marcha tu idea</h1>
 	</div>
 
-	<div>
-		<div class="w-[600px] mx-auto">
-			<h1 class="text-4xl font-bold pb-4 text-center mt-16">INSCRÍBETE YA<br>cupos limitados</h1>
+	<div id="contac" class="bg-[#79D48B] py-10 px-8">
+		<div class="max-w-[600px] mx-auto">
+			<p class="text-4xl font-bold pb-4 text-center mt-16">INSCRÍBETE YA<br><span class="text-[25px]">Cupos limitados</span></p>
 			<form @submit="enviarFormulario"  class="mt-8 mb-16">
 				<label for="name">Nombre completo</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="name" id="name" placeholder="Name" v-model="myData.name">
@@ -384,56 +341,38 @@ const timeDisplay = timeLeft;
 		</div>
 	</div>
 
-	<div class="py-10 px-20">
-		<h1 class="text-[#333333] text-4xl font-bold pb-4 text-center">Preguntas Frecuentes</h1>
+	<div class="py-20 px-8 max-w-[900px] mx-auto">
+		<p class="text-[#333333] text-4xl font-bold pb-4 text-center">Preguntas Frecuentes</p>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Qué es MVP FLASH?</h1>
-			<p class="text-[#333333] text-base font-medium">MVP FLASH es un taller práctico donde aprendes a convertir tus
-				ideas en prototipos funcionales en
-				pocas horas, combinando metodologías ágiles y la última tecnología en inteligencia artificial.</p>
+			<p class="text-[#333333] text-2xl font-bold">¿Qué es MVP FLASH?</p>
+			<p class="text-[#333333] text-base font-medium">MVP FLASH es un taller práctico donde aprendes a convertir tus ideas en prototipos funcionales en pocas horas, combinando metodologías ágiles y la última tecnología en inteligencia artificial.</p>
 		</div>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Para quién es este evento?</h1>
+			<p class="text-[#333333] text-2xl font-bold">¿Para quién es este evento?</p>
 			<p class="text-[#333333] text-base font-regular">Este evento está diseñado para empresarios, líderes
-				empresariales y cualquier persona interesada
-				en innovar en sus proyectos o negocios, independientemente de su experiencia previa en
-				tecnología.</p>
+				empresariales y cualquier persona interesada en innovar en sus proyectos o negocios, independientemente de su experiencia previa en tecnología.</p>
 		</div>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Cuánto dura el taller?</h1>
-			<p class="text-[#333333] text-base font-regular">El taller tiene una duración de aproximadamente 3 horas,
-				incluyendo sesiones interactivas y tiempo
-				para networking.</p>
+			<p class="text-[#333333] text-2xl font-bold">¿Cuánto dura el taller?</p>
+			<p class="text-[#333333] text-base font-regular">El taller tiene una duración de aproximadamente 3 horas, incluyendo sesiones interactivas y tiempo para networking.</p>
 		</div>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Necesito tener conocimientos previos en inteligencia artificial o
-				tecnología?</h1>
-			<p class="text-[#333333] text-base font-regular">No, no es necesario. MVP FLASH está diseñado para ser accesible
-				y valioso tanto para principiantes
-				como para aquellos con más experiencia en tecnología.</p>
+			<p class="text-[#333333] text-2xl font-bold">¿Necesito tener conocimientos previos en inteligencia artificial o
+				tecnología?</p>
+			<p class="text-[#333333] text-base font-regular">No, no es necesario. MVP FLASH está diseñado para ser accesible y valioso tanto para principiantes como para aquellos con más experiencia en tecnología.</p>
 		</div>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Hay algún costo para asistir al evento?</h1>
-			<p class="text-[#333333] text-base font-regular">No, el evento es gratuito. Bajo el patrocinio y objetivo de
-				creación de comunidad de Let’s do it Now.</p>
+			<p class="text-[#333333] text-2xl font-bold">¿Hay algún costo para asistir al evento?</p>
+			<p class="text-[#333333] text-base font-regular">No, el evento es gratuito. Bajo el patrocinio y objetivo de creación de comunidad de Let’s do it Now.</p>
 		</div>
 		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Qué beneficios obtendré al asistir a este taller?</h1>
-			<p class="text-[#333333] text-base font-regular">Obtendrás habilidades prácticas en desarrollo rápido de
-				proyectos, soluciones eficientes a desafíos
-				empresariales, y acceso a una red de profesionales y líderes innovadores.</p>
+			<p class="text-[#333333] text-2xl font-bold">¿Qué beneficios obtendré al asistir a este taller?</p>
+			<p class="text-[#333333] text-base font-regular">Obtendrás habilidades prácticas en desarrollo rápido de proyectos, soluciones eficientes a desafíos empresariales, y acceso a una red de profesionales y líderes innovadores.</p>
 		</div>
-		<div class="pb-10">
-			<h1 class="text-[#333333] text-2xl font-bold">¿Quién puede responder a mis preguntas adicionales sobre el
-				evento?</h1>
+		<div>
+			<p class="text-[#333333] text-2xl font-bold">¿Quién puede responder a mis preguntas adicionales sobre el evento?</p>
 			<p class="text-[#333333] text-base font-regular">Para más información, puedes contactarnos haciendo click AQUÍ.
 			</p>
 		</div>
 	</div>
 </template>
-
-<style scoped>
-.font-fantasy {
-	font-family: fantasy;
-}
-</style>
