@@ -70,7 +70,7 @@ const enviarFormulario = async (e: any) => {
 onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").home;
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
-	updateTime(); // Actualizar inmediatamente al cargar la página
+	updateTime();
 	interval = setInterval(updateTime, 1000);
 });
 
