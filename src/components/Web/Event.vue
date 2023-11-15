@@ -10,18 +10,10 @@ const language = ref<any>({
 });
 
 const myData = ref({
-	name: "", company: "", cargo: "", tel: "", funding: ""
+	name: "", email: "", company: "", position: "", tel: "", financing: "", form: "event"
 });
 
 const viewProjects = ref<number>(1)
-
-const freeConsulation = (): void => {
-	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
-}
-
-const chat = (): void => {
-	window.open("https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20", '_blank')
-}
 
 /* Cuenta regreciba */
 const deadline = new Date('2023-11-23T15:00:00-05:00');
@@ -65,7 +57,7 @@ const enviarFormulario = async (e: any) => {
         if (response.status === 200) {
         showToast(`Formulario enviado con éxito`, 'success', 3000, POSITION.BOTTOM_CENTER)
         // Restablece los campos del formulario
-        myData.value = {name: "", company: "", cargo: "", tel: "", funding: ""}
+        myData.value = {name: "", email: "", company: "", position: "", tel: "", financing: "", form: "event"}
         } else {
         showToast(`Error al enviar el formulario. Por favor, inténtalo de nuevo.`, 'error', 3000, POSITION.BOTTOM_CENTER)
         }
@@ -318,24 +310,27 @@ const timeDisplay = timeLeft;
 				<label for="name">Nombre completo</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="name" id="name" placeholder="Name" v-model="myData.name">
 
+				<label for="email">Correo electrónico</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="email" id="email" placeholder="Email" v-model="myData.email">
+
 				<label for="company">Nombre de tu empresa</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="company" id="company" placeholder="Company" v-model="myData.company">
 
 				<label for="">Cargo:</label>
-				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="cargo" id="cargo" placeholder="Cargo" v-model="myData.cargo">
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="cargo" id="cargo" placeholder="Cargo" v-model="myData.position">
 
 				<label for="tel">Número de celular</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="tel" name="tel" id="tel" placeholder="Número de celular" v-model="myData.tel">
 
 				<label for="funding">¿Estás buscando financiación en tecnología?</label>
-				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="funding" id="funding" v-model="myData.funding">
+				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="funding" id="funding" v-model="myData.financing">
 					<option value="">Seleccione una opción</option>
 					<option value="si">Si</option>
 					<option value="no">No</option>
 				</select>
 
 				<div class="w-100 text-right">
-					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px]">
+					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px] cursor-pointer">
 				</div>
 			</form>
 		</div>
