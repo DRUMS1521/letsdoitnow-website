@@ -130,9 +130,9 @@ const timeDisplay = timeLeft;
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl flex flex-col items-center my-20 px-8">
+	<div class="mx-auto max-w-screen-xl flex flex-col items-center my-20 px-8 gap-4">
 		<img src="../../assets/eventResources/title-2.svg" alt="" class="">
-		<div class="md:flex flex-row items-center">
+		<div class="md:flex flex-row items-center gap-4">
 			<img src="../../assets/eventResources/jp.png" alt="" class="mx-auto mb-4 md:mb-0">
 			<div class="flex flex-col gap-4">
 				<p>En <span class="text-bold"><b>MVP FLASH</b></span>, te enseñamos a convertir tus ideas en <b>proyectos reales en solo 3 horas.</b> Este taller está creado para <b>empresarios y líderes</b> que buscan <b>innovar.</b> Aquí combinamos métodos de planificación efectivos, usados por los profesionales de <b>Google,</b> con las últimas herramientas de <b>inteligencia artificial.</b><br><br>Durante el taller, aprenderás técnicas para <b>desarrollar rápidamente tus proyectos,</b> encontrar soluciones prácticas a desafíos comunes y adaptarte a un enfoque de trabajo más <b>ágil y actual.</b> Es una oportunidad directa y concreta para mejorar tus habilidades de <b>gestión de proyectos y estrategia empresarial.</b></p>
