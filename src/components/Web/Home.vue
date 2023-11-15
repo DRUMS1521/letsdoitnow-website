@@ -71,7 +71,7 @@ onBeforeMount(() => {
 				</a>
 
 			</div>
-			<div class="w-[50%] mt-12">
+			<div class="lg:w-[50%] mt-12 sm:w-[100%]">
 				<p>{{ language.text037 }}</p>
 			</div>
 		</div>
@@ -113,7 +113,7 @@ onBeforeMount(() => {
 				</span>
 			</a>
 		</div>
-		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 justify-items-center">
+		<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3 justify-items-center lg:mx-auto max-w-screen-xl sm:mx-8">
 			<a class="w-[380px] h-[366px] lg:w-[380px] lg:h-[366px] grid grid-rows-3 items-right rounded-xl p-8 shadow-xl group relative inline-block overflow-hidden px-8 py-3 focus:outline-none focus:ring
 			shadow-[0_4px_21px_3px_rgba(0,0,0,0.25)]"
 				href="/services">
@@ -267,7 +267,7 @@ onBeforeMount(() => {
 
 	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 ">
 		<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-center mb-4">{{ language.text052 }}</h2>
-		<div class="flex flex-row gap-10 items-center justify-between ml-[15%] mr-[15%]">
+		<div class="flex lg:flex-row gap-10 items-center justify-between ml-[15%] mr-[15%] sm:flex-col min-[320px]:flex-col">
 			<img src="../../assets/brandLogos/googlecloud.png" alt="" class="w-[360px] h-[84px]">
 			<img src="../../assets/brandLogos/awsactivate.png" alt="" class="w-[365px] h-[57px]">
 		</div>
@@ -323,7 +323,7 @@ onBeforeMount(() => {
 	<div class="bg-[#263F28] p-10">
 		<div class="mx-auto max-w-screen-xl">
 			<h2 class="text-2xl font-bold sm:text-3xl text-white text-center mb-4">{{ language.text053 }}</h2>
-			<div class="flex flex-row justify-between p-20 items-center">
+			<div class="flex lg:flex-row sm:flex-col min-[320px]:flex-col justify-between lg:p-20 items-center min-[320px]:p-4 sm:p-4">
 				<h2 class="text-2xl font-bold sm:text-3xl text-white  mb-4">{{ language.text054 }}</h2>
 				<img src="../../assets/Arrow-2.svg" alt="">
 				<img src="../../assets/mvp-process.svg" alt="">
@@ -348,28 +348,28 @@ onBeforeMount(() => {
 		</div>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl flex flex-row p-20 items-center mx-20">
-		<div class="flex flex-col">
+	<div class="mx-auto max-w-screen-xl flex lg:flex-row sm:flex-col min-[320px]:flex-col lg:p-20 min-[320px]:p-4 items-center mx-20">
+		<div class="flex lg:flex-col sm:flex-row min-[320px]:flex-row">
 			<a>
 				<button @click="viewProjects = 1" 
-					class="w-[194px] h-[150px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 1}">
+					class="lg:w-[194px] lg:h-[150px] min-[320px]:w-[120px] rounded-t-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 1}">
 					<img src="../../assets/brandLogos/planium.svg" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 2"
-					class="w-[194px] h-[150px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 2}">
+					class="lg:w-[194px] lg:h-[150px] min-[320px]:w-[120px] border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 2}">
 					<img src="../../assets/brandLogos/ajpenny.svg" alt="">
 				</button>
 			</a>
 			<a>
 				<button @click="viewProjects = 3"
-					class="w-[194px] h-[150px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 3}">
+					class="lg:w-[194px] lg:h-[150px] min-[320px]:w-[120px] rounded-b-md border-2 border-[#CDCDCD] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-x-1 hover:scale-100 hover:duration-300" :class="{'border-l-[20px] border-l-[#79DB92]': viewProjects == 3}">
 					<img src="../../assets/brandLogos/aliadago.svg" alt="">
 				</button>
 			</a>
 		</div>
-		<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 1">
+		<div class="grid lg:grid-cols-2 min-[320px]:grid-row-2 items-center lg:p-10 min-[320px]:p-4 gap-8 animate-fade-in" v-if="viewProjects == 1">
 			<div>
 				<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text057 }}</h2>
 				<p class="my-4 text-[#333333] text-lg">{{ language.text058 }}</p>
@@ -385,7 +385,7 @@ onBeforeMount(() => {
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 2">
+		<div class="grid lg:grid-cols-2 min-[320px]:grid-row-2 items-center lg:p-10 min-[320px]:p-4 gap-8 animate-fade-in" v-if="viewProjects == 2">
 			<div>
 				<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text080 }}</h2>
 				<p class="my-4 text-[#333333] text-lg">{{ language.text031 }}</p>
@@ -401,7 +401,7 @@ onBeforeMount(() => {
 			</div>
 		</div>
 
-		<div class="grid grid-cols-2 items-center p-10 gap-8 animate-fade-in" v-if="viewProjects == 3">
+		<div class="grid lg:grid-cols-2 min-[320px]:grid-row-2 items-center lg:p-10 min-[320px]:p-4 gap-8 animate-fade-in" v-if="viewProjects == 3">
 			<div>
 				<h2 class="text-2xl font-bold sm:text-3xl text-[#263F28] text-left mb-4">{{ language.text082 }}</h2>
 				<p class="my-4 text-[#333333] text-lg">{{ language.text083 }}</p>
@@ -418,7 +418,7 @@ onBeforeMount(() => {
 		</div>
 	</div>
 
-	<div class="px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8 bg-[#263F28]">
+	<div class="px-4 pt-8 sm:pt-12 sm:px-6 lg:pt-16 lg:px-8 pb-8 bg-[#263F28]">
 		<div class="mx-auto max-w-screen-xl">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
 				<div class="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
@@ -457,11 +457,11 @@ onBeforeMount(() => {
 				<label for="Tab" class="sr-only">Tab</label>
 
 				<select id="Tab" class="w-full rounded-md border-gray-200">
-					<option>{{ language.text065 }}</option>
-					<option>{{ language.text066 }}</option>
-					<option>{{ language.text067 }}</option>
-					<option>{{ language.text068 }}</option>
-					<option>{{ language.text069 }}</option>
+					<option><a @click="viewAreas = 1">{{ language.text065 }}</a></option>
+					<option><a @click="viewAreas = 2">{{ language.text066 }}</a></option>
+					<option><a @click="viewAreas = 3">{{ language.text067 }}</a></option>
+					<option><a @click="viewAreas = 4">{{ language.text068 }}</a></option>
+					<option><a @click="viewAreas = 5">{{ language.text069 }}</a></option>
 				</select>
 			</div>
 
@@ -547,7 +547,7 @@ onBeforeMount(() => {
 		<p class="text-[#333333] text-xl text-center">{{ language.text022 }}</p>
 	</div>
 
-	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 grid grid-cols-3 items-center gap-4">
+	<div class="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8 grid lg:grid-cols-3 min-[320px]:grid-row items-center gap-4">
 		<h2 class="mt-4 text-2xl font-bold text-[#263F28] text-center">{{ language.text029 }}</h2>
 
 		<blockquote class="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8 my-8">
