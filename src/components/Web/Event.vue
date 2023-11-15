@@ -376,13 +376,6 @@ const timeDisplay = timeLeft;
 					<option value="si">Si</option>
 					<option value="no">No</option>
 				</select>
-				
-				<!-- <label for="team">¿Cuentas con un equipo de ingeniería y buscas que complementemos su trabajo, o buscas que seamos tu equipo de ingeniería?</label>
-				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="team" id="team" v-model="team">
-					<option value="">Seleccione una opción</option>
-					<option value="Tengo un equipo">Tengo un equipo y necesito apoyo</option>
-					<option value="Necesito un equipo">Necesito un equipo de ingeniería</option>
-				</select> -->
 
 				<div class="w-100 text-right">
 					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px]">
