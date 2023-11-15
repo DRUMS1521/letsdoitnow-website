@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
 import { seoMeta } from '@/stores/SeoMeta';
+import axios from 'axios';
+import { showToast, POSITION } from '../../stores/Toast';
 
 const language = ref<any>({
 	langweb: "", titleweb: "", desciptionweb: "", keywords: "", imgweb: "", title001: "", text002: "", text003: "", text004: "", text005: "", text006: "", text007: "", text008: "", text009: "", text010: "", text011: "", text012: "", text013: "", text014: "", ext015: ""
 });
 
-onMounted(() => {
-	language.value = lang(localStorage.getItem("Lang") === "Es").home;
-	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
+const myData = ref({
+	name: "", company: "", cargo: "", tel: "", funding: ""
 });
 
 const viewProjects = ref<number>(1)
@@ -21,6 +22,72 @@ const freeConsulation = (): void => {
 const chat = (): void => {
 	window.open("https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20", '_blank')
 }
+
+/* Cuenta regreciba */
+const deadline = new Date('2023-11-23T15:00:00-05:00');
+
+const timeLeft = ref(calculateTimeLeft());
+
+function calculateTimeLeft() {
+	const now = new Date().getTime();
+	const difference = deadline.getTime() - now;
+
+	let days: number | string = Math.floor(difference / (1000 * 60 * 60 * 24));
+	let hours: number | string = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	let minutes: number | string = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+	let seconds: number | string = Math.floor((difference % (1000 * 60)) / 1000);
+
+	days = days < 10 ? `0${days}` : days.toString();
+	hours = hours < 10 ? `0${hours}` : hours.toString();
+	minutes = minutes < 10 ? `0${minutes}` : minutes.toString();
+	seconds = seconds < 10 ? `0${seconds}` : seconds.toString();
+
+	return `${days}-${hours}:${minutes}:${seconds}`;
+}
+
+function updateTime() {
+	timeLeft.value = calculateTimeLeft();
+}
+
+let interval: number | null = null;
+/* Cuenta regreciba */
+
+// Función para enviar el formulario
+const enviarFormulario = async (e: any) => {
+    e.preventDefault();
+    const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
+
+  // Crea un objeto con los datos del formulario
+    const formData = myData.value;
+
+    try {
+        const response = await axios.post(googleFormsURL, formData);
+        if (response.status === 200) {
+        showToast(`Formulario enviado con éxito`, 'success', 3000, POSITION.BOTTOM_CENTER)
+        // Restablece los campos del formulario
+        myData.value = {name: "", company: "", cargo: "", tel: "", funding: ""}
+        } else {
+        showToast(`Error al enviar el formulario. Por favor, inténtalo de nuevo.`, 'error', 3000, POSITION.BOTTOM_CENTER)
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showToast(`Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo más tarde.`, 'error', 3000, POSITION.BOTTOM_CENTER)
+    }
+};
+
+onMounted(() => {
+	language.value = lang(localStorage.getItem("Lang") === "Es").home;
+	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
+	updateTime(); // Actualizar inmediatamente al cargar la página
+	interval = setInterval(updateTime, 1000);
+});
+
+onUnmounted(() => {
+	if (interval) {
+		clearInterval(interval);
+	}
+});
+const timeDisplay = timeLeft;
 </script>
 
 <template>
@@ -34,13 +101,15 @@ const chat = (): void => {
 			<h1 class="text-[#333333] font-bold text-2xl text-center">Un espacio práctico para los empresarios y
 				emprendedores</h1>
 		</div>
-		<!-- <div>
-			<h1 class="text-white">CONTADOR</h1>
-		</div> -->
 		<div class="flex flex-col items-center gap-8 py-20">
-			<h1 class="text-white text-4xl font-medium text-center">Bogotá, 23 de Noviembre dek 2023<br>3:00pm - 6:00pm</h1>
-			<h1 class="text-white text-4xl font-bold">Calle 70 #8-19 Kapital House</h1>
-			<h1 class="text-white text-2xl font-bold">Organiza: Let's Do It Now, Casa de Software</h1>
+			<div class="max-w-2xl text-center text-green-500 mx-auto">
+				<p class="text-[3.75rem] md:text-[4.5rem] lg:text-[6rem] font-fantasy leading-[0.8] md:leading-[0.6] lg:leading-[0.4] ">
+					{{ timeDisplay }}<br><span class="text-4xl font-thin">DD - HH:MM:SS</span>
+				</p>
+			</div>
+			<h1 class="text-white text-4xl font-medium text-center">Bogotá, 23 de Noviembre del 2023<br>3:00pm - 6:00pm<br>
+			<span class="text-white text-4xl font-bold">Calle 70 #8-19 Kapital House</span><br>
+			<span class="text-white text-2xl font-bold">Organiza: Let's Do It Now, Casa de Software</span></h1>
 		</div>
 		<div class="mx-auto max-w-screen-xl flex flex-row justify-center gap-8">
 			<h1 class="text-white text-4xl font-bold">Cupos limitados</h1>
@@ -285,6 +354,36 @@ const chat = (): void => {
 		<h1 class="text-white text-5xl font-bold text-center">Es hora de poner en marcha tu idea</h1>
 	</div>
 
+	<div>
+		<div class="w-[600px] mx-auto">
+			<h1 class="text-4xl font-bold pb-4 text-center mt-16">INSCRÍBETE YA<br>cupos limitados</h1>
+			<form @submit="enviarFormulario"  class="mt-8 mb-16">
+				<label for="name">Nombre completo</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="name" id="name" placeholder="Name" v-model="myData.name">
+
+				<label for="company">Nombre de tu empresa</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="company" id="company" placeholder="Company" v-model="myData.company">
+
+				<label for="">Cargo:</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="cargo" id="cargo" placeholder="Cargo" v-model="myData.cargo">
+
+				<label for="tel">Número de celular</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="tel" name="tel" id="tel" placeholder="Número de celular" v-model="myData.tel">
+
+				<label for="funding">¿Estás buscando financiación en tecnología?</label>
+				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="funding" id="funding" v-model="myData.funding">
+					<option value="">Seleccione una opción</option>
+					<option value="si">Si</option>
+					<option value="no">No</option>
+				</select>
+
+				<div class="w-100 text-right">
+					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px]">
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<div class="py-10 px-20">
 		<h1 class="text-[#333333] text-4xl font-bold pb-4 text-center">Preguntas Frecuentes</h1>
 		<div class="pb-10">
@@ -332,3 +431,9 @@ const chat = (): void => {
 		</div>
 	</div>
 </template>
+
+<style scoped>
+.font-fantasy {
+	font-family: fantasy;
+}
+</style>
