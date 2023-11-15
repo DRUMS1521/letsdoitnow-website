@@ -272,7 +272,7 @@ const timeDisplay = timeLeft;
 				<p class="font-medium text-[#333333] text-lg">CSO en Celes</p>
 			</div>
 			<div class="flex flex-col items-center">
-                <img src="../../assets/eventResources/jp.png" alt="" class="max-h-[200px]">
+                <img src="../../assets/eventResources/jp2.png" alt="" class="max-h-[200px]">
                 <p class="font-bold text-[#333333] text-2xl">Juan P. Sierra</p>
                 <p class="font-medium text-[#333333] text-lg">CEO de Let's Do It Now</p>
             </div>
