@@ -48,22 +48,23 @@ let interval: number | null = null;
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
     const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
+    /* const googleFormsURL = 'http://localhost:3000/api/googleForm'; */
 
   // Crea un objeto con los datos del formulario
     const formData = myData.value;
+	formData.email = formData.email.toLowerCase();
 
     try {
         const response = await axios.post(googleFormsURL, formData);
         if (response.status === 200) {
-        showToast(`Formulario enviado con éxito`, 'success', 3000, POSITION.BOTTOM_CENTER)
+        showToast(`Formulario enviado con éxito. Hemos enviado un correo de confirmación, por favor verifica la bandeja de Spam `, 'success', 5000, POSITION.BOTTOM_CENTER)
         // Restablece los campos del formulario
         myData.value = {name: "", email: "", company: "", position: "", tel: "", financing: "", form: "event"}
         } else {
         showToast(`Error al enviar el formulario. Por favor, inténtalo de nuevo.`, 'error', 3000, POSITION.BOTTOM_CENTER)
         }
-    } catch (error) {
-        console.error('Error:', error);
-        showToast(`Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo más tarde.`, 'error', 3000, POSITION.BOTTOM_CENTER)
+    } catch (error: any) {
+        showToast(error.response.data.error, 'error', 3000, POSITION.BOTTOM_CENTER)
     }
 };
 
