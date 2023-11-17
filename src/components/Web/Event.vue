@@ -47,8 +47,8 @@ let interval: number | null = null;
 // Función para enviar el formulario
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
-    const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
-    /* const googleFormsURL = 'http://localhost:3000/api/googleForm'; */
+    /* const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm'; */
+    const googleFormsURL = 'http://localhost:3000/api/googleForm';
 
   // Crea un objeto con los datos del formulario
     const formData = myData.value;
