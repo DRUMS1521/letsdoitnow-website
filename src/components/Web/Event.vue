@@ -47,8 +47,17 @@ let interval: number | null = null;
 // Función para enviar el formulario
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
-    /* const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm'; */
-    const googleFormsURL = 'http://localhost:3000/api/googleForm';
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (myData.value.name === ""  || myData.value.company === "" || myData.value.position === "" || myData.value.tel === "" || myData.value.financing === "") {
+		showToast(`Por favor completa todos los campos`, 'error', 3000, POSITION.BOTTOM_CENTER)
+		return;
+	}
+	if (!emailRegex.test(myData.value.email)) {
+		showToast(`Por favor ingresa un correo electrónico válido`, 'error', 3000, POSITION.BOTTOM_CENTER)
+		return;
+	}
+    const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
+    /* const googleFormsURL = 'http://localhost:3000/api/googleForm'; */
 
   // Crea un objeto con los datos del formulario
     const formData = myData.value;
@@ -330,10 +339,20 @@ const timeDisplay = timeLeft;
 					<option value="no">No</option>
 				</select>
 
-				<div class="w-100 text-right">
-					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px] cursor-pointer">
+				<div class="mb-6">
+					<!-- terminos y condiciones -->
+					<input type="checkbox" name="terms" id="terms" class="inline-block align-middle" required>
+					<label for="terms" class="inline-block align-middle text-[#333333] text-base font-medium ml-4">Acepto los <a href="https://letsdoitnow.us/terminos-y-condiciones" target="_blank" class="text-[#707070]">términos y condiciones</a> y <a href="https://letsdoitnow.us/politica-de-privacidad" target="_blank" class="text-[#707070]">política de privacidad</a></label>
+				</div>
+
+				<div class="w-100 text-center">
+					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] px-[2.5rem] rounded-[10px] cursor-pointer">
 				</div>
 			</form>
+		</div>
+		<div class="max-w-[850px] mx-auto mb-8">
+			<p class="text-[#333333] text-4xl font-bold pb-4 text-center">Aliado oficial de Let’s do it Now en financiación de proyectos digitales</p>
+			<img src="../../assets/eventResources/kapital.png" alt="" class="mx-auto w-[300px] mt-6">
 		</div>
 	</div>
 
@@ -367,8 +386,7 @@ const timeDisplay = timeLeft;
 		</div>
 		<div>
 			<p class="text-[#333333] text-2xl font-bold">¿Quién puede responder a mis preguntas adicionales sobre el evento?</p>
-			<p class="text-[#333333] text-base font-regular">Para más información, puedes contactarnos haciendo click AQUÍ.
-			</p>
+			<p class="text-[#333333] text-base font-regular">Para más información, puedes contactarnos haciendo click<a href="https://letsdoitnow.us/contact" target="_blank" class="text-[#707070]"><b> AQUÍ.</b></a></p>
 		</div>
 	</div>
 </template>

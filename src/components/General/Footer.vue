@@ -132,8 +132,13 @@ onMounted(() => {
 
 							<ul class="mt-6 space-y-4 text-sm">
 								<li>
-									<a href="#" class="text-gray-700 transition hover:opacity-75">
+									<a href="https://letsdoitnow.us/terminos-y-condiciones" class="text-gray-700 transition hover:opacity-75">
 										{{language.privacy}}
+									</a>
+								</li>
+								<li>
+									<a href="https://letsdoitnow.us/politica-de-privacidad" class="text-gray-700 transition hover:opacity-75">
+										{{language.coditions}}
 									</a>
 								</li>
 							</ul>
@@ -149,4 +154,4 @@ onMounted(() => {
 			</div>
 		</div>
 	</footer>
-</template>../../stores/Toast
+</template>
