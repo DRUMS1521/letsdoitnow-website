@@ -34,7 +34,6 @@ const language = ref<LangInter>({
 const router = useRouter();
 const showMobileMenu = ref<Boolean>(false);
 const showMenu = () => {
-	console.log("click");
 	showMobileMenu.value = !showMobileMenu.value;
 }
 

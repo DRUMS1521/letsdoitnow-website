@@ -10,18 +10,10 @@ const language = ref<any>({
 });
 
 const myData = ref({
-	name: "", company: "", cargo: "", tel: "", funding: ""
+	name: "", email: "", company: "", position: "", tel: "", financing: "", form: "event"
 });
 
 const viewProjects = ref<number>(1)
-
-const freeConsulation = (): void => {
-	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
-}
-
-const chat = (): void => {
-	window.open("https://api.whatsapp.com/send?phone=15512612985&text=Hola!%20%F0%9F%91%8B%F0%9F%8F%BC%20", '_blank')
-}
 
 /* Cuenta regreciba */
 const deadline = new Date('2023-11-23T15:00:00-05:00');
@@ -55,30 +47,40 @@ let interval: number | null = null;
 // Función para enviar el formulario
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (myData.value.name === ""  || myData.value.company === "" || myData.value.position === "" || myData.value.tel === "" || myData.value.financing === "") {
+		showToast(`Por favor completa todos los campos`, 'error', 3000, POSITION.BOTTOM_CENTER)
+		return;
+	}
+	if (!emailRegex.test(myData.value.email)) {
+		showToast(`Por favor ingresa un correo electrónico válido`, 'error', 3000, POSITION.BOTTOM_CENTER)
+		return;
+	}
     const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
+    /* const googleFormsURL = 'http://localhost:3000/api/googleForm'; */
 
   // Crea un objeto con los datos del formulario
     const formData = myData.value;
+	formData.email = formData.email.toLowerCase();
 
     try {
         const response = await axios.post(googleFormsURL, formData);
         if (response.status === 200) {
-        showToast(`Formulario enviado con éxito`, 'success', 3000, POSITION.BOTTOM_CENTER)
+        showToast(`Formulario enviado con éxito. Hemos enviado un correo de confirmación, por favor verifica la bandeja de Spam `, 'success', 5000, POSITION.BOTTOM_CENTER)
         // Restablece los campos del formulario
-        myData.value = {name: "", company: "", cargo: "", tel: "", funding: ""}
+        myData.value = {name: "", email: "", company: "", position: "", tel: "", financing: "", form: "event"}
         } else {
         showToast(`Error al enviar el formulario. Por favor, inténtalo de nuevo.`, 'error', 3000, POSITION.BOTTOM_CENTER)
         }
-    } catch (error) {
-        console.error('Error:', error);
-        showToast(`Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo más tarde.`, 'error', 3000, POSITION.BOTTOM_CENTER)
+    } catch (error: any) {
+        showToast(error.response.data.error, 'error', 3000, POSITION.BOTTOM_CENTER)
     }
 };
 
 onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").home;
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
-	updateTime(); // Actualizar inmediatamente al cargar la página
+	updateTime();
 	interval = setInterval(updateTime, 1000);
 });
 
@@ -319,26 +321,39 @@ const timeDisplay = timeLeft;
 				<label for="name">Nombre completo</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="name" id="name" placeholder="Name" v-model="myData.name">
 
+				<label for="email">Correo electrónico</label>
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="email" id="email" placeholder="Email" v-model="myData.email">
+
 				<label for="company">Nombre de tu empresa</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="company" id="company" placeholder="Company" v-model="myData.company">
 
 				<label for="">Cargo:</label>
-				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="cargo" id="cargo" placeholder="Cargo" v-model="myData.cargo">
+				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="text" name="cargo" id="cargo" placeholder="Cargo" v-model="myData.position">
 
 				<label for="tel">Número de celular</label>
 				<input class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" type="tel" name="tel" id="tel" placeholder="Número de celular" v-model="myData.tel">
 
 				<label for="funding">¿Estás buscando financiación en tecnología?</label>
-				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="funding" id="funding" v-model="myData.funding">
+				<select class="w-full pr-12 border border-[0.5px] border-gray-400 rounded-[10px] p-[0.7rem] [1.2rem] outline-none mb-6" name="funding" id="funding" v-model="myData.financing">
 					<option value="">Seleccione una opción</option>
 					<option value="si">Si</option>
 					<option value="no">No</option>
 				</select>
 
-				<div class="w-100 text-right">
-					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] [1.2rem] rounded-[10px]">
+				<div class="mb-6">
+					<!-- terminos y condiciones -->
+					<input type="checkbox" name="terms" id="terms" class="inline-block align-middle" required>
+					<label for="terms" class="inline-block align-middle text-[#333333] text-base font-medium ml-4">Acepto los <a href="https://letsdoitnow.us/terminos-y-condiciones" target="_blank" class="text-[#707070]">términos y condiciones</a> y <a href="https://letsdoitnow.us/politica-de-privacidad" target="_blank" class="text-[#707070]">política de privacidad</a></label>
+				</div>
+
+				<div class="w-100 text-center">
+					<input type="submit" value="Enviar mensaje" class="bg-[#263F28] text-white p-[0.7rem] px-[2.5rem] rounded-[10px] cursor-pointer">
 				</div>
 			</form>
+		</div>
+		<div class="max-w-[850px] mx-auto mb-8">
+			<p class="text-[#333333] text-4xl font-bold pb-4 text-center">Aliado oficial de Let’s do it Now en financiación de proyectos digitales</p>
+			<img src="../../assets/eventResources/kapital.png" alt="" class="mx-auto w-[300px] mt-6">
 		</div>
 	</div>
 
@@ -372,8 +387,7 @@ const timeDisplay = timeLeft;
 		</div>
 		<div>
 			<p class="text-[#333333] text-2xl font-bold">¿Quién puede responder a mis preguntas adicionales sobre el evento?</p>
-			<p class="text-[#333333] text-base font-regular">Para más información, puedes contactarnos haciendo click AQUÍ.
-			</p>
+			<p class="text-[#333333] text-base font-regular">Para más información, puedes contactarnos haciendo click<a href="https://letsdoitnow.us/contact" target="_blank" class="text-[#707070]"><b> AQUÍ.</b></a></p>
 		</div>
 	</div>
 </template>
