@@ -183,7 +183,7 @@ const timeDisplay = timeLeft;
 				</svg>
 			</span>
 
-			<span class="text-m font-bold transition-all group-hover:me-4">Llámanos</span>
+			<span class="text-m font-bold transition-all group-hover:me-4">Inscríbete Ya</span>
 		</a>
 	</div>
 

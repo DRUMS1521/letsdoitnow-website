@@ -44,7 +44,8 @@ const chat = (): void => {
 	</div>
 
 	<div class="">
-		<div class="flex flex-rows mb-1 items-center bg-gradient-to-r from-[#79DB92] to-[#9CCE7C]">
+		<div
+			class="flex lg:flex-row sm:flex-col min-[320px]:flex-col mb-1 items-center bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] sm:p-4 min-[320px]:p-4 lg:p-0">
 			<div class="rounded-lg">
 				<img alt="" src="../../assets/team1.png" />
 			</div>
@@ -56,11 +57,13 @@ const chat = (): void => {
 					{{ language.text020 }} </p>
 			</div>
 		</div>
-		<div class="flex flex-rows gap-1 h-[300px] w-full">
-			<img src="../../assets/team2.png" alt="" class="">
-			<img src="../../assets/team3.png" alt="" class="">
-			<img src="../../assets/team4.png" alt="" class="w-[645px]">
-			<img src="../../assets/team5.png" alt="" class="">
+		<div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-14 overflow-hidden overflow-hidden">
+			<div class="carrusel flex items-center gap-4">
+				<img src="../../assets/team2.png" alt="" class="h-[200px]">
+				<img src="../../assets/team3.png" alt="" class="h-[200px]">
+				<img src="../../assets/team4.png" alt="" class="h-[200px]">
+				<img src="../../assets/team5.png" alt="" class="h-[200px]">
+			</div>
 		</div>
 	</div>
 
@@ -103,4 +106,4 @@ const chat = (): void => {
 			</div>
 		</div>
 	</div>
-	</template>
+</template>
