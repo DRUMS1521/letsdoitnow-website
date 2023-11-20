@@ -170,7 +170,8 @@ const timeDisplay = timeLeft;
 
 	<div class="flex flex-col items-center bg-[#333333] py-20 px-8">
 		<p class="text-[#79D48B] text-5xl text-center font-bold pb-4">5 días en 3 horas</p>
-		<p class="text-white text-2xl font-bold pb-10">Cronograma del taller</p>
+		<p class="text-white text-2xl font-medium pb-10">20min - Presentación del Evento + Metodología + Mentores</p>
+		<p class="text-white text-2xl font-bold pb-4">Cronograma del taller</p>
 		<img src="../../assets/eventResources/cronograma.png" alt="">
 	</div>
 
