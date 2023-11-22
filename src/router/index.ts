@@ -90,7 +90,20 @@ const router = createRouter({
 
 				}
 			]
-		}
+		},
+		{
+			path: "/design-sprint",
+			children: [
+				{
+					path: "",
+					component: () => import('@/components/Web/DesignSprint.vue')
+				},
+				{
+					path: "/design-sprint/:id",
+					component: () => import('@/components/Web/DesignSprint.vue')
+				}
+			]
+		},
 	]
 })
 
