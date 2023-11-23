@@ -32,24 +32,12 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div class="mb-2 ml-1 font-semibold">
-                <p>Usuario 2</p>
-            </div>
-            <div class="md:w-full md:flex">
-                <div class="mb-2 md:w-1/5 md:mr-2">
-                    <p class="font-medium">Lo que disfrutó</p>
-                    <input class="border border-gray-800 rounded-md w-full py-1" type="text">
-                </div>
-                <div class="md:w-2/5 md:mr-2">
-                    <p class="font-medium">Posibles mejoras</p>
-                    <input class="border border-gray-800 rounded-md w-full py-1" type="text">
-                </div>
-                <div class="md:w-2/5">
-                    <p class="font-medium">Lo que disfrutó</p>
-                    <input class="border border-gray-800 rounded-md w-full py-1" type="text">
-                </div>
-            </div>
+        <div class="w-full mt-4 flex justify-center md:flex md:items-center">
+            <button class="bg-green-500 hover:scale-110 p-2 rounded-full">
+                <span>
+                    <img src="@/assets/suma1.png" alt="Siguiente" class="w-6 h-6" />
+                </span>
+            </button>
         </div>
         <div class="w-full mt-4">
             <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md flex ml-auto">
