@@ -9,17 +9,22 @@
 	import Dia4DesignSprint from '@/components/Web/DesignSprint/Dia4DesignSprint.vue';
 	import Dia5DesignSprint from '@/components/Web/DesignSprint/Dia5DesignSprint.vue';
 	import ChatDesignSprint from '@/components/Web/DesignSprint/ChatDesignSprint.vue';
+	import LoginDesignSprint from './DesignSprint/LoginDesignSprint.vue';
 
 	const view = ref<Number>(0);
+	const isLogin = ref(false);
 
 	onMounted(() => {
-		console.log('Design Sprint');
+		if (localStorage.getItem('session')) {
+			isLogin.value = true;
+		}
 	});
 </script>
 
 <template>
-	<div class="flex h-screen">
-		<div class="max-w-[200px] absolute md:relative ml-[-200px] md:ml-0">
+	<LoginDesignSprint v-if="!isLogin" />
+	<div class="flex h-screen" v-else>
+		<div class="w-[200px] absolute md:relative ml-[-200px] md:ml-0">
 			<menu-left-design-sprint />
 		</div>
 		<div class="p-4 md:p-8 w-[100%] overflow-hidden flex flex-col justify-between">
