@@ -48,4 +48,5 @@ function changeView(a: Number) {
 				<img src="@/assets/Arrow-2.svg" alt="Siguiente" class="w-6 h-6" />
 			</span>
 		</button>
-</div></template>
+    </div>
+</template>
