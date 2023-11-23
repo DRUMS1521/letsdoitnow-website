@@ -2,31 +2,28 @@
 </script>
 
 <template>
-    <h1>Dia 1</h1>
+    <div class="mt-8">
+        <p class="font-semibold">Solución con más votos: <span class="text-green-600">Solución # 1</span></p>
+    </div>
     <div>
         <div class="pt-2">
-            <p class="pb-1">¿Cual es el problema que estamos tratando de resolver?</p>
+            <p class="pb-1">Descripción de la solución</p>
             <textarea class="border border-gray-800 rounded-md p-1 w-full" name="" id="" cols="30" rows="7" placeholder="Escribe tu respuesta"></textarea>
         </div>
         <div class="py-2">
-            <p class="pb-1">¿Quienes son los usuarios o clientes que estamos tratando de ayudar?</p>
+            <p class="mt-6 font-medium">Impacto</p>
+            <p class="pb-1">Posible impacto</p>
             <textarea class="border border-gray-800 rounded-md p-1 w-full" name="" id="" cols="30" rows="7" placeholder="Escribe tu respuesta"></textarea>
         </div>
         <div class="py-2">
-            <p class="pb-1">¿Cuales son los objetivos específicos que queremos lograr con este sprint?</p>
+            <p class="mt-6 font-medium">Viabilidad</p>
+            <p class="pb-1">Posible Viabilidad</p>
             <textarea class="border border-gray-800 rounded-md p-1 w-full" name="" id="" cols="30" rows="7" placeholder="Escribe tu respuesta"></textarea>
         </div>
         <div>
-            <p class="pb-1">¿Que recursos o limitaciones debemos tener en cuenta durante el sprint?</p>
+            <p class="mt-6 font-medium">Implementación</p>
+            <p class="pb-1">Facilidad de implementación</p>
             <textarea class="border border-gray-800 rounded-md p-1 w-full" name="" id="" cols="30" rows="7" placeholder="Escribe tu respuesta"></textarea>
         </div>
-    </div>
-    <div class="w-full text-right mt-4">
-        <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md flex ml-auto">
-            Siguiente
-            <span class="ml-2">
-                <img src="@/assets/Arrow-2.svg" alt="Siguiente" class="w-6 h-6" />
-            </span>
-        </button>
     </div>
 </template>
