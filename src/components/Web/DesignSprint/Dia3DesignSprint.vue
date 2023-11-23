@@ -9,12 +9,14 @@ const finishVote = ref<boolean>(false);
 </script>
 
 <template>
-	<div class="my-4">
-		<p class="ml-1 font-semibold">Votaciones</p>
-	</div>
-	<div class="overflow-y-auto">
-		<dia3-design-sprint-upper />
-		<dia3-design-sprint-lower v-if="finishVote" />
+	<div class="h-full overflow-y-auto">
+		<div class="my-4">
+			<p class="ml-1 font-semibold">Votaciones</p>
+		</div>
+		<div class="">
+			<dia3-design-sprint-upper />
+			<dia3-design-sprint-lower v-if="finishVote" />
+		</div>
 	</div>
 	<div class="flex">
 		<div class="w-full mt-4">

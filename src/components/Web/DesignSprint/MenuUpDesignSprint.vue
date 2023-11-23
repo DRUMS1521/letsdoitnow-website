@@ -2,6 +2,7 @@
 </script>
 
 <template>
+	<div>
 		<div class="flex">
 			<div class="flex items-center pr-2 cursor-pointer">
 				<h1 class="text-green-600"><b>&#60;</b></h1>
@@ -17,4 +18,5 @@
 		<div class="mb-4">
 			<p class="text-xs mt-2">Encuentra aquí todos los proyectos creados y el progreso en el que se ecuentran</p>
 		</div>
+	</div>
 </template>

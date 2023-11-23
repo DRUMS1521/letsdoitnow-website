@@ -22,7 +22,7 @@
 		<div class="max-w-[200px] absolute md:relative ml-[-200px] md:ml-0">
 			<menu-left-design-sprint />
 		</div>
-		<div class="p-4 md:p-8 w-[100%] overflow-hidden flex flex-col">
+		<div class="p-4 md:p-8 w-[100%] overflow-hidden flex flex-col justify-between">
 			<menu-up-design-sprint v-if="view != 0"/>
 			<daschboard-design-sprint v-if="view == 0"/>
 			<dia1-design-sprint v-else-if="view == 1"/>
