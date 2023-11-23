@@ -22,7 +22,7 @@
 		<div class="max-w-[200px] absolute md:relative ml-[-200px] md:ml-0">
 			<menu-left-design-sprint />
 		</div>
-		<div class="p-4 md:p-8 w-[100%]">
+		<div class="p-4 md:p-8 w-[100%] h-screen overflow-hidden">
 			<menu-up-design-sprint v-if="view != 0"/>
 			<daschboard-design-sprint v-if="view == 0"/>
 			<dia1-design-sprint v-else-if="view == 1"/>
@@ -31,7 +31,7 @@
 			<dia4-design-sprint v-else-if="view == 4"/>
 			<dia5-design-sprint v-else-if="view == 5"/>
 			<chat-design-sprint v-if="view != 0"/>
-			<button @click="view++">Mas {{ view }}</button>
+			<button @click="view++" class="absolute">Mas {{ view }}</button>
 		</div>
 	</div>
 

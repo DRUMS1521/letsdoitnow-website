@@ -2,5 +2,7 @@
 </script>
 
 <template>
-    <h1>Chat</h1>
+    <div class="absolute">
+        <h1>Chat</h1>
+    </div>
 </template>

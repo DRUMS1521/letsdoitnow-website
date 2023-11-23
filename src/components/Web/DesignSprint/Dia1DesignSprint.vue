@@ -2,9 +2,8 @@
 </script>
 
 <template>
-    <h1>Dia 1</h1>
-    <div>
-        <div class="pt-2">
+    <div class="overflow-y-auto">
+        <div>
             <p class="pb-1">¿Cual es el problema que estamos tratando de resolver?</p>
             <textarea class="border border-gray-800 rounded-md p-1 w-full" name="" id="" cols="30" rows="7" placeholder="Escribe tu respuesta"></textarea>
         </div>
