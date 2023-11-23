@@ -14,7 +14,7 @@
 				<button class="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-green-700 hover:text-gray-50 focus:relative">Dia 5</button>
 			</div>
 		</div>
-		<div>
+		<div class="mb-4">
 			<p class="text-xs mt-2">Encuentra aquí todos los proyectos creados y el progreso en el que se ecuentran</p>
 		</div>
 </template>

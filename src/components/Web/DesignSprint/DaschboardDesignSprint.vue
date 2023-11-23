@@ -33,7 +33,7 @@
 			<p class="text-center mt-8">Aún no tienes ningún Design Sprint.<br><b>¡Comienza uno ahora!</b></p>
 		</div> -->
 
-		<div class="mt-4 h-full w-full">
+		<div class="mt-4 h-full w-full overflow-y-auto">
 			<div class=" p-1 px-2 bg-[#F6FFF7] flex w-full items-center rounded-md border-b-2 border-green-500 max-w-[1000px] mx-auto mb-8">
 				<p class="w-[50%]">Nombre del Spring</p>
 

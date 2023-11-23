@@ -34,10 +34,17 @@ function changeView(a: Number) {
         <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md flex mx-8" @click="changeView(2)">Ideas de otras industrias</button>
         <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md flex" @click="changeView(3)">Mi cliente ideal</button>
     </div>
-    <div>
-        <dia-2-desingn-spint-view-1 v-if="soluciones"/>
-        <dia-2-desingn-spint-view-2 v-if="otrasIdeas"/>
-        <dia-2-desingn-spint-view-3 v-if="clienteIdeal"/>
+    <div class="overflow-y-auto">
+        <dia2-desingn-spint-view1 v-if="soluciones"/>
+        <dia2-desingn-spint-view2 v-if="otrasIdeas"/>
+        <dia2-desingn-spint-view3 v-if="clienteIdeal"/>
     </div>
-    <h1>Dia 2</h1>
+    <div class="w-full text-right mt-4">
+        <button class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-md flex ml-auto">
+            Siguiente
+            <span class="ml-2">
+                <img src="@/assets/Arrow-2.svg" alt="Siguiente" class="w-6 h-6" />
+            </span>
+        </button>
+    </div>
 </template>
