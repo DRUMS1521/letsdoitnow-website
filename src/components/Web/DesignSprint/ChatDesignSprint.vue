@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="absolute">
+    <div class="absolute right-0">
         <h1>Chat</h1>
     </div>
 </template>
