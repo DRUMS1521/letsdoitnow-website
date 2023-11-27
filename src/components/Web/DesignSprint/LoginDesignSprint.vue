@@ -4,13 +4,16 @@
 	import  { showToast, POSITION } from '../../../stores/Toast';
 	import Spinner from '@/components/General/SpinerComponent.vue';
 
-	const email = ref('');
-	const password = ref('');
-	const confirmPassword = ref('');
-	const name = ref('');
-	const isLogin = ref(false);
-	const idUser = ref('');
-	const token = ref();
+	const name = ref<String>('');
+	const email = ref<String>('');
+	const password = ref<String>('');
+	const confirmPassword = ref<String>('');
+	const isLogin = ref<Boolean>(false);
+	const idUser = ref<String>('');
+	const token = ref<String>();
+	const refEmail = ref<HTMLElement | null>(null);
+	const refPass = ref<HTMLElement | null>(null);
+	const refPassConfir = ref<HTMLElement | null>(null);
 	const URL = 'https://api-chatbot.letsdoitnow.us/api';
 	/* const URL = 'http://localhost:3000/api'; */
 	const spinner = ref(false);
@@ -24,7 +27,7 @@
 
 	const register = async () => {
 		spinner.value = true;
-		if (!emailRegex.test(email.value)) {
+		if (!emailRegex.test(email.value as string)) {
 			showToast('El email no es válido', 'error', 3000, POSITION.BOTTOM_CENTER)
 		} else if (!name.value||!password.value || !confirmPassword.value) {
 			showToast('Todos los campos son obligatorios', 'error', 3000, POSITION.BOTTOM_CENTER)
@@ -57,7 +60,7 @@
 
 	const login = () => {
 		spinner.value = true;
-		if (!emailRegex.test(email.value)) {
+		if (!emailRegex.test(email.value as string)) {
 			showToast('El email no es válido', 'error', 3000, POSITION.BOTTOM_CENTER)
 		} else if (!password.value) {
 			showToast('Todos los campos son obligatorios', 'error', 3000, POSITION.BOTTOM_CENTER)
@@ -82,6 +85,13 @@
 		spinner.value = false;
 	};
 
+	function moveFocus(nextInput: HTMLElement | null) {
+		console.log(nextInput);
+		if (nextInput) {
+			nextInput.focus();
+		}
+	}
+
 	onMounted(async () => {
 		if (localStorage.getItem('session')) {
 			const session = localStorage.getItem('session') || '';
@@ -104,16 +114,16 @@
 				<h2 class="uppercase text-gray-700 mb-2" v-else><b>Registro</b></h2>
 				<div>
 					<div class="form-group" v-if="!isLogin">
-						<input class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="name" type="text" placeholder="Nombre" required />
+						<input class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="name" type="text" placeholder="Nombre" required @keyup.enter="moveFocus(refEmail)"/>
 					</div>
 					<div class="form-group">
-						<input class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="email" type="email" placeholder="Email" required />
+						<input ref="refEmail" class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="email" type="email" placeholder="Email" required @keyup.enter="moveFocus(refPass)" />
 					</div>
 					<div class="form-group">
-						<input class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="password" type="password" placeholder="Password" required />
+						<input ref="refPass" class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="password" type="password" placeholder="Password" required @keyup.enter="isLogin ? login() : moveFocus(refPassConfir)" />
 					</div>
 					<div class="form-group" v-if="!isLogin">
-						<input class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="confirmPassword" type="password" placeholder="Confirmar password" required />
+						<input ref="refPassConfir" class="w-full my-[0.3rem] pr-12 border border-[0.5px] border-gray-400 rounded-[5px] p-[0.7rem] [1.2rem] outline-none" v-model="confirmPassword" type="password" placeholder="Confirmar password" required @keyup.enter="register()" />
 					</div>
 					<div class="my-4" v-if="!isLogin">
 						<p class="text-xs">Al registrarte aceptas nuestros <a href="https://letsdoitnow.us/terminos-y-condiciones" target="_blank" class="text-green-500 font-bold">términos y condiciones</a> y <a href="https://letsdoitnow.us/politica-de-privacidad" target="_blank" class="text-green-500 font-bold">política de privacidad</a>.</p>

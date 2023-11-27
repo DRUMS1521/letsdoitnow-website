@@ -1,11 +1,21 @@
 <script setup lang="ts">
-	import { ref, onMounted } from 'vue';
+	import { ref, onMounted, defineProps } from 'vue';
+	import router from '@/router';
 	import axios from 'axios';
 	import  { showToast, POSITION } from '../../../stores/Toast';
 	import Spinner from '@/components/General/SpinerComponent.vue';
-import router from '@/router';
+
+	const props = defineProps({
+		changeSprint:  {
+			type: Function,
+			default: () => {
+				showToast('Error en la conexión', 'error', 3000, POSITION.BOTTOM_CENTER)
+			},
+		},
+	});
 	
-	const misDesignSprint = ref<Array<Object>>();
+	const misDesignSprint = ref<Array<Sprint>>();
+	interface Sprint {title: string, day1: Object, day2: Object, day3: Object, day4: Object, day5: Object, _id: string}
 	const token = ref<string>();
 	const idUser = ref<string>();
 	const title = ref<string>();
@@ -20,7 +30,7 @@ import router from '@/router';
 			const response = await axios.get(`${URL}/designSprint/user/${idUser.value}`, {headers: {'token': token.value}});
 			misDesignSprint.value = response.data;
 		} catch (error) {
-			showToast(`Error al obtener los Design Sprint ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
+			showToast(`Error al obtener los Design Sprint. ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
 		spinner.value = false;
 	}
@@ -29,7 +39,7 @@ import router from '@/router';
 	const createDesignSprint = async () => {
 		spinner.value = true;
 		if (!title.value) {
-			showToast('El titulo es obligatorio', 'error', 3000, POSITION.BOTTOM_CENTER)
+			showToast('El titulo es obligatorio.', 'error', 3000, POSITION.BOTTOM_CENTER)
 			return;
 		}
 		try {
@@ -37,16 +47,16 @@ import router from '@/router';
 				user: idUser.value,
 				title: title.value,
 			}, {headers: {'token': token.value}});
-			misDesignSprint.value = response.data;
+			misDesignSprint.value?.push(response.data);
 			title.value = '';
 			modalTitle.value = false;
 		} catch (error) {
-			showToast(`Error al crear el Design Sprint ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
+			showToast(`Error al crear el Design Sprint. ${error}`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		}
 		spinner.value = false;
 	}
 
-	const porcentaje = (sprint: object) => {
+	const porcentaje = (sprint: Sprint) => {
 		if (sprint.day4) {
 			return "80%";
 		} else if (sprint.day3) {
@@ -99,12 +109,11 @@ import router from '@/router';
 		</div>
 
 		<div class="mt-4 h-full w-full overflow-y-auto" v-else>
-			<div class=" p-1 px-2 bg-[#F6FFF7] flex w-full items-center rounded-md border-b-2 border-green-500 max-w-[1000px] mx-auto mb-8 cursor-pointer" v-for="sprint of misDesignSprint" @click="router.push(`/design-sprint/${sprint._id}`)">
+			<div class=" p-1 px-2 bg-[#F6FFF7] flex w-full items-center rounded-md border-b-2 border-green-500 max-w-[1000px] mx-auto mb-8 cursor-pointer" v-for="sprint of misDesignSprint" @click="router.push(`/design-sprint/${sprint._id}`), props.changeSprint(sprint._id)">
 				<p class="w-[50%]">{{ sprint.title }}</p>
 
 				<span role="progressbar" aria-labelledby="ProgressLabel" aria-valuenow="50" class="block rounded-full bg-gray-200 w-[50%]" v-if="!sprint.day5">
 					<span class="block h-4 rounded-full bg-green-500 text-center text-[10px]/4" :style="{width: porcentaje(sprint)}">
-					<!-- <span class="block h-4 rounded-full bg-green-500 text-center text-[10px]/4" style="width: 50%"> -->
 						<span class="font-bold text-white"> {{ porcentaje(sprint) }} </span>
 					</span>
 				</span>
