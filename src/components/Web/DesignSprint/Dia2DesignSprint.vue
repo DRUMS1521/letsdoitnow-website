@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref, defineProps, onMounted } from 'vue';
+	import { ref, onMounted } from 'vue';
 	import router from '@/router';
 	import  { showToast, POSITION } from '../../../stores/Toast';
 	import Dia2DesingnSpintView1 from '@/components/Web/DesignSprint/Dia2DesignSprint/Dia2DesignSpintView1.vue';

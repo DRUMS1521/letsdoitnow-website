@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import  { showToast, POSITION } from '../../../../stores/Toast';
 
 const props = defineProps({

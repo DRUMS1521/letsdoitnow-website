@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref, defineProps, onMounted } from 'vue';
+	import { ref, onMounted } from 'vue';
 	import router from '@/router';
 	import  { showToast, POSITION } from '../../../stores/Toast';
 
@@ -29,14 +29,12 @@
 	interface Question {
 		isFinished: boolean;
 		isTaskFinished: boolean;
-		content: [
-			{
+		content: {
 				id: string;
 				Teammember: string;
 				task: string;
 				supply: string;
-			}
-		];
+			}[];
 	}
 
 	const question = ref<Question>({

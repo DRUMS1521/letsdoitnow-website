@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import { ref, onMounted, defineProps } from 'vue';
+	import { ref, onMounted } from 'vue';
 	import router from '@/router';
 	import axios from 'axios';
 	import  { showToast, POSITION } from '../../../stores/Toast';
