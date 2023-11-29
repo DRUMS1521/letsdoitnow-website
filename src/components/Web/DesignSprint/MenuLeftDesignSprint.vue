@@ -5,6 +5,15 @@
 	import  { showToast, POSITION } from '../../../stores/Toast';
 	import Spinner from '@/components/General/SpinerComponent.vue';
 
+	const props = defineProps({
+		changeDay:  {
+			type: Function,
+			default: () => {
+				showToast('Error en la conexión', 'error', 3000, POSITION.BOTTOM_CENTER)
+			},
+		}
+	});
+
 	const router = useRouter();
 	const isDropdownOpen = ref<Boolean>(false);
 	const token = ref<string>('');
@@ -54,7 +63,7 @@
 			</span>
 
 			<ul class="mt-6 space-y-1">
-				<li class="bg-[#4ade80] py-2">
+				<li class="bg-[#4ade80] py-2 cursor-pointer" @click=" router.replace('/design-sprint'), props.changeDay(0)">
 					<button class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-50">Proyectos</button>
 				</li>
 			</ul>

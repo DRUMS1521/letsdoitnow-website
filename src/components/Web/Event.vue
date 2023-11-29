@@ -16,11 +16,11 @@ const myData = ref({
 const viewProjects = ref<number>(1)
 
 /* Cuenta regreciba */
-const deadline = new Date('2023-11-23T15:00:00-05:00');
+/* const deadline = new Date('2023-11-23T15:00:00-05:00'); */
 
-const timeLeft = ref(calculateTimeLeft());
+/* const timeLeft = ref(calculateTimeLeft()); */
 
-function calculateTimeLeft() {
+/* function calculateTimeLeft() {
 	const now = new Date().getTime();
 	const difference = deadline.getTime() - now;
 
@@ -35,11 +35,11 @@ function calculateTimeLeft() {
 	seconds = seconds < 10 ? `0${seconds}` : seconds.toString();
 
 	return `${days}-${hours}:${minutes}:${seconds}`;
-}
+} */
 
-function updateTime() {
+/* function updateTime() {
 	timeLeft.value = calculateTimeLeft();
-}
+} */
 
 let interval: number | null = null;
 /* Cuenta regreciba */
@@ -47,7 +47,8 @@ let interval: number | null = null;
 // Función para enviar el formulario
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	showToast(`Este evento ya termino`, 'error', 3000, POSITION.BOTTOM_CENTER)
+	/* const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	if (myData.value.name === ""  || myData.value.company === "" || myData.value.position === "" || myData.value.tel === "" || myData.value.financing === "") {
 		showToast(`Por favor completa todos los campos`, 'error', 3000, POSITION.BOTTOM_CENTER)
 		return;
@@ -57,9 +58,7 @@ const enviarFormulario = async (e: any) => {
 		return;
 	}
     const googleFormsURL = 'https://api-chatbot.letsdoitnow.us/api/googleForm';
-    /* const googleFormsURL = 'http://localhost:3000/api/googleForm'; */
 
-  // Crea un objeto con los datos del formulario
     const formData = myData.value;
 	formData.email = formData.email.toLowerCase();
 
@@ -74,22 +73,22 @@ const enviarFormulario = async (e: any) => {
         }
     } catch (error: any) {
         showToast(error.response.data.error, 'error', 3000, POSITION.BOTTOM_CENTER)
-    }
+    } */
 };
 
 onMounted(() => {
 	language.value = lang(localStorage.getItem("Lang") === "Es").home;
 	seoMeta(language.value.langweb, language.value.titleweb, language.value.desciptionweb, language.value.imgweb, language.value.keywords);
-	updateTime();
-	interval = setInterval(updateTime, 1000);
+	/* updateTime();
+	interval = setInterval(updateTime, 1000); */
 });
 
 onUnmounted(() => {
-	if (interval) {
+	/* if (interval) {
 		clearInterval(interval);
-	}
+	} */
 });
-const timeDisplay = timeLeft;
+/* const timeDisplay = timeLeft; */
 </script>
 
 <template>
@@ -103,10 +102,10 @@ const timeDisplay = timeLeft;
 			<p class="text-[#333333] font-bold text-2xl text-center">Un espacio práctico para los empresarios y emprendedores</p>
 		</div>
 		<div class="flex flex-col items-center gap-8 py-20">
-			<div class="max-w-2xl text-center text-green-500 mx-auto">
+			<!-- <div class="max-w-2xl text-center text-green-500 mx-auto">
 				<p class="text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] font-sans leading-[0.6] md:leading-[0.4] lg:leading-[0.3] ">{{ timeDisplay }}<br><span class="text-[1rem] font-thin">Dias Horas Minutos Segundos</span>
 				</p>
-			</div>
+			</div> -->
 			<p class="text-white text-4xl font-medium text-center">Bogotá, 23 de Noviembre del 2023<br>3:00pm - 6:00pm<br>
 			<span class="text-white text-4xl font-bold">Calle 70 #8-19 Kapital House</span><br>
 			<span class="text-white text-2xl font-bold">Organiza: Let's Do It Now, Casa de Software</span></p>

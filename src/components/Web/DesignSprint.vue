@@ -58,7 +58,12 @@
 		if(dataSprint.value.day1 && !dataSprint.value.day2) changeDay(2);
 		if(dataSprint.value.day2 && !dataSprint.value.day3) changeDay(3);
 		if(dataSprint.value.day3 && !dataSprint.value.day4) changeDay(4);
-		if(dataSprint.value.day4 && !dataSprint.value.day5) changeDay(5);
+		if(dataSprint.value.day4 && !dataSprint.value.day5) {
+			if(!dataSprint.value.day4.isFinished) changeDay(4);
+			else changeDay(5);
+		}else{
+			changeDay(1);
+		}
 	}
 
 	const saveDay = async (day: number, data: any) => {
@@ -98,16 +103,16 @@
 	<LoginDesignSprint v-if="!isLogin" />
 	<div class="flex h-screen" v-else>
 		<div class="w-[200px] absolute md:relative ml-[-200px] md:ml-0">
-			<menu-left-design-sprint />
+			<menu-left-design-sprint :changeDay="changeDay"/>
 		</div>
 		<div class="p-4 md:p-8 w-[100%] overflow-hidden flex flex-col justify-between">
-			<menu-up-design-sprint v-if="view != 0 && view != null" :changeDay="changeDay" :dataSprint="dataSprint"/>
+			<menu-up-design-sprint v-if="view != 0 && view != null" :changeDay="changeDay" :dataSprint="dataSprint" :view="view"/>
 			<daschboard-design-sprint v-if="view == 0" :changeSprint="changeSprint"/>
 			<dia1-design-sprint v-else-if="view == 1" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<dia2-design-sprint v-else-if="view == 2" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<dia3-design-sprint v-else-if="view == 3" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<dia4-design-sprint v-else-if="view == 4" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
-			<dia5-design-sprint v-else-if="view == 5"/>
+			<dia5-design-sprint v-else-if="view == 5" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<chat-design-sprint v-if="view != 0"/>
 		</div>
 		<spinner v-if="spinner" />

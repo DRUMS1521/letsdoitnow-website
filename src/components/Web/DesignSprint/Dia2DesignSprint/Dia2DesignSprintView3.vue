@@ -31,7 +31,7 @@
 			<textarea v-model="textarea.msg" :class="textareaClass()" cols="30" rows="5" placeholder="Escribe tu respuesta" data-question-id="2" :disabled="props.question.isFinished"></textarea>
 		</div>
 		<div class="w-full mt-4">
-			<button class="rounded-full flex mx-auto" @click="props.question.content.idealClient.content.push({id: newId(), msg: ''})">
+			<button class="rounded-full flex mx-auto" @click="!props.question.isFinished ? props.question.content.idealClient.content.push({id: newId(), msg: ''}) : showToast('No se pueden agregar mas elementos', 'error', 3000, POSITION.BOTTOM_CENTER)">
 				<span>
 					<img src="@/assets/suma.svg" alt="Siguiente" class="w-10 h-10 hover:scale-95" />
 				</span>

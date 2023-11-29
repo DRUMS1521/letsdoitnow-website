@@ -18,19 +18,24 @@
 			default: () => {
 				showToast('Error en la conexión', 'error', 3000, POSITION.BOTTOM_CENTER)
 			},
-		}
+		},
+		view: {
+			type: Number,
+			default: 1,
+		},
 	});
 
 	const getButtonClasses = (day: number) => {
 		return {
 			'inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-green-700 hover:text-gray-50': true,
 			'focus:relative bg-green-500 text-green-50': props.dataSprint[`day${day}`],
-			'bg-green-600 text-green-50': props.dataSprint[`day${day - 1}`] && !props.dataSprint[`day${day}`],
+			'bg-green-600 text-green-50': props.dataSprint[`day${day - 1}`] && props.dataSprint[`day${day - 1}`].isFinished && !props.dataSprint[`day${day}`],
+			'bg-green-700': props.view == day,
 		};
 	};
 
 	const handleButtonClick = (day: number) => {
-		if (props.dataSprint[`day${day - 1}`] && !props.dataSprint[`day${day}`]) {
+		if (props.dataSprint[`day${day - 1}`] && props.dataSprint[`day${day - 1}`].isFinished && !props.dataSprint[`day${day}`]) {
 			props.changeDay(day);
 		}else if(props.dataSprint[`day${day}`]){
 			props.changeDay(day);
@@ -51,7 +56,7 @@
 			<div class="inline-flex -space-x-px overflow-hidden rounded-md border bg-white shadow-sm">
 				<button
 					class="inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-green-700 hover:text-gray-50"
-					:class="{'focus:relative bg-green-500 text-green-50': dataSprint.day1, 'bg-green-600 text-green-50': !dataSprint.day1}"
+					:class="{'focus:relative bg-green-500 text-green-50': dataSprint.day1, 'bg-green-600 text-green-50': !dataSprint.day1, 'bg-green-700': view == 1}"
 					@click="props.changeDay(1)"
 					title="Dia 1"
 				>Dia 1</button>
