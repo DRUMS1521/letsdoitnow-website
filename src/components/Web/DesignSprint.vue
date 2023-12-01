@@ -61,7 +61,7 @@
 		if(dataSprint.value.day4 && !dataSprint.value.day5) {
 			if(!dataSprint.value.day4.isFinished) changeDay(4);
 			else changeDay(5);
-		}else{
+		}else if (dataSprint.value.day5){
 			changeDay(1);
 		}
 	}
@@ -113,7 +113,7 @@
 			<dia3-design-sprint v-else-if="view == 3" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<dia4-design-sprint v-else-if="view == 4" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
 			<dia5-design-sprint v-else-if="view == 5" :saveDay="saveDay" :dataSprint="dataSprint" :changeDay="changeDay"/>
-			<chat-design-sprint v-if="view != 0"/>
+			<chat-design-sprint v-if="view != 0" :dataSprint="dataSprint"/>
 		</div>
 		<spinner v-if="spinner" />
 	</div>

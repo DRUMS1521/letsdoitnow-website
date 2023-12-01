@@ -92,6 +92,18 @@ onUnmounted(() => {
 </script>
 
 <template>
+	<div class="py-20 px-8 max-w-[1200px] mx-auto">
+		<div class="relative pb-[56.25%]">
+			<iframe class="absolute top-0 left-0 w-full h-full" width="560" height="315" src="https://www.youtube.com/embed/Dsfv1Jbi564" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="flex flex-col items-center gap-8 pt-20">
+			<h1 class="text-5xl text-center font-bold">Echa un vistazo a las fotos del evento</h1>
+			<a href="https://bohorquezbarco.pixieset.com/mvpflash/" class="block relative" target="_blank">
+				<img src="https://images.pixieset.com/29029876/273c2a7278151e7db86f425913de2fd5-medium.jpg" alt="">
+				<div class="absolute w-full h-full top-0 text-center pt-[30%] bg-[#0000006e] hover:bg-[#0000008a]"><p class="text-white text-2xl font-semibold">Ver Fotos</p></div>
+			</a>
+		</div>
+	</div>
 	<div class="bg-image-6 py-20 px-8">
 		<div class="flex flex-col items-center gap-8 pb-20">
 			<p class="text-white text-3xl font-medium">Taller Gratuito Presencial</p>
