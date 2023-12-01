@@ -23,17 +23,14 @@ const viewProjects = ref<number>(1)
 /* function calculateTimeLeft() {
 	const now = new Date().getTime();
 	const difference = deadline.getTime() - now;
-
 	let days: number | string = Math.floor(difference / (1000 * 60 * 60 * 24));
 	let hours: number | string = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	let minutes: number | string = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 	let seconds: number | string = Math.floor((difference % (1000 * 60)) / 1000);
-
 	days = days < 10 ? `0${days}` : days.toString();
 	hours = hours < 10 ? `0${hours}` : hours.toString();
 	minutes = minutes < 10 ? `0${minutes}` : minutes.toString();
 	seconds = seconds < 10 ? `0${seconds}` : seconds.toString();
-
 	return `${days}-${hours}:${minutes}:${seconds}`;
 } */
 
