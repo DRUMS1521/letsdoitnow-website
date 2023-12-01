@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { lang } from '../../stores/SwitchLang';
 import { seoMeta } from '@/stores/SeoMeta';
-import axios from 'axios';
+/* import axios from 'axios'; */
 import { showToast, POSITION } from '../../stores/Toast';
 
 const language = ref<any>({
@@ -23,14 +23,17 @@ const viewProjects = ref<number>(1)
 /* function calculateTimeLeft() {
 	const now = new Date().getTime();
 	const difference = deadline.getTime() - now;
+
 	let days: number | string = Math.floor(difference / (1000 * 60 * 60 * 24));
 	let hours: number | string = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	let minutes: number | string = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
 	let seconds: number | string = Math.floor((difference % (1000 * 60)) / 1000);
+
 	days = days < 10 ? `0${days}` : days.toString();
 	hours = hours < 10 ? `0${hours}` : hours.toString();
 	minutes = minutes < 10 ? `0${minutes}` : minutes.toString();
 	seconds = seconds < 10 ? `0${seconds}` : seconds.toString();
+
 	return `${days}-${hours}:${minutes}:${seconds}`;
 } */
 
@@ -44,7 +47,7 @@ let interval: number | null = null;
 // Función para enviar el formulario
 const enviarFormulario = async (e: any) => {
     e.preventDefault();
-	showToast(`Este evento ya termino`, 'error', 3000, POSITION.BOTTOM_CENTER)
+	showToast(`Este evento ya finalizó`, 'error', 3000, POSITION.BOTTOM_CENTER)
 	/* const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 	if (myData.value.name === ""  || myData.value.company === "" || myData.value.position === "" || myData.value.tel === "" || myData.value.financing === "") {
 		showToast(`Por favor completa todos los campos`, 'error', 3000, POSITION.BOTTOM_CENTER)
