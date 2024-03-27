@@ -27,7 +27,7 @@ const bot = (): void => {
 	window.open("https://chatbot.letsdoitnow.us/doitbot/chat", '_blank');
 }
 const freeConsulation = (): void => {
-	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
+	window.open("https://calendly.com/letsdoitnow/webinar", '_blank')
 } 
 
 onBeforeMount(() => {
