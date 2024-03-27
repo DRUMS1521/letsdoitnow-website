@@ -21,7 +21,7 @@ const viewProjects = ref<number>(1)
 const viewAreas = ref<number>(1)
 
 const quote = (): void => {
-	window.open("https://7j1l5jqb43v.typeform.com/to/kSlNtr0J", '_blank');
+	window.open("https://7jywpogtw4m.typeform.com/to/RvV3yTQk", '_blank');
 }
 const bot = (): void => {
 	window.open("https://chatbot.letsdoitnow.us/doitbot/chat", '_blank');
@@ -224,20 +224,20 @@ onBeforeMount(() => {
 		</div>
 		<div class="flex flex-row items-center gap-4">
 			<div>
-			<img src="../../assets/team/edinson.png" alt="" class="w-[100px] border rounded-full">
+			<img src="../../assets/team/felipe.png" alt="" class="w-[100px] border rounded-full">
 			</div>
 			<div class="w-[300px]">
-				<h1 class="font-semibold text-2xl text-[#263F28]">Edinson Acevedo</h1>
+				<h1 class="font-semibold text-2xl text-[#263F28]">felipe</h1>
 				<p class="font-medium text-xl text-[#475569]">Fullstack Developer</p>
 				<p class="font-medium">#javascript #vuejs #nodejs #backend</p>
 			</div>
 		</div>
 		<div class="flex flex-row items-center gap-4">
 			<div>
-			<img src="../../assets/team/alejandra.png" alt="" class="w-[100px] border rounded-full">
+			<img src="../../assets/team/brian.png" alt="" class="w-[100px] border rounded-full">
 			</div>
 			<div class="w-[300px]">
-				<h1 class="font-semibold text-2xl text-[#263F28]">Alejandra Martinez</h1>
+				<h1 class="font-semibold text-2xl text-[#263F28]">Brian Ochoa</h1>
 				<p class="font-medium text-xl text-[#475569]">Product Owner</p>
 				<p class="font-medium">#scrummaster</p>
 			</div>
@@ -254,10 +254,10 @@ onBeforeMount(() => {
 		</div>
 		<div class="flex flex-row items-center gap-4">
 			<div>
-			<img src="../../assets/team/daniela.png" alt="" class="w-[100px] border rounded-full">
+			<img src="../../assets/team/viviana.png" alt="" class="w-[100px] border rounded-full">
 			</div>
 			<div class="w-[300px]">
-				<h1 class="font-semibold text-2xl text-[#263F28]">Daniela Gomez</h1>
+				<h1 class="font-semibold text-2xl text-[#263F28]">Viviana Villabona</h1>
 				<p class="font-medium text-xl text-[#475569]">UX/UI Designer</p>
 				<p class="font-medium">#uxresearch #figma</p>
 			</div>

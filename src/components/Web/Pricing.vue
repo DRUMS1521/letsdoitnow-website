@@ -16,10 +16,10 @@ const jobs = (): void => {
     window.open("https://www.linkedin.com/company/letsdoitnowus/jobs/", '_blank')
 }
 const freeConsulation = (): void => {
-	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
+	window.open("https://calendly.com/letsdoitnow/webinar", '_blank')
 }
 const quote = (): void => {
-	window.open("https://7j1l5jqb43v.typeform.com/to/kSlNtr0J", '_blank');
+	window.open("https://7jywpogtw4m.typeform.com/to/RvV3yTQk", '_blank');
 }
 </script>
 

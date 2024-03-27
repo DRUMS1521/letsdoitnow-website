@@ -13,7 +13,7 @@ onMounted(() => {
 });
 
 const freeConsulation = (): void => {
-	window.open("https://calendly.com/juanes-paca-letsdoitnow/30min?month=2023-07", '_blank')
+	window.open("https://calendly.com/letsdoitnow/webinar", '_blank')
 }
 </script>
 
@@ -30,7 +30,7 @@ const freeConsulation = (): void => {
 				<p class="my-8 text-[#333333]">
 					{{ language.text002 }}
 				</p>
-				<a @click="$router.push('/portfolio')">
+				<a @click="freeConsulation">
 					<button
 						class="text-m font-bold text-[#333333] underline relative text-gray-600 hover:text-black transition-colors duration-300 hover:after:bg-black hover:after:w-full">
 						{{ language.text003 }}

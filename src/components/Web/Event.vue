@@ -263,11 +263,7 @@ onUnmounted(() => {
 				<p class="font-bold text-[#333333] text-2xl">Milton Suárez</p>
 				<p class="font-medium text-[#333333] text-lg">Fullstack Marketer</p>
 			</div>
-			<div class="flex flex-col items-center">
-				<img src="../../assets/eventResources/juanes.png" alt="" class="max-h-[200px]">
-				<p class="font-bold text-[#333333] text-2xl">Juan Esteban Paca</p>
-				<p class="font-medium text-[#333333] text-lg">CGO en Let's Do It Now</p>
-			</div>
+			
 			<div class="flex flex-col items-center">
 				<img src="../../assets/eventResources/joan.png" alt="" class="max-h-[200px]">
 				<p class="font-bold text-[#333333] text-2xl">Joan Ariza</p>
