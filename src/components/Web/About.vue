@@ -50,7 +50,7 @@ const chat = (): void => {
 			</div>
 
 			<div class="lg:p-20 mx-auto max-w-screen-xl">
-				<p class="text-[#263F28] text-lg font-bold">TEAM WORK</p>
+				<p class="text-[#263F28] text-lg font-bold">TEAM WORKS</p>
 				<h2 class="text-3xl font-bold sm:text-4xl text-[#263F28]">{{ language.text019 }}</h2>
 				<p class="my-8 text-[#333333]">
 					{{ language.text020 }} </p>
