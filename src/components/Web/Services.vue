@@ -100,40 +100,34 @@ const freeConsulation = (): void => {
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/lang.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">{{ language.text020 }}</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">We specialize in Python for robust backend applications and PHP for dynamic web solutions, adapting to project needs for efficiency, scalability, and security</p>
 			</div>
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/frameworks.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">Frameworks</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">We use advanced frameworks like Django for Python and Express.js for Node, adapting to the best for each project for fast and secure developments.</p>
 			</div>
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/mobile.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">{{ language.text021 }}</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">We focus on creating exceptional mobile applications, using Vue JS and React JS, adapting to frameworks that ensure interactivity and adaptability.</p>
 			</div>
 		</div>
 		<div class="flex flex-row gap-8 items-center justify-center mt-10">
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/web.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">Web</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">We employ Angular, Vue JS, and React JS for rich, responsive frontends, and Python with Django, Node.js with Express.js for powerful backends, adapting to project needs.</p>
 			</div>
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/database.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">{{ language.text022 }}</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">We manage MySQL, PostgreSQL, MariaDB for relational solutions, and MongoDB for NoSQL, all on AWS, adapting to ensure performance and scalability.</p>
 			</div>
 			<div class="w-[350px] h-[190px]">
 				<img src="../../assets/cloud.svg" alt="">
 				<h1 class="font-bold text-[#333333] mb-2">{{ language.text023 }}</h1>
-				<p class="text-base">Viverra netus odio nunc ac nibh lorem iaculis. Orci facilisis habitasse cursus tempor
-					et.</p>
+				<p class="text-base">Our cloud infrastructure relies on AWS, also adapting to Google Cloud and Azure, offering scalable and secure hosting services.</p>
 			</div>
 		</div>
 	</div>
@@ -147,7 +141,7 @@ const freeConsulation = (): void => {
 			<p class="my-8 text-white">
 				{{ language.text026 }}
 			</p>
-		<a @click="$router.push('/portfolio')">
+		<a href="https://calendly.com/letsdoitnow/webinar?month=2024-04">
 			<button
 				class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300">
 				{{ language.text027 }}

@@ -109,16 +109,17 @@ const isActive = (route: string) => {
 				<div class="flex items-center gap-4">
 					<div class="sm:flex sm:gap-4">
 						<a class="rounded-md bg-gradient-to-r from-[#79DB92] to-[#9CCE7C] px-5 py-2.5 text-m font-bold text-[#333333] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
-							href="/contact">
+							href="https://calendly.com/letsdoitnow/webinar?month=2024-04">
 							{{ language.menu.contact }}
 						</a>
 
-						<div class="hidden sm:flex">
+						
+						<!-- <div class="hidden sm:flex">
 							<a class="rounded-md bg-none px-5 py-2.5 text-m font-bold text-white border border-[#79DB92] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:duration-300"
 								href="https://chatbot.letsdoitnow.us/doitbot/chat">
 								{{ language.menu.doit }}
 							</a>
-						</div>
+						</div> -->
 					</div>
 
 					<div class="block md:hidden">
